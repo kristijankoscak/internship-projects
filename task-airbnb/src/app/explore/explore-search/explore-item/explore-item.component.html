@@ -1,7 +1,8 @@
 
 <button
   mat-button
-  class="border-bottom">
+  class="border-bottom"
+  routerLink="../city/{{city.name}}">
   <div fxLayout="row">
     <img class="image" [src] ="city.image" [ngClass]="{'gray-background': !city.distance}"/>
     <div fxLayout="column" fxLayoutAlign="center start" >
