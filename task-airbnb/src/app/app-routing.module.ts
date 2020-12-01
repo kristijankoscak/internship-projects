@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ExploreCityComponent } from './explore/explore-city/explore-city.component';
 import { ExploreMainComponent } from './explore/explore-main/explore-main.component';
 import { ExploreSearchComponent } from './explore/explore-search/explore-search.component';
 import { ExploreComponent } from './explore/explore.component';
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: ExploreMainComponent},
       { path: 'search', component: ExploreSearchComponent},
+      { path: ':city', component: ExploreCityComponent}
     ]
   },
   {
