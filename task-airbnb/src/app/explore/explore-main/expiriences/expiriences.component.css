@@ -1,0 +1,25 @@
+.background {
+  background-color: black;
+  width:100vw;
+  padding:1rem 1rem;
+  color: white;
+}
+
+h2{
+  margin-bottom: 0;
+  margin-top:1rem;
+}
+
+.scrollable{
+  padding:2rem 1rem;
+  overflow-x: scroll;
+  display: grid !important;
+  grid-template-columns: auto auto auto auto;
+}
+
+.mat-stroked-button{
+  border: 1px solid white;
+  font-weight: 600 !important;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}

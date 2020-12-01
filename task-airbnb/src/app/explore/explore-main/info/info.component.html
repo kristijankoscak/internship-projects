@@ -1,0 +1,23 @@
+<div fxLayout="column" class="background">
+  <div fxLayout="row">
+    <span class="text-title ml-1">Budite u toku</span>
+  </div>
+  <div fxLayout="row" class="scrollable">
+    <mat-list>
+      <span class="text-size-16">Za goste</span>
+      <app-item-info *ngFor="let info of guestInfo" [info]="info"></app-item-info>
+    </mat-list>
+    <mat-list>
+      <span class="text-size-16">Za domaćine</span>
+      <app-item-info *ngFor="let info of hostInfo" [info]="info"></app-item-info>
+    </mat-list>
+    <mat-list>
+      <span class="text-size-16">Za pružatelje pomoći (COVID-19)</span>
+      <app-item-info *ngFor="let info of helpersInfo" [info]="info"></app-item-info>
+    </mat-list>
+    <mat-list>
+      <span class="text-size-16">Više</span>
+      <app-item-info *ngFor="let info of moreInfo" [info]="info"></app-item-info>
+    </mat-list>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.action-image{
+  display: block;
+  background-size: cover;
+  height:20rem;
+  width: 20rem;
+  border-radius: 1.5rem;
+}
+
+.action-text{
+  font-weight: bold;
+  font-size: 1.2rem;
+  float:left;
+}
+
+button{
+  padding: 1rem;
+}

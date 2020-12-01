@@ -1,0 +1,18 @@
+.background {
+  background-color: white;
+  width:100vw;
+  padding:1rem 1rem;
+}
+
+h2{
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.scrollable{
+  display:flex;
+  overflow-x: scroll;
+  display: grid !important;
+  grid-template-columns: auto auto auto auto;
+  padding:1rem 0rem;
+}

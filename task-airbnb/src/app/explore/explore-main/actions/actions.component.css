@@ -1,0 +1,17 @@
+.background {
+  background-color: white;
+  width:100vw;
+  padding:1rem;
+  color: black;
+}
+
+h2{
+  margin-bottom: 0;
+  margin-top:1rem;
+}
+
+.scrollable{
+  overflow-x: scroll;
+  display: grid !important;
+  grid-template-columns: auto auto auto;
+}

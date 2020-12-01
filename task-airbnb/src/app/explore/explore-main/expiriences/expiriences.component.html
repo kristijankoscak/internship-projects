@@ -1,0 +1,22 @@
+<div fxLayout="column" class="background">
+  <div
+  fxLayout="column"
+  class="ml-1">
+  <span class="text-title">Ponuda online doživljaja</span>
+  <span class="margin-top-bottom-2 text-bold-600 text-size-12">Interaktivne aktivnosti u kojima možete zajedno
+    sudjelovati, a vode ih iskusni domaćini.</span>
+</div>
+<div
+  fxLayout="row"
+  class="scrollable">
+  <app-item-expirience
+    *ngFor="let expirience of expiriences" [expirience]="expirience"></app-item-expirience>
+</div>
+<div
+  fxLayout="row"
+  class="margin-top-bottom-2 ml-1">
+  <button mat-stroked-button>Istražite što je sve u ponudi</button>
+</div>
+
+</div>
+

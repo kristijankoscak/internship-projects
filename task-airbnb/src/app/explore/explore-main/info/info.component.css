@@ -1,0 +1,18 @@
+.background {
+  background-color: rgba(247, 247, 247);
+  width:100vw;
+  padding:1rem;
+  padding: 2rem 0rem;
+  box-shadow: 0rem 0 0.1rem rgba(0, 0, 0, 0.4);
+}
+
+.scrollable{
+  overflow-x: scroll;
+  display: grid !important;
+  grid-template-columns: auto auto auto auto;
+  padding:0rem 1rem;
+}
+
+.mat-list{
+  margin-right:1rem;
+}

@@ -1,0 +1,40 @@
+.background{
+  position: flex;
+  overflow-y:scroll;
+  height:90vh;
+}
+div{
+  color:rgba(0, 0, 0, 0.6);
+}
+.header{
+  width: 100vw;
+  padding:2rem;
+  box-shadow: 0 0.1rem 0.5rem 0 rgb(0, 0, 0,0.2);
+  color:rgba(0, 0, 0, 0.6);
+}
+.person-icon{
+  width:5rem;
+  height:5rem;
+  font-size: 5rem;
+  border-radius: 50%;
+}
+.button-icon{
+  display:inline-block;
+  float: right;
+}
+.icon-bg{
+  background-color:rgb(0, 0, 0,0.3);
+  color:rgb(0, 0, 0,0.5);
+}
+
+.mat-button{
+  width:100%;
+  border-radius: unset !important;
+  line-height: normal;
+  padding:1rem 2rem;
+  text-align: start;
+  white-space: normal;
+}
+.shaddow-bottom{
+  box-shadow: 0 2rem 0.1rem -2rem rgb(0, 0, 0,0.88);
+}

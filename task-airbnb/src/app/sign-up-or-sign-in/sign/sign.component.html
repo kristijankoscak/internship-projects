@@ -1,0 +1,99 @@
+<div class="background">
+  <div fxLayout="row" class="pt-1">
+    <button mat-flat-button class="icon-close" routerLink="/explore">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div fxLayout="row">
+    <span class="title margin-top-bottom-2"
+      >Prijavite se ili registrirajte na Airbnbu</span
+    >
+  </div>
+  <form fxLayout="column" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="legacy" class="borders rounded-top">
+      <mat-label>Država/regija</mat-label>
+      <mat-select formControlName="country">
+        <mat-option
+          *ngFor="let country of countries"
+          [value]="country.phoneNumber"
+        >
+          {{ country.name + " ( " + country.phoneNumber + " ) " }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="borders rounded-bottom" [ngClass]="borderClassName">
+      <mat-label>Broj telefona</mat-label>
+      <input
+        matInput
+        placeholder="912233445"
+        type="tel"
+        formControlName="phoneNumber"
+        (click)="changeStyle()"
+        autocomplete="off"
+      />
+    </mat-form-field>
+    <div
+      fxLayout="row"
+      fxLayoutAlign="start start"
+      class="warning-message-color"
+      *ngIf="
+        signUpForm.controls.phoneNumber.touched &&
+        !signUpForm.controls.phoneNumber.valid
+      "
+    >
+      <span><mat-icon class="warning-icon ml-2">error_outline</mat-icon></span>
+      <span class="warning-message ml-1">Broj telefona nije ispravan!</span>
+    </div>
+    <div fxLayout="row">
+      <span class="note">
+        Nazvat ćemo vas ili vam poslati SMS poruku kako bismo provjerili vaš
+        broj. Naplaćuju se standardne cijene poruka i podatkovnog prometa.
+      </span>
+    </div>
+    <div fxLayout="row">
+      <button
+        mat-flat-button
+        color="accent"
+        [disabled]="!numberIsValid"
+        class="color-white message"
+        type="submit"
+      >
+        Nastavite
+      </button>
+    </div>
+  </form>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <span class="note section-divider-margin"> ili </span>
+  </div>
+  <div fxLayout="row">
+    <button mat-stroked-button (click)="login()">
+      <mat-icon class="icon email-icon"></mat-icon>
+      Prijavite se e-mailom
+    </button>
+  </div>
+  <div fxLayout="row">
+    <button mat-stroked-button (click)="login()">
+      <mat-icon class="icon mobile-icon"></mat-icon>
+      Prijavite se pomoću broja telefona
+    </button>
+  </div>
+  <div fxLayout="row">
+    <button mat-stroked-button (click)="login()">
+      <mat-icon class="icon facebook-icon"></mat-icon>
+      Prijavite se Facebook računom
+    </button>
+  </div>
+  <div fxLayout="row">
+    <button mat-stroked-button (click)="login()">
+      <mat-icon class="icon google-icon"></mat-icon>
+      <span class="icon-text">Prijavite se Google računom</span>
+    </button>
+  </div>
+  <div fxLayout="row" class="pb-1">
+    <button mat-stroked-button (click)="login()">
+      <mat-icon class="icon apple-icon"></mat-icon>
+      <span class="icon-text">Prijavite se Apple računom</span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.background {
+  background-color: white;
+  width:100vw;
+  overflow-x: scroll;
+  padding:1rem;
+  display: grid !important;
+  grid-template-columns: auto auto auto;
+}

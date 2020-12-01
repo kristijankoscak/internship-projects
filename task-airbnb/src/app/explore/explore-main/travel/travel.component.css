@@ -1,0 +1,60 @@
+* {
+  color:white;
+}
+.background{
+  display: block;
+  background-size: cover;
+  background-image: url("https://a0.muscache.com/im/pictures/8203f5ab-f1a9-4574-b97c-b7ad693d83fb.jpg?im_q=highq&im_w=720");
+  width:100vw;
+  height:65vh;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding: 0 2rem;
+}
+.fixed{
+  padding:1rem 0rem;
+  margin-top: 0;
+  position:fixed;
+  display: block;
+  top:0;
+  left:0;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+  transition: background-color 0.5s;
+  transition-timing-function: linear;
+}
+.fixed-button{
+  border-style:unset;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin:0rem 2rem;
+  transition: background-color 0.5s;
+}
+
+.mat-icon{
+  font-size: 2rem;
+}
+.mat-flat-button{
+  color:black;
+  font-weight: 500;
+}
+.rounded-borders{
+  border-radius: 2rem;
+}
+
+.message{
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 4rem;
+  position:absolute;
+  top:20%;
+}
+.places-nearby{
+  font-size: 1.3rem;
+  line-height:1.3rem !important;
+  padding: 0.8rem ;
+  border-radius: 0.7rem;
+  box-shadow: 0rem 0 0.1rem rgba(0, 0, 0, 0.4);
+  position:absolute !important;
+  top:40%;
+}

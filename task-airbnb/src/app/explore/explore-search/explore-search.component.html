@@ -1,0 +1,56 @@
+<div class="background text-size-12">
+
+  <div
+    fxLayout="column"
+    class="background-content"
+    fxLayoutAlign="start stretch">
+    <div
+      fxLayout="row"
+      class="search-block"
+      fxLayoutAlign="space-around center">
+      <button
+        mat-button
+        routerLink="/explore">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+      <form class="example-form">
+        <mat-form-field floatLabel="never" class="example-full-width">
+          <input matInput
+                 placeholder="Kamo želite otputovati?"
+                 aria-label="State"
+                 [matAutocomplete]="auto"
+                 [formControl]="citiesControl"
+                 (input)="toggleCloseButton($event)"
+                 (focus)="displayNearbyCities(false)"
+                 (blur)="displayNearbyCities(true)"
+                 #inputSearch
+                 [(ngModel)]="input">
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="displayNearbyCities(true)">
+            <mat-option *ngFor="let city of filteredCities | async" [value]="city.name">
+              <app-explore-item [city]="city"></app-explore-item>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+      <button
+        class="close-icon"
+        mat-button
+        *ngIf="closeButtonVisible"
+        (click)="closeFilteredCities()"
+        routerLink="/explore-search">
+        <mat-icon>cancel</mat-icon>
+      </button>
+
+    </div>
+    <div fxLayout="row" *ngIf="nearbyCitiesVisible">
+      <app-explore-item [city]="gpsNearbyPlace"></app-explore-item>
+    </div>
+    <div fxLayout="row" *ngIf="nearbyCitiesVisible">
+      <div fxLayout="column">
+        <span class="text-bold-600 places-nearby-text">SMJEŠTAJI U VAŠOJ BLIZINI</span>
+        <app-explore-item *ngFor="let city of nearbyCities" [city]="city" class="border-bottom"></app-explore-item>
+      </div>
+    </div>
+
+  </div>
+</div>

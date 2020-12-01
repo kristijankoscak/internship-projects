@@ -1,0 +1,20 @@
+import { Component, OnInit } from '@angular/core';
+import { Action } from './action.model';
+import { ActionsService } from './actions.service';
+
+@Component({
+  selector: 'app-actions',
+  templateUrl: './actions.component.html',
+  styleUrls: ['./actions.component.css']
+})
+export class ActionsComponent implements OnInit {
+
+  actions: Action[];
+
+  constructor(private actionsService: ActionsService) { }
+
+  ngOnInit(): void {
+    this.actions = this.actionsService.getActions();
+  }
+
+}

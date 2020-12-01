@@ -1,0 +1,11 @@
+<div fxLayout="row" class="shaddow-bottom">
+  <button mat-button class="left-right-padding-2" (click)="item.name === 'Odjava' && logOff()">
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="color-black">
+      <span class="text-size-16 text-lighter">{{ item.name }}</span>
+      <mat-icon >{{ item.icon }}</mat-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="text-size-14 text-lighter">{{item.desc}}</span>
+    </div>
+  </button>
+</div>

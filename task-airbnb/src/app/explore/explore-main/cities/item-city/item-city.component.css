@@ -1,0 +1,18 @@
+.city-icon{
+  display: inline-block;
+  background-size: cover;
+  height:7rem;
+  width: 7rem;
+  border-radius: 1.5rem;
+}
+
+.description{
+  line-height: 2rem;
+  margin-left: 1rem;
+  display: inline-flex !important;
+}
+
+button{
+  padding:1rem;
+  padding-right: 6.0rem!important;
+}

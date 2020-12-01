@@ -1,0 +1,15 @@
+<div
+  fxLayout="row"
+  fxFlex="100">
+  <button
+    mat-button>
+    <img
+      class="city-icon"
+      [src]="city.image">
+      <div fxLayout="column" fxLayoutAlign="center start" class="description">
+        <span class="text-bold-600">{{city.name}}</span>
+        <span class="text-lighter">{{city.distance}} vožnje</span>
+      </div>
+  </button>
+</div>
+

@@ -1,0 +1,57 @@
+<div fxLayout="column"
+  class="background"
+  fxLayoutAlign="start stretch">
+  <div fxLayout="row" class="left-right-padding-2">
+    <div fxLayout="column">
+      <span class="text-size-24 text-bold">Vaš profil</span>
+      <span class="text-size-14 text-lighter">Prijavite se kako biste započeli s planiranjem sljedećeg putovanja.</span>
+    </div>
+  </div>
+  <div fxLayout="row" class="left-right-padding-2">
+    <button
+      mat-flat-button
+      color="accent" routerLink="/sign">Prijava</button>
+  </div>
+  <div fxLayout="row" class="shaddow-bottom">
+    <button mat-button class="left-right-padding-2" routerLink="/sign">
+      <span class="text-size-14 text-lighter left-right-padding-2" >Nemate korisnički račun? <a routerLink="/sign" class="text-bold-600">Registracija</a></span>
+    </button>
+  </div>
+  <div fxLayout="row" class="shaddow-bottom">
+    <button mat-button class="left-right-padding-2">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <span class="text-size-16 text-lighter">Postavke</span>
+        <mat-icon class="">settings</mat-icon>
+      </div>
+    </button>
+  </div>
+  <div fxLayout="row" class="shaddow-bottom">
+    <button mat-button class="left-right-padding-2">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <span class="text-size-16 text-lighter">Saznajte više o ugošćivanju</span>
+        <mat-icon class="icon icon-home"></mat-icon>
+      </div>
+    </button>
+  </div>
+  <div fxLayout="row" class="shaddow-bottom">
+    <button mat-button class="left-right-padding-2">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <span class="text-size-16 text-lighter">Zatražite pomoć</span>
+        <mat-icon class="icon icon-help"></mat-icon>
+      </div>
+    </button>
+  </div>
+  <div fxLayout="row" class="shaddow-bottom">
+    <button mat-button class="left-right-padding-2">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <span class="text-size-16 text-lighter">Uvjeti korištenja</span>
+        <mat-icon class="icon icon-terms"></mat-icon>
+      </div>
+    </button>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center" class="mt-1">
+    <span class="text-size-12 text-lighter left-right-padding-2" >VERZIJA {{version}}</span>
+  </div>
+
+
+</div>

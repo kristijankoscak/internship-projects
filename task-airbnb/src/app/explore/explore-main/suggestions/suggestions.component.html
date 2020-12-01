@@ -1,0 +1,15 @@
+<div fxLayout="column" class="background">
+  <div
+    fxLayout="row"
+    class="ml-1">
+    <span class="text-title">Odaberite gdje želite živjeti</span>
+</div>
+<div
+  fxLayout="row"
+  class="scrollable ">
+  <app-item-suggestion
+    *ngFor="let suggestion of suggestions"
+    [suggestion]="suggestion"></app-item-suggestion>
+</div>
+
+</div>
