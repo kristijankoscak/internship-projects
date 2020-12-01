@@ -50,6 +50,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { UserComponent } from './user/user.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { OptionItemComponent } from './user/profile/option-item/option-item.component';
+import { ExploreCityComponent } from './explore/explore-city/explore-city.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { OptionItemComponent } from './user/profile/option-item/option-item.comp
     UserComponent,
     ProfileComponent,
     OptionItemComponent,
+    ExploreCityComponent,
   ],
   imports: [
     BrowserModule,
