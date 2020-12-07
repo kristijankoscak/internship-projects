@@ -51,6 +51,8 @@ import { UserComponent } from './user/user.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { OptionItemComponent } from './user/profile/option-item/option-item.component';
 import { ExploreCityComponent } from './explore/explore-city/explore-city.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { ExploreCityItemComponent } from './explore/explore-city/explore-city-item/explore-city-item.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +86,7 @@ import { ExploreCityComponent } from './explore/explore-city/explore-city.compon
     ProfileComponent,
     OptionItemComponent,
     ExploreCityComponent,
+    ExploreCityItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,7 +108,8 @@ import { ExploreCityComponent } from './explore/explore-city/explore-city.compon
     MatTabsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

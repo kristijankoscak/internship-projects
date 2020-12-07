@@ -11,10 +11,10 @@ export class AuthService {
   otherLogins: User[] = [
     {
       phoneNumber: '+385921122334',
-      userName: 'Pero',
-      userSurname: 'Peric',
+      userName: 'Marko',
+      userSurname: 'Markovic',
       userBirthDate: new Date(1998, 16, 2),
-      userEmail: 'peroperic@test.com',
+      userEmail: 'mmarkovic@test.com',
       adsDisallowed: true
     }
   ];
