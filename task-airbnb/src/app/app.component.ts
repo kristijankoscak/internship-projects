@@ -12,8 +12,12 @@ export class AppComponent implements OnInit{
     '/',
     '/sign',
     '/sign/up',
-    '/explore-search'
+    '/explore/search'
   ];
+
+  dynamicalRoutes = [
+    '/explore/city/'
+  ]
 
   showNavbar = true;
 
@@ -26,7 +30,12 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if (this.componentsWithoutNavbar.find((component) => {
+        if (this.dynamicalRoutes.find((component) => {
+          return val.url.includes(component);
+        })) {
+          this.showNavbar = false;
+        }
+        else if (this.componentsWithoutNavbar.find((component) => {
           return component === val.url;
         })) {
           this.showNavbar = false;

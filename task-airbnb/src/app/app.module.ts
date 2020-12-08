@@ -53,6 +53,7 @@ import { OptionItemComponent } from './user/profile/option-item/option-item.comp
 import { ExploreCityComponent } from './explore/explore-city/explore-city.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ExploreCityItemComponent } from './explore/explore-city/explore-city-item/explore-city-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,7 @@ import { ExploreCityItemComponent } from './explore/explore-city/explore-city-it
     ProfileComponent,
     OptionItemComponent,
     ExploreCityComponent,
-    ExploreCityItemComponent,
+    ExploreCityItemComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +110,8 @@ import { ExploreCityItemComponent } from './explore/explore-city/explore-city-it
     MatDatepickerModule,
     MatNativeDateModule,
     MatSlideToggleModule,
-    MatExpansionModule
+    MatExpansionModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

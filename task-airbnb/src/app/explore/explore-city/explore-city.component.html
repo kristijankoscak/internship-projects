@@ -1,28 +1,59 @@
 <div class="background">
   <div fxLayout="row" class="padding-left-right-2 question">
-    <span class="text-size-24 text-bold-600">Što tražite?</span>
+    <span class="text-size-24 text-bold-600">{{ currentAction }}</span>
   </div>
-  <div fxLayout="row" class="slide-container borders-top">
+  <div fxLayout="row" class="slide-container borders-top" [ngClass]="sliderHeight">
     <div fxLayout="column" fxFlex="100">
       <div fxLayout="row" class="slide-header" fxLayoutAlign="center">
-        <mat-icon>maximize</mat-icon>
+        <mat-icon class="maximize-icon" (click)="toggleSlider()">maximize</mat-icon>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center">
         <button mat-button class="back-icon">
-          <mat-icon class="icon" class="">keyboard_backspace</mat-icon>
+          <mat-icon class="icon" (click)="onBack()">keyboard_backspace</mat-icon>
         </button>
-        <span class="text-size-14 text-bold-600">Grad..</span>
+        <span class="text-size-14 text-bold-600">{{ currentCity }}</span>
       </div>
-      <div fxLayout="column" fxFlex="100" class="options-container">
-        <button mat-button class="button-borders">
-          <div fxLayout="row">
-            <div fxLayout="column">
-              <span class="text-size-14 text-bold-600">Pronađite smještaj</span>
-              <span class="text-size-14 text-lighter">Cijeli smještaji,sobe i još mnogo toga.</span>
-            </div>
-            <img class="image" />
-          </div>
-        </button>
+      <div fxLayout="row" fxLayoutAlign="center center" *ngIf="currentAction === actions[1]">
+        <span *ngIf="fromDate" class="text-lighter text-size-12">
+          {{ fromDate.day }}. -
+        </span>
+        <span *ngIf="toDate" class="text-lighter text-size-12">
+          {{ toDate.day }}. {{ getMonth(toDate.month) }} {{ dateOption }}
+        </span>
+      </div>
+      <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentAction === actions[0]">
+        <app-explore-city-item *ngFor="let option of options" [option]="option" (click)="nextAction()"></app-explore-city-item>
+      </div>
+      <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentAction === actions[1]">
+        <div fxLayout="row">
+          <ngb-datepicker
+            #datePicker
+            [(ngModel)]="model"
+            (navigate)="date = $event.next"
+            (dateSelect)="onDateSelection($event)"
+            [dayTemplate]="t"></ngb-datepicker>
+          <ng-template #t let-date let-focused="focused">
+            <span class="custom-day"
+                  [class.focused]="focused"
+                  [class.range]="isRange(date)"
+                  [class.faded]="isHovered(date) || isInside(date)"
+                  (mouseenter)="hoveredDate = date"
+                  (mouseleave)="hoveredDate = null">
+              {{ date.day }}
+            </span>
+          </ng-template>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="x-slide padding-top-bottom-1" *ngIf="dateIsPicked">
+          <button mat-stroked-button (click)="addDateOption($event)">Točni datumi</button>
+          <button mat-stroked-button (click)="addDateOption($event)">	&plusmn; 1 dan</button>
+          <button mat-stroked-button (click)="addDateOption($event)">	&plusmn; 3 dana</button>
+          <button mat-stroked-button (click)="addDateOption($event)">	&plusmn; 7 dana</button>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-top-bottom-1">
+          <button mat-flat-button class="text-underline">Izbriši</button>
+          <button mat-flat-button class="bg-color-black color-white" [disabled]="!dateIsPicked">Sljedeće</button>
+        </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ExploreCity } from '../explore-city.model';
 
 @Component({
   selector: 'app-explore-city-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore-city-item.component.css']
 })
 export class ExploreCityItemComponent implements OnInit {
+
+  @Input() option:ExploreCity;
 
   constructor() { }
 

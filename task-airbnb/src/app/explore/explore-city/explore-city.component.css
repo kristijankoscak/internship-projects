@@ -1,65 +1,154 @@
-.background{
-  display:block;
+.background {
+  display: block;
   background-color: rgb(22, 69, 199);
-  height:90vh;
-  width:100vw;
+  height: 90vh;
+  width: 100vw;
 }
 
-.question{
-  position:fixed;
-  height:10%;
-  top:20%;
+.question {
+  position: fixed;
+  height: 10%;
+  top: 20%;
   color: white;
 }
 
-.slide-container{
+.slide-container {
   position: absolute;
-  width:100%;
-  height:70%;
+  width: 100%;
   background-color: white;
   bottom: 0;
-  padding:0rem 2rem;
+  padding: 0rem 2rem;
 }
-.slide-header{
-  width:100%;
+.slider-height-default {
+  height: 70%;
+  transition: 1s;
+}
+.slider-height-full {
+  height: 100%;
+  transition: 1s;
+}
+
+.slide-header {
+  width: 100%;
   text-align: center;
-  color:gray;
+  color: gray;
 }
-.borders-top{
+.maximize-icon {
+  width: 3rem;
+  font-size: 3rem;
+}
+
+.borders-top {
   border-top-left-radius: 2rem !important;
   border-top-right-radius: 2rem !important;
 }
 
-.mat-button{
-  width:100%;
+.mat-button {
   min-width: unset;
   line-height: normal;
-  padding:1rem;
-  white-space: unset;
-  text-align: start;
-}
-.image{
-  margin-left:2rem;
-  display: inline-block;
-  background-size: cover;
-  height:6rem;
-  width: 6rem;
-  border-radius: 1.5rem;
-  background-image: url('https://a0.muscache.com/im/pictures/be4d3ba5-08d7-4afe-95a7-f2da6453886a.jpg?im_q=medq&im_w=720');
+  padding: 1rem;
 }
 
-.back-icon{
-  padding:0;
-  width:unset;
+.back-icon {
+  padding: 0;
+  width: unset;
   border-radius: 50%;
   position: absolute;
   left: 2rem;
 }
-.button-borders{
-  border: 0.1rem solid rgba(128, 128, 128, 0.4);
-    border-radius: 1.5rem;
-    box-shadow: 0rem 0.3rem 0.5rem 0rem rgba(128, 128, 128, 0.4);
+
+.options-container {
+  margin-top: 3rem;
 }
-.options-container{
-  margin-top:3rem;
+
+::ng-deep ngb-datepicker {
+  width: 100% !important;
+  border: unset !important;
+}
+::ng-deep ngb-datepicker-month {
+  width: 100% !important;
+}
+::ng-deep .ngb-dp-month {
+  width: 100% !important;
+}
+::ng-deep .ngb-dp-week {
+  width: 100% !important;
+  text-align: center !important;
+  place-content: center space-between !important;
+  align-items: center !important;
+  padding: 0.5rem 0rem;
+}
+::ng-deep .ngb-dp-weekday {
+  width: 3rem !important;
+  height: 3rem !important;
+  line-height: unset !important;
+  font-size: 2rem !important;
+  color: gray !important;
+  font-style: unset !important;
+  font-weight: 100;
+  text-transform: lowercase;
+}
+::ng-deep .ngb-dp-day {
+  width: 3rem;
+  height: 3rem;
+  line-height: normal;
+  font-size: 2rem;
+}
+::ng-deep .ngb-dp-arrow-btn {
+  color: black !important;
+}
+::ng-deep .custom-select {
+  font-size: 1.5rem !important;
+  height: 3rem !important;
+  padding: 0rem !important;
+}
+.custom-day {
+  text-align: center;
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+  line-height: unset;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: rgba(0, 0, 0);
+  border-radius: 50%;
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgb(0, 0, 0, 0.61);
+  border-radius: 50%;
+}
+
+.x-slide {
+  overflow-x: scroll;
+  padding: 1rem;
+  grid-template-columns: auto auto auto auto;
+  width: 100%;
+  margin-top:1rem;
+  border-bottom: 1px solid rgb(128, 128, 128,0.5);
+  border-top: 1px solid rgb(128, 128, 128,0.5);
+}
+.padding-top-bottom-1 {
+  padding: 1rem 0rem;
+}
+::ng-deep .mat-stroked-button {
+  border-radius: 2rem;
+  min-width: unset;
+  margin: 0rem 0.5rem;
+  border-color: gray;
+}
+::ng-deep .mat-stroked-button:focus {
+  border-color: black;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+.bg-color-black {
+  background-color: black;
 }
