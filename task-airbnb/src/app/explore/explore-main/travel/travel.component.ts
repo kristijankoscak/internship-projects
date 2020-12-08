@@ -30,10 +30,12 @@ export class TravelComponent implements OnInit, AfterViewInit {
     if (window.pageYOffset > this.buttonTopOffset) {
       this.button._elementRef.nativeElement.classList.add('fixed-button');
       this.buttonBlock.nativeElement.classList.add('fixed');
+      this.buttonBlock.nativeElement.classList.remove('mt-1');
     }
     else {
       this.button._elementRef.nativeElement.classList.remove('fixed-button');
       this.buttonBlock.nativeElement.classList.remove('fixed');
+      this.buttonBlock.nativeElement.classList.add('mt-1');
     }
   }
 
