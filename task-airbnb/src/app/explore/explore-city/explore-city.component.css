@@ -145,6 +145,9 @@
 ::ng-deep .mat-stroked-button:focus {
   border-color: black;
 }
+::ng-deep .ngb-dp-day.disabled{
+  color:rgba(0, 0, 0, 0.3);
+}
 
 .text-underline {
   text-decoration: underline;

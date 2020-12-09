@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgbDate, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar, NgbDate, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { ExploreCity } from './explore-city.model';
 import { ExploreCityService } from './explore-city.service';
 
@@ -15,7 +15,7 @@ import { ExploreCityService } from './explore-city.service';
 export class ExploreCityComponent implements OnInit {
 
   actionCounter = 1;
-  actions: string[] = ['Što tražite?', 'Kad dolazite?'];
+  actions: string[] = ['Što tražite?', 'Kad dolazite?','Koliko ljudi dolazi?'];
   currentAction: string;
 
   currentCity: string;
@@ -25,6 +25,7 @@ export class ExploreCityComponent implements OnInit {
   model: NgbDateStruct;
   date: { year: number, month: number };
   hoveredDate: NgbDate | null = null;
+  todayDate: NgbDate;
   fromDate: NgbDate;
   toDate: NgbDate | null = null;
   dateOption: string = '';
@@ -36,12 +37,15 @@ export class ExploreCityComponent implements OnInit {
     private exploreCityService: ExploreCityService,
     private route: ActivatedRoute,
     private router: Router,
-    private element: ElementRef
+    private element: ElementRef,
+    private calendar: NgbCalendar
 
   ) { }
 
   ngOnInit(): void {
     this.initStartScreen();
+    this.todayDate = this.calendar.getToday();
+    console.log(this.todayDate)
   }
 
   initStartScreen(): void {
@@ -76,6 +80,9 @@ export class ExploreCityComponent implements OnInit {
         break;
       }
       case this.actions[1]: {
+        this.previousAction();
+      }
+      case this.actions[2]: {
         this.previousAction();
       }
     }

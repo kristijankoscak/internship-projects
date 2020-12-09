@@ -31,9 +31,12 @@
             [(ngModel)]="model"
             (navigate)="date = $event.next"
             (dateSelect)="onDateSelection($event)"
-            [dayTemplate]="t"></ngb-datepicker>
+            [dayTemplate]="t"
+            outsideDays="hidden"
+            [minDate]="todayDate"></ngb-datepicker>
           <ng-template #t let-date let-focused="focused">
             <span class="custom-day"
+
                   [class.focused]="focused"
                   [class.range]="isRange(date)"
                   [class.faded]="isHovered(date) || isInside(date)"
@@ -52,8 +55,11 @@
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-top-bottom-1">
           <button mat-flat-button class="text-underline">Izbriši</button>
-          <button mat-flat-button class="bg-color-black color-white" [disabled]="!dateIsPicked">Sljedeće</button>
+          <button mat-flat-button class="bg-color-black color-white" [disabled]="!dateIsPicked" (click)="nextAction()">Sljedeće</button>
         </div>
+      </div>
+      <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentAction === actions[2]">
+        xaxaxa
       </div>
     </div>
   </div>
