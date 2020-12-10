@@ -52,8 +52,9 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { OptionItemComponent } from './user/profile/option-item/option-item.component';
 import { ExploreCityComponent } from './explore/explore-city/explore-city.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { ExploreCityItemComponent } from './explore/explore-city/explore-city-item/explore-city-item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ExploreCityPersonsItemComponent } from './explore/explore-city/explore-city-persons-item/explore-city-persons-item.component';
+import { ExploreCityActionItemComponent } from './explore/explore-city/explore-city-action-item/explore-city-action-item.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProfileComponent,
     OptionItemComponent,
     ExploreCityComponent,
-    ExploreCityItemComponent
+    ExploreCityPersonsItemComponent,
+    ExploreCityActionItemComponent
   ],
   imports: [
     BrowserModule,

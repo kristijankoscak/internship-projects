@@ -1,8 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbCalendar, NgbDate, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import { ExploreCity } from './explore-city.model';
+import { ExploreCityAction, ExploreCityPerson } from './explore-city.model';
 import { ExploreCityService } from './explore-city.service';
 
 // TO DO - switch calendar language
@@ -14,12 +13,12 @@ import { ExploreCityService } from './explore-city.service';
 })
 export class ExploreCityComponent implements OnInit {
 
-  actionCounter = 1;
+  actionCounter = 0;
   actions: string[] = ['Što tražite?', 'Kad dolazite?','Koliko ljudi dolazi?'];
   currentAction: string;
 
   currentCity: string;
-  options: ExploreCity[];
+  options: ExploreCityAction[];
   sliderHeight: string;
 
   model: NgbDateStruct;
@@ -31,6 +30,9 @@ export class ExploreCityComponent implements OnInit {
   dateOption: string = '';
 
   dateIsPicked: boolean;
+
+  personTypes: ExploreCityPerson[];
+  personsValid = false;
 
 
   constructor(
@@ -45,14 +47,30 @@ export class ExploreCityComponent implements OnInit {
   ngOnInit(): void {
     this.initStartScreen();
     this.todayDate = this.calendar.getToday();
-    console.log(this.todayDate)
+    this.initPersonTypeScreen();
+    this.initPersonCountChange();
   }
 
   initStartScreen(): void {
     this.currentAction = this.actions[this.actionCounter];
     this.currentCity = this.route.snapshot.params['city'];
-    this.options = this.exploreCityService.getOptions();
+    this.options = this.exploreCityService.getActions();
     this.sliderHeight = 'slider-height-default';
+  }
+
+  initPersonTypeScreen(): void{
+    this.personTypes = this.exploreCityService.getPersonTypes();
+  }
+
+  initPersonCountChange(): void{
+    this.exploreCityService.personCountChanged.subscribe(value => {
+      if(this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0 ){
+        this.personsValid = true;
+      }
+      else{
+        this.personsValid = false;
+      }
+    })
   }
 
   toggleSlider(): void {
@@ -173,6 +191,22 @@ export class ExploreCityComponent implements OnInit {
     else{
       this.dateOption = '( ' + option.target.innerText + ' )';
     }
+  }
+
+  checkPersonsCount(): boolean{
+    let status: boolean;
+    if(this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0 ){
+      status = true;
+    }
+    else{
+      status = false;
+    }
+    return status;
+  }
+  clearPersonsCount(): void{
+    this.personTypes.forEach(person => {
+      person.count = 0;
+    })
   }
 
 }

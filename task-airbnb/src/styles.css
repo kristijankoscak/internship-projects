@@ -31,35 +31,35 @@ h3{
   margin-top:1rem !important;
 }
 .mb-1{
-  margin-bottom:1rem;
+  margin-bottom:1rem !important;
 }
 .mt-4{
-  margin-top:4rem;
+  margin-top:4rem !important;
 }
 .mb-2{
-  margin-bottom:2rem;
+  margin-bottom:2rem !important;
 }
 
 .ml-1{
-  margin-left: 1rem;
+  margin-left: 1rem !important;
 }
 .ml-2{
-  margin-left:2rem;
+  margin-left:2rem !important;
 }
 .mr-2{
-  margin-right:2rem;
+  margin-right:2rem !important;
 }
 .p-2{
-  padding:2rem;
+  padding:2rem !important;
 }
 .pl-1{
-  padding-left: 1rem;
+  padding-left: 1rem !important;
 }
 .pt-1{
-  padding-top:1.0rem;
+  padding-top:1.0rem !important;
 }
 .pb-1{
-  padding-bottom:1.0rem;
+  padding-bottom:1.0rem !important;
 }
 
 .full-width{

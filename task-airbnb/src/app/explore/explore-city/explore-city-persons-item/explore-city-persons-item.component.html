@@ -1,0 +1,11 @@
+<div fxLayout="row" class="personType" fxLayoutAlign="space-between center">
+  <div fxLayout="column">
+    <span class="text-bold text-size-14">{{ personType.type }}</span>
+    <span class="text-lighter text-size-12">{{ personType.description }}</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-stroked-button class="countAction" (click)="minus()" [disabled]="personType.count === 0">	- </button>
+    <span class="text-size-14 ml-2 mr-2"> {{ personType.count}} </span>
+    <button mat-stroked-button class="countAction" (click)="add()">	+ </button>
+  </div>
+</div>

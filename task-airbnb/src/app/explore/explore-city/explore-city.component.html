@@ -22,7 +22,7 @@
         </span>
       </div>
       <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentAction === actions[0]">
-        <app-explore-city-item *ngFor="let option of options" [option]="option" (click)="nextAction()"></app-explore-city-item>
+        <app-explore-city-action-item *ngFor="let option of options" [option]="option" (click)="nextAction()"></app-explore-city-action-item>
       </div>
       <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentAction === actions[1]">
         <div fxLayout="row">
@@ -47,10 +47,10 @@
           </ng-template>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center" class="x-slide padding-top-bottom-1" *ngIf="dateIsPicked">
-          <button mat-stroked-button (click)="addDateOption($event)">Točni datumi</button>
-          <button mat-stroked-button (click)="addDateOption($event)">	&plusmn; 1 dan</button>
-          <button mat-stroked-button (click)="addDateOption($event)">	&plusmn; 3 dana</button>
-          <button mat-stroked-button (click)="addDateOption($event)">	&plusmn; 7 dana</button>
+          <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">Točni datumi</button>
+          <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">	&plusmn; 1 dan</button>
+          <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">	&plusmn; 3 dana</button>
+          <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">	&plusmn; 7 dana</button>
 
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-top-bottom-1">
@@ -59,8 +59,21 @@
         </div>
       </div>
       <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentAction === actions[2]">
-        xaxaxa
-      </div>
+        <app-explore-city-persons-item [personType]="person" *ngFor="let person of personTypes"></app-explore-city-persons-item>
+        <div fxLayout="row" class="personType" fxLayoutAlign="space-between center">
+          <div fxLayout="column">
+            <span class="text-bold text-size-14">Kućni ljubimci?</span>
+            <span class="text-lighter text-size-12">Dovodite li kućnog ljubimca?</span>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-slide-toggle></mat-slide-toggle>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-top-bottom-1">
+          <button mat-flat-button class="text-underline" *ngIf="checkPersonsCount() === false">Preskoči</button>
+          <button mat-flat-button class="text-underline" *ngIf="checkPersonsCount() === true" (click)="clearPersonsCount()">Izbriši</button>
+          <button mat-flat-button color="accent" [disabled]="!personsValid" (click)="nextAction()">Pretraživanje</button>
+        </div>
     </div>
   </div>
 </div>
