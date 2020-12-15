@@ -1,0 +1,49 @@
+<button mat-button class="accommodation-button">
+  <div
+    class="accommodation-image-container">
+    <div class="accommodation-slide-container" (scroll)="handleScroll($event)">
+      <div class="accommodation-image"
+      *ngFor="let imagePath of accommodationsImage; let i=index;"
+      [ngStyle]="{'background-image': 'url(' + imagePath + ')'}">
+    </div>
+    </div>
+    <div class="save-button-container">
+      <div class="accommodation-image-badge"><span>SUPERDOMAĆIN</span></div>
+      <mat-icon class="save-icon">favorite_border</mat-icon>
+    </div>
+    <div class="dots-container" *ngIf="accommodationsImage">
+      <span
+        class="dot dot-normal"
+        *ngFor="let accommodation of accommodationsImage; let i = index"
+        [ngClass]="{ 'dot-active': currentActive === i }"
+        (click)="nextImage(i)"
+      ></span>
+    </div>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon color="accent" class="star-icon">grade</mat-icon>
+      <span clasS="text-size-12">&nbsp; Novo</span>
+      <span clasS="text-size-12 color-gray">&nbsp; (146)</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span clasS="text-size-14 ">Privatna soba &nbsp;</span>
+      <span clasS="text-size-14 "> - &nbsp;</span>
+      <span clasS="text-size-14 ">Zagreb</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span clasS="text-size-14 ">Beautiful Room in Zagreb Center</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span clasS="text-size-14 text-bold color-gray text-line-through"
+        >312 kn
+      </span>
+      <span clasS="text-size-14 text-bold">&nbsp; 156 kn </span>
+      <span clasS="text-size-14 ">&nbsp; po noćenju</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" class="color-gray">
+      <span clasS="text-size-12 text-underline">Ukupno&nbsp;</span>
+      <span clasS="text-size-12 text-underline">313 kn</span>
+    </div>
+  </div>
+</button>

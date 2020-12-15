@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SearchService } from '../../search.service';
 import { ExploreCityAction } from '../explore-city.model';
 
 @Component({
@@ -10,9 +11,15 @@ export class ExploreCityActionItemComponent implements OnInit {
 
   @Input() option:ExploreCityAction;
 
-  constructor() { }
+  constructor(
+    private searchService: SearchService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  setSearchType(): void {
+    this.searchService.setSearchType(this.option.title);
   }
 
 }

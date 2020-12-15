@@ -55,6 +55,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExploreCityPersonsItemComponent } from './explore/explore-city/explore-city-persons-item/explore-city-persons-item.component';
 import { ExploreCityActionItemComponent } from './explore/explore-city/explore-city-action-item/explore-city-action-item.component';
+import { ExploreResultComponent } from './explore/explore-result/explore-result.component';
+import { AccommodationSmallItemComponent } from './explore/explore-result/accommodation-small-item/accommodation-small-item.component';
+import { AccommodationBigItemComponent } from './explore/explore-result/accommodation-big-item/accommodation-big-item.component';
+
 
 @NgModule({
   declarations: [
@@ -89,7 +93,10 @@ import { ExploreCityActionItemComponent } from './explore/explore-city/explore-c
     OptionItemComponent,
     ExploreCityComponent,
     ExploreCityPersonsItemComponent,
-    ExploreCityActionItemComponent
+    ExploreCityActionItemComponent,
+    ExploreResultComponent,
+    AccommodationSmallItemComponent,
+    AccommodationBigItemComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +120,7 @@ import { ExploreCityActionItemComponent } from './explore/explore-city/explore-c
     MatNativeDateModule,
     MatSlideToggleModule,
     MatExpansionModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

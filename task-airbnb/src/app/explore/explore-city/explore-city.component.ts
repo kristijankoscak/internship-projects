@@ -1,6 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbCalendar, NgbDate, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { DateFromTo } from '../search.model';
+import { SearchService } from '../search.service';
 import { ExploreCityAction, ExploreCityPerson } from './explore-city.model';
 import { ExploreCityService } from './explore-city.service';
 
@@ -27,11 +29,12 @@ export class ExploreCityComponent implements OnInit {
   todayDate: NgbDate;
   fromDate: NgbDate;
   toDate: NgbDate | null = null;
-  dateOption: string = '';
+  dateOption: string = 'Točni datumi';
 
   dateIsPicked: boolean;
 
   personTypes: ExploreCityPerson[];
+  petsAllowed = false;
   personsValid = false;
 
 
@@ -40,8 +43,8 @@ export class ExploreCityComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private element: ElementRef,
-    private calendar: NgbCalendar
-
+    private calendar: NgbCalendar,
+    private searchService: SearchService
   ) { }
 
   ngOnInit(): void {
@@ -83,9 +86,21 @@ export class ExploreCityComponent implements OnInit {
     }
   }
   nextAction(): void {
+    this.handleAction();
     this.actionCounter++;
     this.currentAction = this.actions[this.actionCounter];
   }
+  handleAction(){
+    if(this.currentAction === this.actions[1]){
+      const dateFromTo: DateFromTo = { dateFrom:this.fromDate, dateTo:this.toDate }
+      this.searchService.setDateOptions(dateFromTo,this.dateOption);
+    }
+    if(this.currentAction === this.actions[2]){
+      this.searchService.setPersons(this.exploreCityService.getPersonTypes(),this.petsAllowed);
+      this.router.navigate(['results'], { relativeTo: this.route})
+    }
+  }
+
   previousAction(): void {
     this.actionCounter--;
     this.currentAction = this.actions[this.actionCounter];

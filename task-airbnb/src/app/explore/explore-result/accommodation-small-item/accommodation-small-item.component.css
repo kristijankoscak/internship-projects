@@ -1,0 +1,57 @@
+.accommodation-image {
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg');
+  display: inline-block;
+  background-size: cover;
+  height: 10rem;
+  width: 10rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  display: flex;
+  place-content: center;
+}
+.accommodation-image-badge{
+  position: absolute;
+  width: auto;
+  height:auto;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 750;
+  padding:0.2rem;
+  border-radius: 0.3rem;
+  margin-top:1rem;
+}
+
+.accomomodation-info{
+  display:inline-flex;
+  height:10rem;
+  width: auto;
+  background-color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding-left: 1rem;
+}
+::ng-deep .mat-button{
+  position: relative;
+  width: auto;
+  min-width: unset;
+  line-height: normal;
+  padding:unset;
+  margin-right: 1rem;
+}
+
+::ng-deep .mat-button-wrapper{
+  display:flex;
+}
+
+.star-icon{
+  font-size:1.3rem;
+  height:1.3rem;
+  width:1.3rem;
+}
+.save-icon{
+  position: absolute;
+  right: 1rem;
+  font-size: 1.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+}

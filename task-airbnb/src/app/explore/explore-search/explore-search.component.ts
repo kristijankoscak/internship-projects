@@ -13,7 +13,7 @@ import { ExploreService } from './explore.service';
 })
 export class ExploreSearchComponent implements OnInit {
 
-  gpsNearbyPlace: City = { image: 'https://a0.muscache.com/im/pictures/fc42dde0-36a7-460e-af89-10b5e44e48d8.jpg?im_w=240&im_q=lowq', name: 'Pogledajte obližnje destinacije', distance: '' };
+  gpsNearbyPlace: City = { image: 'https://a0.muscache.com/im/pictures/fc42dde0-36a7-460e-af89-10b5e44e48d8.jpg?im_w=240&im_q=lowq', name: 'Pogledajte obližnje destinacije', distance: '' ,map:''};
   nearbyCities: City[];
   searchCities: City[];
 
