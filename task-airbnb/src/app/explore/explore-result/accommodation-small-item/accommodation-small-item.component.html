@@ -1,26 +1,27 @@
 
 <button
   mat-button fxLayout="row" fxLayoutAlign="start">
-    <div class="accommodation-image">
-      <div class="accommodation-image-badge"><span>SUPERDOMAĆIN</span></div>
+    <div class="accommodation-image" >
+      <div class="accommodation-image-badge" *ngIf="accommodation.grade > 4.8"><span>SUPERDOMAĆIN</span></div>
     </div>
     <div fxLayout="column" fxLayoutAlign="center start" class="accomomodation-info">
       <div fxLayout="row" fxLayoutAlign=" center">
         <mat-icon color="accent" class="star-icon">grade</mat-icon>
-        <span clasS="text-size-12">&nbsp; Novo</span>
-        <span clasS="text-size-12 color-gray">&nbsp; (146)</span>
+        <span clasS="text-size-12" *ngIf="accommodation.grade === null">&nbsp; Novo</span>
+        <span clasS="text-size-12" *ngIf="accommodation.grade !== null">&nbsp; {{accommodation.grade}}</span>
+        <span clasS="text-size-12 color-gray">&nbsp; ({{accommodation.votesCount}})</span>
         <mat-icon class="save-icon">favorite_border</mat-icon>
       </div>
       <div fxLayoutAlign="row">
-        <span clasS="text-size-12 ">Privatna soba &nbsp;</span>
+        <span clasS="text-size-12 ">{{accommodation.type}} &nbsp;</span>
         <span clasS="text-size-12 "> - &nbsp;</span>
-        <span clasS="text-size-12 ">Zagreb</span>
+        <span clasS="text-size-12 ">{{accommodation.location}}</span>
       </div>
       <div fxLayoutAlign="row">
-        <span clasS="text-size-12 ">Beautiful Room in Zagreb Center</span>
+        <span clasS="text-size-12 ">{{accommodation.description}}</span>
       </div>
       <div fxLayoutAlign="row">
-        <span clasS="text-size-12 text-bold">156 kn </span>
+        <span clasS="text-size-12 text-bold">{{accommodation.newPrice}}</span>
         <span clasS="text-size-12 ">&nbsp; po noćenju</span>
       </div>
     </div>

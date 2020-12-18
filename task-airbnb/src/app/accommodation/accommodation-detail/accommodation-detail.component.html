@@ -1,0 +1,32 @@
+<div class="accommodation-container">
+  <div class="images-container">
+    <div class="slide-container" (scroll)="handleScroll($event)">
+      <button mat-button class="images-button"
+        *ngFor="let imagePath of accommodationImages; let i=index;"
+        [ngStyle]="{'background-image': 'url(' + imagePath + ')'}"></button>
+    </div>
+    <div class="actions-container">
+      <button mat-flat-button class="icon back">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+      <button mat-flat-button class="icon save">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button mat-flat-button class="icon share">
+        <mat-icon>input</mat-icon>
+      </button>
+    </div>
+    <div class="counter-container">
+      <span class="text-weight-500 color-white">{{currentImage}}</span>
+      <span class="text-weight-500 color-white">/</span>
+      <span class="text-weight-500 color-white">{{accommodationImages.length}}</span>
+    </div>
+  </div>
+</div>
+<div class="accommodation-info-container">
+
+</div>
+
+<div class="reserve-container">
+
+</div>

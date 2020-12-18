@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { Accommodation } from 'src/app/accommodation/accommodation.model';
+import { AccommodationService } from 'src/app/accommodation/accommodation.service';
 import { City } from '../explore-main/cities/city.model';
 import { ExploreService } from '../explore-search/explore.service';
 import { Search } from '../search.model';
@@ -17,13 +19,15 @@ export class ExploreResultComponent implements OnInit {
   searchContainerBackground: string;
   currentCity: City;
   currentSearch: Search;
+  accommodations: Accommodation[];
 
   constructor(
     private searchService: SearchService,
     private exploreService: ExploreService,
     private route: ActivatedRoute,
     private element: ElementRef,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private accommodationService: AccommodationService
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +35,7 @@ export class ExploreResultComponent implements OnInit {
     this.searchContainerBackground = 'search-container-bg-default'
     this.fetchSearchData();
     this.fetchCurrentCity();
-    console.log(this.currentSearch);
+    this.fetchAccommodations();
   }
 
   fetchSearchData(): void{
@@ -42,6 +46,9 @@ export class ExploreResultComponent implements OnInit {
   }
   fetchMapUrl(): SafeUrl{
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.currentCity.map);
+  }
+  fetchAccommodations(): void{
+    this.accommodations = this.accommodationService.getAccommodations();
   }
   toggleSlider(): void {
     if (this.sliderHeight === 'slider-height-default') {

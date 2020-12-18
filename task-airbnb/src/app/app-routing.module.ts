@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccommodationDetailComponent } from './accommodation/accommodation-detail/accommodation-detail.component';
+import { AccommodationComponent } from './accommodation/accommodation.component';
 import { ExploreCityComponent } from './explore/explore-city/explore-city.component';
 import { ExploreMainComponent } from './explore/explore-main/explore-main.component';
 import { ExploreResultComponent } from './explore/explore-result/explore-result.component';
@@ -60,6 +62,13 @@ const appRoutes: Routes = [
       { path: '', component: ProfileComponent},
     ]
   },
+  {
+    path: 'accommodation/:id',
+    component: AccommodationComponent,
+    children: [
+      { path: '', component: AccommodationDetailComponent}
+    ]
+  }
 ];
 
 @NgModule({

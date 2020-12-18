@@ -58,6 +58,8 @@ import { ExploreCityActionItemComponent } from './explore/explore-city/explore-c
 import { ExploreResultComponent } from './explore/explore-result/explore-result.component';
 import { AccommodationSmallItemComponent } from './explore/explore-result/accommodation-small-item/accommodation-small-item.component';
 import { AccommodationBigItemComponent } from './explore/explore-result/accommodation-big-item/accommodation-big-item.component';
+import { AccommodationComponent } from './accommodation/accommodation.component';
+import { AccommodationDetailComponent } from './accommodation/accommodation-detail/accommodation-detail.component';
 
 
 @NgModule({
@@ -96,7 +98,9 @@ import { AccommodationBigItemComponent } from './explore/explore-result/accommod
     ExploreCityActionItemComponent,
     ExploreResultComponent,
     AccommodationSmallItemComponent,
-    AccommodationBigItemComponent
+    AccommodationBigItemComponent,
+    AccommodationComponent,
+    AccommodationDetailComponent
   ],
   imports: [
     BrowserModule,
