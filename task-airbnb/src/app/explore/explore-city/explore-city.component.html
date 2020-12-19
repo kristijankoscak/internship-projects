@@ -18,7 +18,10 @@
           {{ fromDate.day }}. -
         </span>
         <span *ngIf="toDate" class="text-lighter text-size-12">
-          {{ toDate.day }}. {{ getMonth(toDate.month) }} {{ dateOption }}
+          {{ toDate.day }}. {{ getMonth(toDate.month) }}
+        </span>
+        <span *ngIf="toDate && dateOption !== 'Točni datumi'" class="text-lighter text-size-12 ml-1">
+          ( {{ dateOption }} )
         </span>
       </div>
       <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentAction === actions[0]">

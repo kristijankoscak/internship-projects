@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/search.service';
 import { City } from '../../explore-main/cities/city.model';
-import { SearchService } from '../../search.service';
 
 @Component({
   selector: 'app-explore-item',

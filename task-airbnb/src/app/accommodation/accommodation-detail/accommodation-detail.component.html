@@ -1,3 +1,17 @@
+<div fxLayout="row" class="reserve-container" fxLayoutAlign="space-between center">
+  <div class="column" class="reserve-info">
+    <span class="text-size-14 text-bold color-gray text-line-through">265 kn &nbsp;</span>
+    <span class="text-size-14 text-bold ">211 kn &nbsp;</span>
+    <span class="text-size-14 ">po noćenju</span>
+    <div fxLayout="row">
+      <mat-icon color="accent" class="star-icon mr-1">grade</mat-icon>
+      <span class="text-size-12 text-bold-600">4,96</span>
+      <span class="text-size-12 color-gray">(619)</span>
+    </div>
+  </div>
+  <button mat-flat-button color="accent">Rezerviraj</button>
+</div>
+
 <div class="accommodation-container">
   <div class="images-container">
     <div class="slide-container" (scroll)="handleScroll($event)">
@@ -24,9 +38,222 @@
   </div>
 </div>
 <div class="accommodation-info-container">
+  <div fxLayout="row">
+    <span class="text-size-24 text-bold-600"> Description </span>
+  </div>
+  <div fxLayout="row" class="color-gray" fxLayoutAlign="start center">
+    <mat-icon color="accent" class="star-icon mr-1">grade</mat-icon>
+    <span class="text-size-14 mr-1"> 4.79 </span>
+    <span class="text-size-14 mr-1"> (48) </span>
+    <span class="text-size-14 mr-1"> - </span>
+    <span class="text-size-14 mr-1"> Grad </span>
+    <span class="text-size-14 mr-1"> ,Država </span>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" >
+    <div fxLayout="column">
+      <span class="text-size-20 text-bold-600"> Type </span>
+      <span class="text-size-14 text-bold-600"> Domaćin je ... </span>
+    </div>
+    <div class="user-image"></div>
+  </div>
+  <div fxLayout="row">
+    <span class="text-size-14 mr-1">2 gosta</span>
+    <span class="text-size-14 mr-1">1 spavaća soba</span>
+    <span class="text-size-14 mr-1">1 krevet</span>
+    <span class="text-size-14 mr-1">3 kupaonice</span>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="column">
+    <app-accommodation-info-item
+      *ngFor="let info of accommodationInformations"
+      [info]="fetchInfo(info.type,info.description)"
+      [accommodationType]="type"
+      [endDate]="endDate"></app-accommodation-info-item>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="column" >
+    <div fxLayout="row">
+      <button mat-stroked-button class="translate-button" fxLayoutAlign="space-between center">
+        <span>Prevedi na hrvatski</span>
+        <mat-icon>translate</mat-icon>
+      </button>
+    </div>
+    <div fxLayout="row">
+      <span class="text-size-14 mt-2">Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...</span>
+    </div>
+    <div fxLayout="row">
+      <span class="text-size-14 text-bold-600 text-underline mt-2">Prikaži još</span>
+    </div>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row">
+        <span class="text-size-20 text-bold-600 mt-1 mb-1">Raspored spavanja</span>
+    </div>
+    <div fxLayout="column" class="room-container">
+      <div class="bed-icon"></div>
+      <span class="text-size-14 text-bold-600">Spavaća soba 1</span>
+      <span class="text-size-14 color-gray">1 bračni krevet</span>
+    </div>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row">
+        <span class="text-size-20 text-bold-600 mt-1 mb-1">Sadržaj</span>
+    </div>
+    <div fxLayout="column">
+      <app-accommodation-content-item
+        *ngFor="let content of fetchFilteredContent()"
+        [ngClass]="{'text-line-through color-gray' : !accommodationContent.includes(content.type)}"
+        [accommodationContent] = "content"></app-accommodation-content-item>
+    </div>
+    <button mat-stroked-button fxLayoutAlign="center" class="all-content-button">
+      <span>Prikaži sve sadržaje (25)</span>
+    </button>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row">
+        <span class="text-size-20 text-bold-600 margin-top-bottom-1">Lokacija</span>
+    </div>
+    <div fxLayout="row">
+      <span class="text-size-14">Kačićeva uica 3b,Zagreb,1000,Zagreb</span>
+    </div>
+    <div fxLayout="row">
+      <iframe
+        [src]="fetchMapUrl()"
+        class="map-block"
+        frameborder="0"></iframe>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <button mat-stroked-button fxLayoutAlign="center" class="all-content-button">
+        <span>Više o lokaciji</span>
+      </button>
+    </div>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon color="accent" class="mr-1">grade</mat-icon>
+      <span class="text-size-20 text-bold-600 mt-1 mb-1">4.79 (48 recenzija)</span>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <div class="review-user-image mr-3"></div>
+      <div fxLayout="column">
+        <span class="text-size-14 text-bold-600">Krešimir</span>
+        <span class="text-size-12 text-bold-600 color-gray">studeni 2018.</span>
+      </div>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <span class="text-size-14">Svaka preporuku dajem!</span>
+    </div>
+    <button mat-stroked-button fxLayoutAlign="center" class="all-content-button">
+      <span>Prikaži 48 recenzija</span>
+    </button>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="text-size-20 text-bold-600">Domaćin je Joško</span>
+      <div class="review-user-image ml-3"></div>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1" fxLayoutAlign="start center">
+      <mat-icon color="accent" class="mr-1">grade</mat-icon>
+      <span class="text-size-14 mt-1 mb-1">56 recenzija</span>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <span class="text-size-14">
+        This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...
+      <span class="text-underline text-bold-600">pročitajte više</span>
+      </span>
+    </div>
+    <div fxLayout="column" class="margin-top-bottom-1" >
+      <span class="text-size-14">Stopa odgovora: 100 %</span>
+      <span class="text-size-14">Vrijeme odgovora: u roku od sat vremena</span>
+    </div>
+    <button mat-stroked-button fxLayoutAlign="center" class="all-content-button">
+      <span>Obratite se domaćinu</span>
+    </button>
+  </div>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <button class="button-option" fxLayout="row" fxLayoutAlign="space-between center" mat-button >
+    <div fxLayout="column" class="text-align-start">
+      <span class="text-size-20 text-bold-600">Dostupno</span>
+      <span class="text-size-14 color-gray">19. - 20.pro</span>
+    </div>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <button class="button-option" fxLayout="row" fxLayoutAlign="space-between center" mat-button >
+    <div fxLayout="column" class="text-align-start">
+      <span class="text-size-20 text-bold-600">Što morate znati</span>
+      <span class="text-size-14 color-gray"></span>
+    </div>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <button class="button-option" fxLayout="row" fxLayoutAlign="space-between center" mat-button >
+    <div fxLayout="column" class="text-align-start">
+      <span class="text-size-20 text-bold-600">Zdravlje i sigurnost</span>
+      <span class="text-size-14 color-gray">Obveza priržavanja Airbnbovih posebnih mjera za čistoću.. Treba se pridržavati Air...</span>
+    </div>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <button class="button-option" fxLayout="row" fxLayoutAlign="space-between center" mat-button >
+    <div fxLayout="column" class="text-align-start">
+      <span class="text-size-20 text-bold-600">Uvjeti otkazivanja</span>
+      <span class="text-size-14 color-gray"></span>
+    </div>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+  <button class="button-option " fxLayout="row" fxLayoutAlign="start center"  mat-button >
+    <mat-icon class="mr-2">flag</mat-icon>
+    <div fxLayout="row" class="text-align-start">
+      <span class="text-size-14 text-unerline text-bold-600">Prijavite oglas</span>
+    </div>
+  </button>
+</div>
+
+
+<div class="bigger-divider">
+  <mat-divider></mat-divider>
+</div>
+<div class="more-accommodations-container">
+  <div fxLayout="row" class="margin-top-bottom-1">
+    <span class="text-size-20 text-bold-600">Još smještaja</span>
+  </div>
+  <div class="slide-container">
+    <app-other-accommodation-item *ngFor="let accommodation of otherAccommodations" [accommodation]="accommodation"></app-other-accommodation-item>
+  </div>
 
 </div>
 
-<div class="reserve-container">
-
-</div>

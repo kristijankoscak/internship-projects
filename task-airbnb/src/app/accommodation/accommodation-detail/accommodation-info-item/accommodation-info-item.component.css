@@ -1,0 +1,13 @@
+.info-item{
+  padding:1rem 0rem;
+}
+
+.accommodation-info-icon{
+  display: inline;
+  height: 3rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+  margin-right: 1rem;
+}
+

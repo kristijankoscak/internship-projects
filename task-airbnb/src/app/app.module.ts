@@ -60,6 +60,9 @@ import { AccommodationSmallItemComponent } from './explore/explore-result/accomm
 import { AccommodationBigItemComponent } from './explore/explore-result/accommodation-big-item/accommodation-big-item.component';
 import { AccommodationComponent } from './accommodation/accommodation.component';
 import { AccommodationDetailComponent } from './accommodation/accommodation-detail/accommodation-detail.component';
+import { AccommodationInfoItemComponent } from './accommodation/accommodation-detail/accommodation-info-item/accommodation-info-item.component';
+import { AccommodationContentItemComponent } from './accommodation/accommodation-detail/accommodation-content-item/accommodation-content-item.component';
+import { OtherAccommodationItemComponent } from './accommodation/accommodation-detail/other-accommodation-item/other-accommodation-item.component';
 
 
 @NgModule({
@@ -100,7 +103,10 @@ import { AccommodationDetailComponent } from './accommodation/accommodation-deta
     AccommodationSmallItemComponent,
     AccommodationBigItemComponent,
     AccommodationComponent,
-    AccommodationDetailComponent
+    AccommodationDetailComponent,
+    AccommodationInfoItemComponent,
+    AccommodationContentItemComponent,
+    OtherAccommodationItemComponent
   ],
   imports: [
     BrowserModule,

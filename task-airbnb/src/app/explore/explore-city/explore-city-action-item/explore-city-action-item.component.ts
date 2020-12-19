@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SearchService } from '../../search.service';
+import { SearchService } from 'src/app/search.service';
 import { ExploreCityAction } from '../explore-city.model';
 
 @Component({

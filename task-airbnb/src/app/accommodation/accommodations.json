@@ -1,0 +1,401 @@
+{
+  "accommodations": [
+    {
+      "id":0,
+      "type": "Cijeli kondominij",
+      "location": "Zagreb",
+      "description": "COMFORTZONE1 ZAGREB CENTER",
+      "oldPrice": 335,
+      "newPrice": 241,
+      "grade": 4.84,
+      "votesCount": 236,
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSvcYSxQQmDQXaYVzh7VPXDwUI-lscsitxdQ&usqp=CAU",
+        "https://cdn.mos.cms.futurecdn.net/urnQmjBrp6U2nnAqzzf2gb-768-80.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99"
+      ],
+      "guestCount": 1,
+      "country": "Croatia",
+      "info": [
+        {
+          "type":"clean",
+          "description":""
+        },
+        {
+          "type":"location",
+          "description":""
+        },
+        {
+          "type":"comming",
+          "description":"Samostalni ulazak u smještaj uz pomoć digitalne brave."
+        },
+        {
+          "type":"cancel",
+          "description": "Ako otkažete, dobit ćete povrat cjelokupnog iznosa za preostala noćenja 24 h nakon otkazivanja, umanjen za naknadu za usluge i naknadu za čišćenje."
+        },
+        {
+          "type":"house-rules",
+          "description": "Domaćin ne dozvoljava organiziranje zabava ni pušenje."
+        }
+      ],
+      "welcomeMessageCro": "",
+      "welcomeMessageEng": "Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...",
+      "room": [
+        {"type":"Spavaća soba 1", "description":"1 jednostruki krevet"}
+      ],
+      "content": [
+        "Wi-Fi","Kuhinja","Glačalo","Grijanje","Sušilo za kosu"
+      ],
+      "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
+      "review": [
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+      ],
+      "ownerInfo": {
+        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+      }
+    },
+    {
+      "id":1,
+      "type": "Hotelska soba",
+      "location": "Zagreb",
+      "description": "10 be mixed dorm",
+      "oldPrice": 157,
+      "newPrice": 101,
+      "grade": 4.79,
+      "votesCount": 48,
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99"
+      ],
+      "guestCount": 2,
+      "country": "Croatia",
+      "info": [
+        {
+          "type":"home",
+          "description":""
+        },
+        {
+          "type":"clean",
+          "description":""
+        },
+        {
+          "type":"location",
+          "description":""
+        },
+        {
+          "type":"comming",
+          "description":"Samostalni ulazak u smještaj uz pomoć digitalne brave."
+        },
+        {
+          "type":"cancel",
+          "description": "Ako otkažete, dobit ćete povrat cjelokupnog iznosa za preostala noćenja 24 h nakon otkazivanja, umanjen za naknadu za usluge i naknadu za čišćenje."
+        },
+        {
+          "type":"house-rules",
+          "description": "Domaćin ne dozvoljava organiziranje zabava ni pušenje."
+        }
+      ],
+      "welcomeMessageCro": "",
+      "welcomeMessageEng": "Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...",
+      "room": [
+        {"type":"Spavaća soba 1", "description":"1 jednostruki krevet"}
+      ],
+      "content": [
+        "Wi-Fi","Kuhinja","Glačalo","Grijanje","Sušilo za kosu"
+      ],
+      "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
+      "review": [
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+      ],
+      "ownerInfo": {
+        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+      }
+    },
+    {
+      "id":2,
+      "type": "Cijeli stan",
+      "location": "Zagreb",
+      "description": "Studio Green near Main BUS station",
+      "oldPrice": 265,
+      "newPrice": 211,
+      "grade": 4.96,
+      "votesCount": 619,
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSvcYSxQQmDQXaYVzh7VPXDwUI-lscsitxdQ&usqp=CAU",
+        "https://cdn.mos.cms.futurecdn.net/urnQmjBrp6U2nnAqzzf2gb-768-80.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99",
+        "https://cdn.mos.cms.futurecdn.net/urnQmjBrp6U2nnAqzzf2gb-768-80.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99"
+      ],
+      "guestCount": 2,
+      "country": "Croatia",
+      "info": [
+        {
+          "type":"home",
+          "description":""
+        },
+        {
+          "type":"clean",
+          "description":""
+        },
+        {
+          "type":"comming",
+          "description":"Samostalni ulazak u smještaj uz pomoć digitalne brave."
+        },
+        {
+          "type":"cancel",
+          "description": "Ako otkažete, dobit ćete povrat cjelokupnog iznosa za preostala noćenja 24 h nakon otkazivanja, umanjen za naknadu za usluge i naknadu za čišćenje."
+        },
+        {
+          "type":"house-rules",
+          "description": "Domaćin ne dozvoljava organiziranje zabava ni pušenje."
+        }
+      ],
+      "welcomeMessageCro": "",
+      "welcomeMessageEng": "Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...",
+      "room": [
+        {"type":"Spavaća soba 1", "description":"1 jednostruki krevet"}
+      ],
+      "content": [
+        "Wi-Fi","Kuhinja","Glačalo","Grijanje","Sušilo za kosu"
+      ],
+      "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
+      "review": [
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+      ],
+      "ownerInfo": {
+        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+      }
+    },
+    {
+      "id":3,
+      "type": "Hotelska soba",
+      "location": "Zagreb",
+      "description": "10 be mixed dorm",
+      "oldPrice": 157,
+      "newPrice": 101,
+      "grade": 4.79,
+      "votesCount": 48,
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99"
+      ],
+      "guestCount": 3,
+      "country": "Croatia",
+      "info": [
+        {
+          "type":"home",
+          "description":""
+        },
+        {
+          "type":"clean",
+          "description":""
+        },
+        {
+          "type":"location",
+          "description":""
+        },
+        {
+          "type":"comming",
+          "description":"Samostalni ulazak u smještaj uz pomoć digitalne brave."
+        },
+        {
+          "type":"cancel",
+          "description": "Ako otkažete, dobit ćete povrat cjelokupnog iznosa za preostala noćenja 24 h nakon otkazivanja, umanjen za naknadu za usluge i naknadu za čišćenje."
+        },
+        {
+          "type":"house-rules",
+          "description": "Domaćin ne dozvoljava organiziranje zabava ni pušenje."
+        }
+      ],
+      "welcomeMessageCro": "",
+      "welcomeMessageEng": "Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...",
+      "room": [
+        {"type":"Spavaća soba 1", "description":"1 jednostruki krevet"}
+      ],
+      "content": [
+        "Wi-Fi","Kuhinja","Glačalo","Grijanje","Sušilo za kosu"
+      ],
+      "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
+      "review": [
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+      ],
+      "ownerInfo": {
+        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+      }
+    },
+    {
+      "id":4,
+      "type": "Cijeli stan",
+      "location": "Zagreb",
+      "description": "Studio Green near Main BUS station",
+      "oldPrice": 265,
+      "newPrice": 211,
+      "grade": 4.96,
+      "votesCount": 619,
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSvcYSxQQmDQXaYVzh7VPXDwUI-lscsitxdQ&usqp=CAU",
+        "https://cdn.mos.cms.futurecdn.net/urnQmjBrp6U2nnAqzzf2gb-768-80.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99",
+        "https://cdn.mos.cms.futurecdn.net/urnQmjBrp6U2nnAqzzf2gb-768-80.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99"
+      ],
+      "guestCount": 1,
+      "country": "Croatia",
+      "info": [
+        {
+          "type":"home",
+          "description":""
+        },
+        {
+          "type":"clean",
+          "description":""
+        },
+        {
+          "type":"comming",
+          "description":"Samostalni ulazak u smještaj uz pomoć digitalne brave."
+        },
+        {
+          "type":"cancel",
+          "description": "Ako otkažete, dobit ćete povrat cjelokupnog iznosa za preostala noćenja 24 h nakon otkazivanja, umanjen za naknadu za usluge i naknadu za čišćenje."
+        },
+        {
+          "type":"house-rules",
+          "description": "Domaćin ne dozvoljava organiziranje zabava ni pušenje."
+        }
+      ],
+      "welcomeMessageCro": "",
+      "welcomeMessageEng": "Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...",
+      "room": [
+        {"type":"Spavaća soba 1", "description":"1 jednostruki krevet"}
+      ],
+      "content": [
+        "Wi-Fi","Kuhinja","Glačalo","Grijanje","Sušilo za kosu"
+      ],
+      "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
+      "review": [
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+      ],
+      "ownerInfo": {
+        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+      }
+    },
+    {
+      "id":5,
+      "type": "Hotelska soba",
+      "location": "Zagreb",
+      "description": "10 be mixed dorm",
+      "oldPrice": 157,
+      "newPrice": 101,
+      "grade": 4.79,
+      "votesCount": 48,
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99"
+      ],
+      "guestCount": 2,
+      "country": "Croatia",
+      "info": [
+        {
+          "type":"home",
+          "description":""
+        },
+        {
+          "type":"clean",
+          "description":""
+        },
+        {
+          "type":"location",
+          "description":""
+        },
+        {
+          "type":"comming",
+          "description":"Samostalni ulazak u smještaj uz pomoć digitalne brave."
+        },
+        {
+          "type":"cancel",
+          "description": "Ako otkažete, dobit ćete povrat cjelokupnog iznosa za preostala noćenja 24 h nakon otkazivanja, umanjen za naknadu za usluge i naknadu za čišćenje."
+        },
+        {
+          "type":"house-rules",
+          "description": "Domaćin ne dozvoljava organiziranje zabava ni pušenje."
+        }
+      ],
+      "welcomeMessageCro": "",
+      "welcomeMessageEng": "Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...",
+      "room": [
+        {"type":"Spavaća soba 2", "description":"2 jednostruki krevet"}
+      ],
+      "content": [
+        "Wi-Fi","Kuhinja","Glačalo","Grijanje","Sušilo za kosu"
+      ],
+      "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
+      "review": [
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+      ],
+      "ownerInfo": {
+        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+      }
+    },
+    {
+      "id":6,
+      "type": "Cijeli stan",
+      "location": "Zagreb",
+      "description": "Studio Green near Main BUS station",
+      "oldPrice": 265,
+      "newPrice": 211,
+      "grade": 4.96,
+      "votesCount": 619,
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSvcYSxQQmDQXaYVzh7VPXDwUI-lscsitxdQ&usqp=CAU",
+        "https://cdn.mos.cms.futurecdn.net/urnQmjBrp6U2nnAqzzf2gb-768-80.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99",
+        "https://cdn.mos.cms.futurecdn.net/urnQmjBrp6U2nnAqzzf2gb-768-80.jpg",
+        "https://i.guim.co.uk/img/media/780338b4a60538843317f90a883e8e011c77b6ea/0_300_2000_1200/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=717bf05cf79345edc8e9d4422be37b99"
+      ],
+      "guestCount": 1,
+      "country": "Croatia",
+      "info": [
+        {
+          "type":"home",
+          "description":""
+        },
+        {
+          "type":"clean",
+          "description":""
+        },
+        {
+          "type":"comming",
+          "description":"Samostalni ulazak u smještaj uz pomoć digitalne brave."
+        },
+        {
+          "type":"cancel",
+          "description": "Ako otkažete, dobit ćete povrat cjelokupnog iznosa za preostala noćenja 24 h nakon otkazivanja, umanjen za naknadu za usluge i naknadu za čišćenje."
+        },
+        {
+          "type":"house-rules",
+          "description": "Domaćin ne dozvoljava organiziranje zabava ni pušenje."
+        }
+      ],
+      "welcomeMessageCro": "",
+      "welcomeMessageEng": "Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...",
+      "room": [
+        {"type":"Spavaća soba 1", "description":"1 jednostruki krevet"}
+      ],
+      "content": [
+        "Wi-Fi","Kuhinja","Glačalo","Grijanje","Sušilo za kosu"
+      ],
+      "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
+      "review": [
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+      ],
+      "ownerInfo": {
+        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+      }
+    }
+  ]
+}

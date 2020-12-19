@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbCalendar, NgbDate, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import { DateFromTo } from '../search.model';
-import { SearchService } from '../search.service';
+import { SearchService } from 'src/app/search.service';
+import { DateFromTo } from '../../search.model';
 import { ExploreCityAction, ExploreCityPerson } from './explore-city.model';
 import { ExploreCityService } from './explore-city.service';
 
@@ -52,6 +52,7 @@ export class ExploreCityComponent implements OnInit {
     this.todayDate = this.calendar.getToday();
     this.initPersonTypeScreen();
     this.initPersonCountChange();
+    this.saveCity();
   }
 
   initStartScreen(): void {
@@ -76,6 +77,10 @@ export class ExploreCityComponent implements OnInit {
     })
   }
 
+  saveCity(): void{
+    this.searchService.setCity(this.currentCity);
+  }
+
   toggleSlider(): void {
     if (this.sliderHeight === 'slider-height-default') {
       this.sliderHeight = 'slider-height-full';
@@ -97,7 +102,7 @@ export class ExploreCityComponent implements OnInit {
     }
     if(this.currentAction === this.actions[2]){
       this.searchService.setPersons(this.exploreCityService.getPersonTypes(),this.petsAllowed);
-      this.router.navigate(['results'], { relativeTo: this.route})
+      this.router.navigate(['results'], { relativeTo: this.route, queryParams: this.searchService.getCurrentSearch})
     }
   }
 
@@ -200,12 +205,7 @@ export class ExploreCityComponent implements OnInit {
     }
   }
   addDateOption(option): void{
-    if(option.target.innerText === 'Točni datumi'){
-      this.dateOption = '';
-    }
-    else{
-      this.dateOption = '( ' + option.target.innerText + ' )';
-    }
+    this.dateOption = option.target.innerText;
   }
 
   checkPersonsCount(): boolean{

@@ -1,0 +1,14 @@
+<div fxLayout="row" class="info-item">
+  <img class="accommodation-info-icon"
+  [src]="fetchIconUrl()"/>
+  <div fxLayout="column">
+    <span class="text-size-14 text-bold-600">{{info.title}}</span>
+    <span class="text-size-14 color-gray">{{info.description}}
+      <span
+        class="text-bold-600 text-underline"
+        *ngIf="info.descriptionLinkTitle !== ''">
+        {{info.descriptionLinkTitle}}
+      </span>
+    </span>
+  </div>
+</div>

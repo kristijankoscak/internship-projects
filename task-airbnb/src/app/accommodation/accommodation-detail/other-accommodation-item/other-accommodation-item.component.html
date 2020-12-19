@@ -1,0 +1,23 @@
+<button mat-button class="accommodation-button" ><!-- routerLink="" -->
+  <div
+    class="accommodation-image-container">
+      <img class="accommodation-image"
+      [src]="accommodation.images[0]"/>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon color="accent" class="star-icon">grade</mat-icon>
+      <span clasS="text-size-12" *ngIf="accommodation.grade === null">&nbsp; Novo</span>
+      <span clasS="text-size-12" *ngIf="accommodation.grade !== null">&nbsp; {{accommodation.grade}}</span>
+      <span clasS="text-size-12 color-gray">&nbsp; ({{accommodation.votesCount}})</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span clasS="text-size-14 ">{{accommodation.type}} &nbsp;</span>
+      <span clasS="text-size-14 ">{{getRoomDescription()}}</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span clasS="text-size-14 text-bold-600">313 kn &nbsp;</span>
+      <span clasS="text-size-14 ">Ukupno</span>
+    </div>
+  </div>
+</button>

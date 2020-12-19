@@ -12,11 +12,13 @@ export class AppComponent implements OnInit{
     '/',
     '/sign',
     '/sign/up',
-    '/explore/search'
+    '/explore/search',
+
   ];
 
   dynamicalRoutes = [
-    '/explore/city/'
+    '/explore/city/',
+    '/accommodation'
   ]
 
   showNavbar = true;

@@ -1,5 +1,12 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
+import { City } from 'src/app/explore/explore-main/cities/city.model';
+import { ExploreService } from 'src/app/explore/explore-search/explore.service';
+import { Accommodation } from '../accommodation.model';
 import { AccommodationService } from '../accommodation.service';
+import { AccommodationContent } from './accommodation-content-item/accommodation-content.model';
+import { AccommodationInfo } from './accommodation-info-item/accommodation-info.model';
 
 @Component({
   selector: 'app-accommodation-detail',
@@ -7,6 +14,37 @@ import { AccommodationService } from '../accommodation.service';
   styleUrls: ['./accommodation-detail.component.css']
 })
 export class AccommodationDetailComponent implements OnInit {
+
+  otherAccommodations: Accommodation[];
+
+  type: string = 'Kondominij';
+  endDate: NgbDate = new NgbDate(2020,12,20);
+  accommodationInformations = [
+    {
+      type:'clean',
+      description:''
+    },
+    {
+      type:'location',
+      description:''
+    },
+    {
+      type:'comming',
+      description:'Samostalni ulazak u smještaj uz pomoć digitalne brave.'
+    },
+    {
+      type:'cancel',
+      description: 'Ako otkažete, dobit ćete povrat cjelokupnog iznosa za preostala noćenja 24 h nakon otkazivanja, umanjen za naknadu za usluge i naknadu za čišćenje.'
+    },
+    {
+      type:'house-rules',
+      description: 'Domaćin ne dozvoljava organiziranje zabava ni pušenje.'
+    },
+  ]
+  accommodationContent=[
+    'Wi-Fi','Kuhinja','Glačalo','Grijanje','Sušilo za kosu'
+  ]
+  currentCity:City;
 
   accommodationImages= [
     'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg',
@@ -23,11 +61,14 @@ export class AccommodationDetailComponent implements OnInit {
 
   constructor(
     private element: ElementRef,
-    private accomodationService: AccommodationService
+    private accommodationService: AccommodationService,
+    private exploreService: ExploreService,
+    private sanitizer: DomSanitizer,
     ) { }
 
   ngOnInit(): void {
     this.initImagesData();
+    this.fetchAccommodations();
   }
   initImagesData(): void{
     const image = this.element.nativeElement.querySelector('.slide-container');
@@ -61,6 +102,23 @@ export class AccommodationDetailComponent implements OnInit {
       this.currentImage = this.imagesCount;
     }
     console.log(data.target.scrollLeft);
+  }
+
+  fetchInfo(type:string,description:string){
+    return this.accommodationService.getAccommodationInfo(type,description);
+  }
+  fetchFilteredContent(): AccommodationContent[]{
+    return this.accommodationService.getFilteredAccommodationContent(this.accommodationContent);
+  }
+  fetchMapUrl(): SafeUrl{
+    this.fetchCurrentCity();
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.currentCity.map);
+  }
+  fetchCurrentCity(): void{
+    this.currentCity = this.exploreService.fetchCity('Zagreb');
+  }
+  fetchAccommodations(): void{
+    this.otherAccommodations = this.accommodationService.getAccommodations();
   }
 
 }

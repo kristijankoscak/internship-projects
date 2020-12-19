@@ -2,11 +2,11 @@
   position: relative;
   display: block;
   width: 100vw;
-  height: 100vh;
+  height: 30vh;
 }
 .images-container{
   position: relative;
-  height: 30%;
+  height: 100%;
   width: 100%;
 }
 .slide-container{
@@ -85,4 +85,109 @@
   display: flex;
   place-content: space-around;
   margin: 0.5rem;
+}
+
+.accommodation-info-container{
+  position: relative;
+  width:100%;
+  height:30%;
+  padding: 2rem;
+}
+.star-icon{
+  height:1.4rem;
+  width:1.4rem;
+  font-size: 1.4rem;
+}
+.divider{
+  padding:1rem 0rem;
+  width:100%;
+}
+.user-image{
+  position: relative;
+  height: 5rem;
+  width: 5rem;
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg');
+  display: inline-block;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.translate-button{
+  border-color: rgba(0, 0, 0);
+  width: 100%;
+}
+.translate-button > ::ng-deep .mat-button-wrapper{
+  width:100%;
+  display:contents;
+}
+.room-container{
+  border: 0.1rem solid rgba(0,0,0,0.2);
+  border-radius: 1rem;
+  width: fit-content;
+  padding: 1rem;
+}
+.all-content-button{
+  border-color: rgba(0, 0, 0);
+  width: 100%;
+}
+.map-block{
+  width: 100%;
+  height: 30%;
+}
+.review-user-image{
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg');
+  display: inline-block;
+  background-size: cover;
+  border-radius: 50%;
+}
+.button-option{
+  width:100%;
+  line-height: normal;
+  white-space: unset;
+  font-weight: unset;
+  text-align: center;
+}
+.button-option > ::ng-deep .mat-button-wrapper{
+  width:100%;
+  display:contents;
+}
+.text-align-start{
+  text-align: start;
+}
+.more-accommodations-container{
+  display:block;
+  width:100vw;
+  height:auto;
+  padding:0rem 2rem;
+  margin-bottom: 9rem;
+}
+.more-accommodations-container > .slide-container{
+  height:80%;
+}
+.bigger-divider{
+  padding:1rem 0rem;
+}
+
+.bigger-divider > ::ng-deep mat-divider{
+  border-top-width: 0.3rem;
+}
+.reserve-container{
+  position: fixed;
+  width:100%;
+  height:8rem;
+  padding:1rem 2rem;
+  bottom:0;
+  background-color: white;
+  z-index:50;
+}
+.reserve-info{
+  width:40%;
+}
+.reserve-container > ::ng-deep .mat-flat-button{
+    min-width: unset;
+    line-height: normal;
+    padding: 1rem 2rem;
 }
