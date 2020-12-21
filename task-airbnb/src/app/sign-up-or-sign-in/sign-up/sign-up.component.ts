@@ -28,7 +28,6 @@ export class SignUpComponent implements OnInit {
       }
 
     });
-    // console.log(this.authService.getUser())
   }
 
   onSubmit(): void{

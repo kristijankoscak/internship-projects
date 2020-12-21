@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { ActivatedRoute, Params } from '@angular/router';
-import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { AccommodationInfo } from './accommodation-info.model';
 
 @Component({
@@ -12,7 +10,6 @@ import { AccommodationInfo } from './accommodation-info.model';
 export class AccommodationInfoItemComponent implements OnInit {
 
   @Input() info : AccommodationInfo;
-  // @Input() endDate: NgbDate;
 
   constructor(
     private sanitizer: DomSanitizer

@@ -13,15 +13,18 @@
         </button>
         <span class="text-size-14 text-bold-600">{{ currentCity }}</span>
       </div>
-      <div fxLayout="row" fxLayoutAlign="center center" *ngIf="currentScreen === screens[1]">
-        <span *ngIf="fromDate" class="text-lighter text-size-12">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <span *ngIf="fromDate && currentScreen === screens[1]" class="text-lighter text-size-12" >
           {{ fromDate.day }}. -
         </span>
-        <span *ngIf="toDate" class="text-lighter text-size-12">
+        <span *ngIf="toDate && currentScreen === screens[1]" class="text-lighter text-size-12">
           {{ toDate.day }}. {{ getMonth(toDate.month) }}
         </span>
-        <span *ngIf="toDate !== null && dateOption !== 'Točni datumi'" class="text-lighter text-size-12 ml-1">
+        <span *ngIf="toDate !== null && dateOption !== 'Točni datumi' && currentScreen === screens[1]" class="text-lighter text-size-12 ml-1">
           ( {{ dateOption }} )
+        </span>
+        <span *ngIf="personCount > 0 && currentScreen === screens[2]" class="text-lighter text-size-12 ml-1">
+          Gostiju: {{personCount}}
         </span>
       </div>
       <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentScreen === screens[0]">

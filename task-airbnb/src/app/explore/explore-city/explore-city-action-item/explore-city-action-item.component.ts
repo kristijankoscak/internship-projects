@@ -22,8 +22,6 @@ export class ExploreCityActionItemComponent implements OnInit {
   }
 
   setSearchType(): void {
-    console.log('uso')
-    console.log(this.router.url)
     this.router.navigate([], {relativeTo: this.activeRoute, queryParams: {
       place: this.activeRoute.snapshot.queryParams.place,
       searchType: this.type.title

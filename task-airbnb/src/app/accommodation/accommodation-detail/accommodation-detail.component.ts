@@ -83,7 +83,7 @@ export class AccommodationDetailComponent implements OnInit {
 
   handleScroll(data){
     const currentOffset = data.target.scrollLeft;
-    if(currentOffset < this.imageWidth){  // first image
+    if(currentOffset < this.imageWidth){
       this.currentImage = 1;
     }
     else if(currentOffset > this.borders[this.currentImage] && currentOffset < this.borders[this.currentImage+1]){
@@ -92,7 +92,7 @@ export class AccommodationDetailComponent implements OnInit {
     else if(currentOffset < this.borders[this.currentImage-1]){
       this.currentImage--;
     }
-    else if(currentOffset >= ((this.imagesCount-1)*this.imageWidth)){  // last image
+    else if(currentOffset >= ((this.imagesCount-1)*this.imageWidth)){
       this.currentImage = this.imagesCount;
     }
   }

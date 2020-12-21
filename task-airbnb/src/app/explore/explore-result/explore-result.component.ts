@@ -1,8 +1,7 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Accommodation } from 'src/app/accommodation/accommodation.model';
-import { AccommodationService } from 'src/app/accommodation/accommodation.service';
 import { City } from '../explore-main/cities/city.model';
 import { ExploreService } from '../explore-search/explore.service';
 import { Search } from '../../search.model';

@@ -19,8 +19,9 @@
   padding: 1rem 2rem;
   font-size: 1.1rem;
 }
-.border-bottom{
+.shaddow-bottom{
   box-shadow: 0 2rem 0.1rem -2rem rgb(0, 0, 0,0.88);
+  border-bottom:unset;
 }
 .mat-button{
   min-width: unset;

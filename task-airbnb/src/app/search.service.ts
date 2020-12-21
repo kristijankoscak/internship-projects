@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
-import { ExploreCityPerson } from './explore/explore-city/explore-city.model';
-import { DateFromTo, Search } from './search.model';
+import { Search } from './search.model';
 
 @Injectable({
   providedIn: 'root'

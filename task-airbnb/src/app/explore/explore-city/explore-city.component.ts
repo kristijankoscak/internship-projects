@@ -6,8 +6,6 @@ import { DateFromTo } from '../../search.model';
 import { ExploreCityAction, ExploreCityPerson } from './explore-city.model';
 import { ExploreCityService } from './explore-city.service';
 
-// TO DO - switch calendar language
-
 @Component({
   selector: 'app-explore-city',
   templateUrl: './explore-city.component.html',
@@ -35,6 +33,7 @@ export class ExploreCityComponent implements OnInit {
   personTypes: ExploreCityPerson[];
   petsAllowed = false;
   personsValid = false;
+  personCount:number;
 
 
   constructor(
@@ -65,6 +64,7 @@ export class ExploreCityComponent implements OnInit {
 
   subscribeToPersonCountChange(): void{
     this.exploreCityService.personCountChanged.subscribe(value => {
+      this.getPersonCount();
       if(this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0 ){
         this.personsValid = true;
       }
@@ -73,20 +73,24 @@ export class ExploreCityComponent implements OnInit {
       }
     })
   }
+  getPersonCount(): void{
+    this.personCount = 0;
+    this.personTypes.forEach(person => {
+      this.personCount += +person.count;
+    })
+  }
+
   fetchRouteParams(): void{
     this.route.queryParams.subscribe((params: Params) => {
       if(params.place){
-        console.log('ima place');
         this.screenPointer = 0;
         this.currentCity = params.place;
       }
       if(params.searchType){
-        console.log('ima searchType');
         this.screenPointer = 1;
         this.clearCalendar();
       }
       if(params.fromDate){
-        console.log('ima date');
         this.screenPointer = 2;
       }
       this.currentScreen = this.screens[this.screenPointer];
@@ -169,7 +173,6 @@ export class ExploreCityComponent implements OnInit {
   addDateOption(option): void{
     this.dateOption = option.target.innerText;
   }
-
   checkPersonsCount(): boolean{
     let status: boolean;
     if(this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0 ){
@@ -203,7 +206,6 @@ export class ExploreCityComponent implements OnInit {
   toggleSlider(): void {
     if (this.sliderHeight === 'slider-height-default') {
       this.sliderHeight = 'slider-height-full';
-      console.log(this.element.nativeElement.querySelector('.cdk-overlay-container'));
     }
     else {
       this.sliderHeight = 'slider-height-default';
