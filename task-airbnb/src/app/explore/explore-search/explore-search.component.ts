@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { City } from '../explore-main/cities/city.model';
-import { ExploreService } from './explore.service';
+import { ExploreService } from '../explore.service';
 
 
 @Component({
@@ -36,8 +36,8 @@ export class ExploreSearchComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    this.nearbyCities = this.exploreServices.getNearbyCities();
-    this.searchCities = this.exploreServices.getSearchCities();
+    this.nearbyCities = this.exploreServices.getData('searchNearbyCities');
+    this.searchCities = this.exploreServices.getData('searchAllResults');
   }
   toggleCloseButton(data): void {
     if (data !== '') {

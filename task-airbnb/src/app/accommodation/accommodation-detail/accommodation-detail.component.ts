@@ -5,7 +5,7 @@ import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { AccommodationsService } from 'src/app/accommodations.service';
 import { ExploreCityService } from 'src/app/explore/explore-city/explore-city.service';
 import { City } from 'src/app/explore/explore-main/cities/city.model';
-import { ExploreService } from 'src/app/explore/explore-search/explore.service';
+import { ExploreService } from 'src/app/explore/explore.service';
 import { Search } from 'src/app/search.model';
 import { Accommodation } from '../accommodation.model';
 import { AccommodationService } from '../accommodation.service';

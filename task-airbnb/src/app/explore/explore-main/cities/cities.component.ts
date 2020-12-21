@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CitiesService } from './cities.service';
+import { ExploreService } from '../../explore.service';
 import { City } from './city.model';
 
 @Component({
@@ -12,11 +12,11 @@ export class CitiesComponent implements OnInit {
   public cities: City[];
 
   constructor(
-    private citiesService: CitiesService
+    private exploreService: ExploreService
   ) { }
 
   ngOnInit(): void {
-    this.cities = this.citiesService.getCities();
+    this.cities = this.exploreService.getData('cities');
   }
 
 }

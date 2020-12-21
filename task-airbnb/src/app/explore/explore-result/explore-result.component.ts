@@ -3,7 +3,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Accommodation } from 'src/app/accommodation/accommodation.model';
 import { City } from '../explore-main/cities/city.model';
-import { ExploreService } from '../explore-search/explore.service';
+import { ExploreService } from '../explore.service';
 import { Search } from '../../search.model';
 import { SearchService } from 'src/app/search.service';
 import { AccommodationsService } from 'src/app/accommodations.service';

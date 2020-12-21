@@ -33,11 +33,7 @@ export class SignUpComponent implements OnInit {
   onSubmit(): void{
     const user: User = {
       phoneNumber: this.authService.phoneNumber,
-      userName: this.userDataForm.value.userName,
-      userSurname: this.userDataForm.value.userSurname,
-      userBirthDate: this.userDataForm.value.userBirthDate,
-      userEmail: this.userDataForm.value.userEmail,
-      adsDisallowed: this.userDataForm.value.userDontSendAds
+      ...this.userDataForm.value
     };
     this.authService.setUserData(user);
     this.navigateToExploreScreen();

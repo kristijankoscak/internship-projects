@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExploreService } from '../../explore.service';
 import { Suggestion } from './suggestion.model';
-import { SuggestionsService } from './suggestions.service';
 
 @Component({
   selector: 'app-suggestions',
@@ -11,10 +11,10 @@ export class SuggestionsComponent implements OnInit {
 
   suggestions: Suggestion[];
 
-  constructor(private suggestionsService: SuggestionsService) { }
+  constructor(private exploreService: ExploreService) { }
 
   ngOnInit(): void {
-    this.suggestions = this.suggestionsService.getSuggestions();
+    this.suggestions = this.exploreService.getData('suggestions');
   }
 
 }

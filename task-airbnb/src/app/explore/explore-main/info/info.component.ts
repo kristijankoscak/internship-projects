@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExploreService } from '../../explore.service';
 import { Info } from './info.model';
-import { InfoService } from './info.service';
 
 @Component({
   selector: 'app-info',
@@ -14,13 +14,13 @@ export class INFOComponent implements OnInit {
   helpersInfo: Info[];
   moreInfo: Info[];
 
-  constructor(private infoService: InfoService) { }
+  constructor(private exploreService: ExploreService) { }
 
   ngOnInit(): void {
-    this.guestInfo = this.infoService.getGuestInfo();
-    this.hostInfo = this.infoService.getHostInfo();
-    this.helpersInfo = this.infoService.getHelpersInfo();
-    this.moreInfo = this.infoService.getMoreInfo();
+    this.guestInfo = this.exploreService.getData('guestInfo');
+    this.hostInfo = this.exploreService.getData('hostInfo');
+    this.helpersInfo = this.exploreService.getData('helpersInfo');
+    this.moreInfo = this.exploreService.getData('moreInfo');
   }
 
 }

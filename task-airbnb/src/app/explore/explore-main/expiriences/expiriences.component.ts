@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExploreService } from '../../explore.service';
 import { Expirience } from './expirience.model';
-import { ExpiriencesService } from './expiriences.service';
 
 @Component({
   selector: 'app-expiriences',
@@ -11,10 +11,10 @@ export class ExpiriencesComponent implements OnInit {
 
   expiriences: Expirience[];
 
-  constructor(private expiriencesService: ExpiriencesService) { }
+  constructor(private exploreService: ExploreService) { }
 
   ngOnInit(): void {
-    this.expiriences = this.expiriencesService.getExpiriences();
+    this.expiriences = this.exploreService.getData('expiriences');
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExploreService } from '../../explore.service';
 import { Action } from './action.model';
 import { ActionsService } from './actions.service';
 
@@ -11,10 +12,10 @@ export class ActionsComponent implements OnInit {
 
   actions: Action[];
 
-  constructor(private actionsService: ActionsService) { }
+  constructor(private exploreService: ExploreService) { }
 
   ngOnInit(): void {
-    this.actions = this.actionsService.getActions();
+    this.actions = this.exploreService.getData('actions');
   }
 
 }
