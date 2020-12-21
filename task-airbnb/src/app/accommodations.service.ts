@@ -13,21 +13,21 @@ export class AccommodationsService {
 
   constructor() { }
 
-  getFilteredAccommodations(search: Search): Accommodation[]{
+  getFilteredAccommodations(search: Search): Accommodation[] {
     this.filterAccommodations(search);
     return this.filteredAccommodations;
   }
-  filterAccommodations(search: Search): void{
+  filterAccommodations(search: Search): void {
     this.filteredAccommodations = [];
-    let numberOfGuests: number = +search.adults + +search.kids + +search.babies;
+    const numberOfGuests: number = +search.adults + +search.kids + +search.babies;
     this.accommodations.find(accommodation => {
-      if(accommodation.location === search.place && accommodation.guestCount >= numberOfGuests){
+      if (accommodation.location === search.place && accommodation.guestCount >= numberOfGuests) {
         this.filteredAccommodations.push(accommodation);
       }
-    })
+    });
   }
-  getAccommodationById(id:string): Accommodation{
-    let tempAccommodation = this.accommodations.find(
+  getAccommodationById(id: string): Accommodation {
+    const tempAccommodation = this.accommodations.find(
       accommodation => accommodation.id === +id
     );
     return tempAccommodation;

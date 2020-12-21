@@ -42,7 +42,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ItemInfoComponent } from './explore/explore-main/info/item-info/item-info.component';
 import { ExploreMainComponent } from './explore/explore-main/explore-main.component';
 import { SignUpOrSignInComponent } from './sign-up-or-sign-in/sign-up-or-sign-in.component';
-import { SignInComponent } from './sign-up-or-sign-in/sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up-or-sign-in/sign-up/sign-up.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -91,7 +90,6 @@ import { OtherAccommodationItemComponent } from './accommodation/accommodation-d
     ItemInfoComponent,
     ExploreMainComponent,
     SignUpOrSignInComponent,
-    SignInComponent,
     SignUpComponent,
     UserComponent,
     ProfileComponent,

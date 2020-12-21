@@ -14,24 +14,26 @@ export class ExploreItemComponent implements OnInit {
 
   constructor(
     private searchService: SearchService,
-    private activeRoute:ActivatedRoute,
-    private router:Router
+    private activeRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
-  navigateToExploreCity(): void{
+  navigateToExploreCity(): void {
     this.handleManualSearch();
     this.router.navigate(
-      ['../city'], {relativeTo: this.activeRoute, queryParams: {
-        place: this.city.name
-      }}
+      ['../city'], {
+        relativeTo: this.activeRoute, queryParams: {
+          place: this.city.name
+        }
+    }
     );
   }
 
-  handleManualSearch(): void{
-    if(this.city.name.includes(',')){
+  handleManualSearch(): void {
+    if (this.city.name.includes(',')) {
       this.city.name = this.city.name.split(',')[0];
     }
   }

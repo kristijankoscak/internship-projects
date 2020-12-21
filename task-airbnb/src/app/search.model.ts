@@ -12,8 +12,8 @@ export interface Search {
   fromDate: Date;
   toDate: Date;
   dateOption: string;
-  adults:number;
-  kids:number;
-  babies:number;
-  petsAllowed: boolean
+  adults: number;
+  kids: number;
+  babies: number;
+  petsAllowed: boolean;
 }

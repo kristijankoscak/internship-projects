@@ -62,5 +62,18 @@
     { "image": "https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png", "name": "Osimo, AN", "distance": "" , "map":"" },
     { "image": "https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png", "name": "Oslo", "distance": "" , "map":"" },
     { "image": "https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png", "name": "Zagreb,Hrvatska", "distance": "" , "map":"" }
+  ],
+  "searchTypes": [
+    { "title": "Pronađite smještaj", "description": "Cijeli smještaji, sobe i još mnogo toga", "image": "https://a0.muscache.com/4ea/air/v2/pictures/02a9e2fa-1d42-409a-b040-99e8eeeb0448.jpg" },
+    { "title": "Pronađite smještaj u kojem možete boraviti mjesec dana", "description": "Smještaji za boravak od 4 i više tjedana", "image": "https://a0.muscache.com/4ea/air/v2/pictures/02a9e2fa-1d42-409a-b040-99e8eeeb0448.jpg" },
+    { "title": "Pronađite doživljaj", "description": "Aktivnosti koje vode lokalci", "image": "https://a0.muscache.com/4ea/air/v2/pictures/d0652aac-13ac-4378-a97e-b10d2289d97e.jpg" }
+  ],
+  "months": [
+    "sij","vel","ozu","tra","svi","lip","srp","kol","ruj","lis","stu","pro"
+  ],
+  "personTypes": [
+    { "type":"Odrasli", "description":"Najmanje 13 god.","count": 0},
+    { "type":"Djeca", "description":"Dob: 2-12","count": 0},
+    { "type":"Bebe", "description":"Mlađi od 2","count": 0}
   ]
 }

@@ -20,14 +20,14 @@ export class SearchService {
     petsAllowed: null
   };
 
-  lastSearch: Search ;
+  lastSearch: Search;
 
-  setCurrentSearch(currentSearch: Search){
+  setCurrentSearch(currentSearch: Search): void {
     this.currentSearch = currentSearch;
     this.lastSearch = this.currentSearch;
   }
 
-  getCurrentSearch(): Search{
+  getCurrentSearch(): Search {
     return this.currentSearch;
   }
 }

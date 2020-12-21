@@ -9,7 +9,7 @@ import { AccommodationInfo } from './accommodation-info.model';
 })
 export class AccommodationInfoItemComponent implements OnInit {
 
-  @Input() info : AccommodationInfo;
+  @Input() info: AccommodationInfo;
 
   constructor(
     private sanitizer: DomSanitizer
@@ -19,7 +19,7 @@ export class AccommodationInfoItemComponent implements OnInit {
 
   }
 
-  fetchIconUrl(): SafeUrl{
+  fetchIconUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.info.imagePath);
   }
 

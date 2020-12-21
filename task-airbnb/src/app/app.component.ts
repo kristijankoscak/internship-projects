@@ -6,7 +6,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   componentsWithoutNavbar = [
     '/',
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
     '/explore/city',
     '/explore/results',
     '/accommodation'
-  ]
+  ];
 
   showNavbar = true;
 

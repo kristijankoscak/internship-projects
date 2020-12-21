@@ -1,5 +1,5 @@
-export class Accommodation{
-  id:number;
+export class Accommodation {
+  id: number;
   type: string;
   location: string;
   description: string;
@@ -21,26 +21,26 @@ export class Accommodation{
 }
 
 export class AccommodationInfo {
-  type:string;
+  type: string;
   description: string;
 }
 
 export class AccommodationRoom {
-  type:string;
+  type: string;
   description;
 }
 
-export class AccommodationComment{
+export class AccommodationComment {
   user: string;
   date: string;
   comment: string;
-  imagePath:string;
+  imagePath: string;
 }
 
-export class AccommodationOwner{
+export class AccommodationOwner {
   name: string;
   accommodationInfo: string;
   responseRate: number;
   responseTime: string;
-  imagePath:string;
+  imagePath: string;
 }

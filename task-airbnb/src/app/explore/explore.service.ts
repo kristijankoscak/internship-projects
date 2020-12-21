@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { City } from './explore-main/cities/city.model';
 
 import * as exploreData from './explore.json';
@@ -10,8 +10,16 @@ export class ExploreService {
 
   constructor() { }
 
-  getData(key:string): any {
-    switch(key) {
+  personCountChanged: EventEmitter<boolean> = new EventEmitter();
+
+  getMonth(monthNumber: number): string {
+    const months = this.getData('months');
+    const id = monthNumber - 1;
+    return months[id];
+  }
+
+  getData(key: string): any {
+    switch (key) {
       case 'actions': {
         return exploreData.actions;
         break;
@@ -52,14 +60,26 @@ export class ExploreService {
         return exploreData.suggestions;
         break;
       }
+      case 'searchTypes': {
+        return exploreData.searchTypes;
+        break;
+      }
+      case 'months': {
+        return exploreData.months;
+        break;
+      }
+      case 'personTypes': {
+        return exploreData.personTypes;
+        break;
+      }
     }
   }
 
-  fetchCity(cityName: string): City{
-    let nearbyCities = this.getData('searchNearbyCities');
-    let tempCity:City = nearbyCities[0];
+  fetchCity(cityName: string): City {
+    const nearbyCities = this.getData('searchNearbyCities');
+    let tempCity: City = nearbyCities[0];
     nearbyCities.forEach(city => {
-      if(city.name === cityName){
+      if (city.name === cityName) {
         tempCity = city;
       }
     });

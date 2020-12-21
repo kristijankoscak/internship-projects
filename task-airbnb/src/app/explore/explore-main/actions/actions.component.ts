@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExploreService } from '../../explore.service';
 import { Action } from './action.model';
-import { ActionsService } from './actions.service';
 
 @Component({
   selector: 'app-actions',

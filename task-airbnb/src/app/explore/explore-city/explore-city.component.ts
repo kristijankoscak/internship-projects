@@ -3,8 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NgbCalendar, NgbDate, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { SearchService } from 'src/app/search.service';
 import { DateFromTo } from '../../search.model';
+import { ExploreService } from '../explore.service';
 import { ExploreCityAction, ExploreCityPerson } from './explore-city.model';
-import { ExploreCityService } from './explore-city.service';
 
 @Component({
   selector: 'app-explore-city',
@@ -14,7 +14,7 @@ import { ExploreCityService } from './explore-city.service';
 export class ExploreCityComponent implements OnInit {
 
   screenPointer = 0;
-  screens: string[] = ['Što tražite?', 'Kad dolazite?','Koliko ljudi dolazi?'];
+  screens: string[] = ['Što tražite?', 'Kad dolazite?', 'Koliko ljudi dolazi?'];
   currentScreen: string;
 
   currentCity: string;
@@ -27,23 +27,23 @@ export class ExploreCityComponent implements OnInit {
   todayDate: NgbDate;
   fromDate: NgbDate;
   toDate: NgbDate | null = null;
-  dateOption: string = 'Točni datumi';
+  dateOption = 'Točni datumi';
   dateIsPicked: boolean;
 
   personTypes: ExploreCityPerson[];
   petsAllowed = false;
   personsValid = false;
-  personCount:number;
+  personCount: number;
 
 
   constructor(
-    private exploreCityService: ExploreCityService,
+    private exploreService: ExploreService,
     private route: ActivatedRoute,
     private router: Router,
     private element: ElementRef,
     private calendar: NgbCalendar,
     private searchService: SearchService,
-    private activeRoute:ActivatedRoute
+    private activeRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -55,46 +55,46 @@ export class ExploreCityComponent implements OnInit {
   }
 
   initSearchTypeScreen(): void {
-    this.searchTypes = this.exploreCityService.getSearchTypes();
+    this.searchTypes = this.exploreService.getData('searchTypes');
     this.sliderHeight = 'slider-height-default';
   }
-  initPersonTypeScreen(): void{
-    this.personTypes = this.exploreCityService.getPersonTypes();
+  initPersonTypeScreen(): void {
+    this.personTypes = this.exploreService.getData('personTypes');
   }
 
-  subscribeToPersonCountChange(): void{
-    this.exploreCityService.personCountChanged.subscribe(value => {
+  subscribeToPersonCountChange(): void {
+    this.exploreService.personCountChanged.subscribe(value => {
       this.getPersonCount();
-      if(this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0 ){
+      if (this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0) {
         this.personsValid = true;
       }
-      else{
+      else {
         this.personsValid = false;
       }
-    })
+    });
   }
-  getPersonCount(): void{
+  getPersonCount(): void {
     this.personCount = 0;
     this.personTypes.forEach(person => {
       this.personCount += +person.count;
-    })
+    });
   }
 
-  fetchRouteParams(): void{
+  fetchRouteParams(): void {
     this.route.queryParams.subscribe((params: Params) => {
-      if(params.place){
+      if (params.place) {
         this.screenPointer = 0;
         this.currentCity = params.place;
       }
-      if(params.searchType){
+      if (params.searchType) {
         this.screenPointer = 1;
         this.clearCalendar();
       }
-      if(params.fromDate){
+      if (params.fromDate) {
         this.screenPointer = 2;
       }
       this.currentScreen = this.screens[this.screenPointer];
-    })
+    });
   }
 
 
@@ -103,26 +103,29 @@ export class ExploreCityComponent implements OnInit {
     this.screenPointer++;
     this.currentScreen = this.screens[this.screenPointer];
   }
-  handleScreen(){
-    if(this.currentScreen === this.screens[1]){
-      const dateFromTo: DateFromTo = { dateFrom:this.fromDate, dateTo:this.toDate }
-      this.router.navigate([], {relativeTo: this.activeRoute, queryParams: {
-        ...this.activeRoute.snapshot.queryParams,
-        fromDate: this.convertNgbDateToDate(this.fromDate),
-        toDate: this.convertNgbDateToDate(this.toDate),
-        dateOption: this.dateOption
-      }})
-    }
-    if(this.currentScreen === this.screens[2]){
-      this.router.navigate(['../results'], { relativeTo: this.route,
-        queryParams: {
-        ...this.activeRoute.snapshot.queryParams,
-        adults: this.personTypes[0].count,
-        kids: this.personTypes[1].count,
-        babies: this.personTypes[2].count,
-        petsAllowed: this.petsAllowed
+  handleScreen(): void{
+    if (this.currentScreen === this.screens[1]) {
+      const dateFromTo: DateFromTo = { dateFrom: this.fromDate, dateTo: this.toDate };
+      this.router.navigate([], {
+        relativeTo: this.activeRoute, queryParams: {
+          ...this.activeRoute.snapshot.queryParams,
+          fromDate: this.convertNgbDateToDate(this.fromDate),
+          toDate: this.convertNgbDateToDate(this.toDate),
+          dateOption: this.dateOption
         }
-      })
+      });
+    }
+    if (this.currentScreen === this.screens[2]) {
+      this.router.navigate(['../results'], {
+        relativeTo: this.route,
+        queryParams: {
+          ...this.activeRoute.snapshot.queryParams,
+          adults: this.personTypes[0].count,
+          kids: this.personTypes[1].count,
+          babies: this.personTypes[2].count,
+          petsAllowed: this.petsAllowed
+        }
+      });
     }
   }
   onBack(): void {
@@ -132,22 +135,26 @@ export class ExploreCityComponent implements OnInit {
         break;
       }
       case this.screens[1]: {
-        this.router.navigate([], {relativeTo: this.activeRoute, queryParams: {
-          place: this.activeRoute.snapshot.queryParams.place
-        }})
+        this.router.navigate([], {
+          relativeTo: this.activeRoute, queryParams: {
+            place: this.activeRoute.snapshot.queryParams.place
+          }
+        });
         break;
       }
       case this.screens[2]: {
-        this.router.navigate([], {relativeTo: this.activeRoute, queryParams: {
-          place: this.activeRoute.snapshot.queryParams.place,
-          searchType: this.activeRoute.snapshot.queryParams.searchType
-        }})
+        this.router.navigate([], {
+          relativeTo: this.activeRoute, queryParams: {
+            place: this.activeRoute.snapshot.queryParams.place,
+            searchType: this.activeRoute.snapshot.queryParams.searchType
+          }
+        });
         break;
       }
     }
   }
 
-   onDateSelection(date: NgbDate): void {
+  onDateSelection(date: NgbDate): void {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
@@ -170,36 +177,36 @@ export class ExploreCityComponent implements OnInit {
   isRange(date: NgbDate): boolean {
     return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || this.isInside(date) || this.isHovered(date);
   }
-  addDateOption(option): void{
+  addDateOption(option): void {
     this.dateOption = option.target.innerText;
   }
-  checkPersonsCount(): boolean{
+  checkPersonsCount(): boolean {
     let status: boolean;
-    if(this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0 ){
+    if (this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0) {
       status = true;
     }
-    else{
+    else {
       status = false;
     }
     return status;
   }
-  clearPersonsCount(): void{
+  clearPersonsCount(): void {
     this.personTypes.forEach(person => {
       person.count = 0;
-    })
+    });
   }
-  clearCalendar(): void{
+  clearCalendar(): void {
     this.fromDate = null;
     this.toDate = null;
     this.dateOption = 'Točni datumi';
     this.dateIsPicked = false;
   }
 
-  getMonth(monthNumber: number): string{
-    return this.exploreCityService.getMonth(monthNumber);
+  getMonth(monthNumber: number): string {
+    return this.exploreService.getMonth(monthNumber);
   }
 
-  convertNgbDateToDate(date:NgbDate): Date{
+  convertNgbDateToDate(date: NgbDate): Date {
     return new Date(date.year, date.month - 1, date.day);
   }
 

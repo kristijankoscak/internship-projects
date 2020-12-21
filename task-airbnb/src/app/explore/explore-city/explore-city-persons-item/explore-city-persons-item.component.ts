@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ExploreService } from '../../explore.service';
 import { ExploreCityPerson } from '../explore-city.model';
-import { ExploreCityService } from '../explore-city.service';
 
 @Component({
   selector: 'app-explore-city-persons-item',
@@ -11,18 +11,18 @@ export class ExploreCityPersonsItemComponent implements OnInit {
 
   @Input() personType: ExploreCityPerson;
 
-  constructor(private exploreCityService: ExploreCityService) { }
+  constructor(private exploreService: ExploreService) { }
 
   ngOnInit(): void {
   }
 
-  add(){
+  add(): void{
     this.personType.count++;
-    this.exploreCityService.personCountChanged.emit(true);
+    this.exploreService.personCountChanged.emit(true);
   }
-  minus(){
+  minus(): void{
     this.personType.count--;
-    this.exploreCityService.personCountChanged.emit(true);
+    this.exploreService.personCountChanged.emit(true);
   }
 
 }

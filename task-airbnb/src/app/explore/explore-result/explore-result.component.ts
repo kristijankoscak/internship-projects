@@ -26,7 +26,7 @@ export class ExploreResultComponent implements OnInit {
     private searchService: SearchService,
     private exploreService: ExploreService,
     private route: ActivatedRoute,
-    private router:Router,
+    private router: Router,
     private sanitizer: DomSanitizer,
     private accommodationsService: AccommodationsService
   ) { }
@@ -38,33 +38,33 @@ export class ExploreResultComponent implements OnInit {
     this.fetchAccommodations();
   }
 
-  fetchRouteParameters(): void{
+  fetchRouteParameters(): void {
     this.route.queryParams.subscribe((params: Params) => {
-      this.saveCurrentSearch(params as Search)
-    })
+      this.saveCurrentSearch(params as Search);
+    });
   }
-  saveCurrentSearch(search:Search): void{
+  saveCurrentSearch(search: Search): void {
     this.currentSearch = search;
     this.searchService.setCurrentSearch(search);
   }
-  initStartHeights(): void{
+  initStartHeights(): void {
     this.sliderHeight = 'slider-height-default';
     this.searchContainerBackground = 'search-container-bg-default';
     this.navBarIsVisible = false;
   }
-  fetchCurrentCity(): void{
+  fetchCurrentCity(): void {
     this.currentCity = this.exploreService.fetchCity(this.currentSearch.place);
   }
-  fetchMapUrl(): SafeUrl{
+  fetchMapUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.currentCity.map);
   }
-  fetchAccommodations(): void{
+  fetchAccommodations(): void {
     this.accommodations = this.accommodationsService.getFilteredAccommodations(this.currentSearch);
   }
-  fetchDays(): number{
-    let days:number;
-    let toDate = new Date(this.currentSearch.toDate).getDate();
-    let fromDate = new Date(this.currentSearch.fromDate).getDate();
+  fetchDays(): number {
+    let days: number;
+    const toDate = new Date(this.currentSearch.toDate).getDate();
+    const fromDate = new Date(this.currentSearch.fromDate).getDate();
     days = toDate - fromDate;
     return days;
   }
@@ -82,12 +82,12 @@ export class ExploreResultComponent implements OnInit {
     }
   }
 
-  navigateToAccommodationDetail(accommodationID:number): void{
-    let params = {
+  navigateToAccommodationDetail(accommodationID: number): void {
+    const params = {
       ...this.currentSearch,
       accommodationID: accommodationID
-    }
-    this.router.navigate(['/accommodation/'+accommodationID], {queryParams: params})
+    };
+    this.router.navigate(['/accommodation/' + accommodationID], { queryParams: params });
 
   }
 }

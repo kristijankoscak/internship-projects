@@ -1,4 +1,4 @@
-export class AccommodationContent{
-  type:string;
-  imagePath:string;
+export class AccommodationContent {
+  type: string;
+  imagePath: string;
 }

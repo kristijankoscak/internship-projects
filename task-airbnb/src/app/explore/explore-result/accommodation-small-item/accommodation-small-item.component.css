@@ -30,7 +30,7 @@
   border-bottom-right-radius: 1rem;
   padding-left: 1rem;
 }
-::ng-deep .mat-button{
+.small-accommodation-button{
   position: relative;
   width: auto;
   min-width: unset;
@@ -39,7 +39,7 @@
   margin-right: 1rem;
 }
 
-::ng-deep .mat-button-wrapper{
+.small-accommodation-button > ::ng-deep .mat-button-wrapper{
   display:flex;
 }
 

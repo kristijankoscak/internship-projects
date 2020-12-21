@@ -4,8 +4,8 @@ export interface ExploreCityAction {
   image: string;
 }
 
-export interface ExploreCityPerson{
+export interface ExploreCityPerson {
   type: string;
-  description : string;
+  description: string;
   count: number;
 }

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchService } from 'src/app/search.service';
 import { ExploreCityAction } from '../explore-city.model';
 
 @Component({
@@ -10,11 +9,10 @@ import { ExploreCityAction } from '../explore-city.model';
 })
 export class ExploreCityActionItemComponent implements OnInit {
 
-  @Input() type:ExploreCityAction;
+  @Input() type: ExploreCityAction;
 
   constructor(
-    private searchService: SearchService,
-    private activeRoute : ActivatedRoute,
+    private activeRoute: ActivatedRoute,
     private router: Router
   ) { }
 
@@ -22,10 +20,12 @@ export class ExploreCityActionItemComponent implements OnInit {
   }
 
   setSearchType(): void {
-    this.router.navigate([], {relativeTo: this.activeRoute, queryParams: {
-      place: this.activeRoute.snapshot.queryParams.place,
-      searchType: this.type.title
-    }})
+    this.router.navigate([], {
+      relativeTo: this.activeRoute, queryParams: {
+        place: this.activeRoute.snapshot.queryParams.place,
+        searchType: this.type.title
+      }
+    });
   }
 
 }

@@ -17,13 +17,13 @@ export class OtherAccommodationItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getRoomDescription(): string{
+  getRoomDescription(): string {
     this.handleLenght(this.accommodation.room[0].description);
-    return this.description+'...';
+    return this.description + '...';
   }
-  handleLenght(text:string): void{
-    if(text.length > 10){
-      this.description = text.slice(0,10);
+  handleLenght(text: string): void {
+    if (text.length > 10) {
+      this.description = text.slice(0, 10);
     }
   }
 }

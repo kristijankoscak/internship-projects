@@ -10,7 +10,6 @@ import { ExploreComponent } from './explore/explore.component';
 import { LoginComponent } from './login/login.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SavedComponent } from './saved/saved.component';
-import { SignInComponent } from './sign-up-or-sign-in/sign-in/sign-in.component';
 import { SignUpOrSignInComponent } from './sign-up-or-sign-in/sign-up-or-sign-in.component';
 import { SignUpComponent } from './sign-up-or-sign-in/sign-up/sign-up.component';
 import { SignComponent } from './sign-up-or-sign-in/sign/sign.component';
@@ -25,8 +24,7 @@ const appRoutes: Routes = [
     component: SignUpOrSignInComponent,
     children: [
       { path: '', component: SignComponent},
-      { path: 'up', component: SignUpComponent},
-      { path: 'in', component: SignInComponent},
+      { path: 'up', component: SignUpComponent}
     ]
   },
   {
