@@ -7,10 +7,13 @@ export interface DateFromTo {
 }
 
 export interface Search {
-  city: string;
+  place: string;
   searchType: string;
-  dateFromTo: DateFromTo;
-  dateAccuracy: string;
-  persons: ExploreCityPerson[];
-  petsAllowed: boolean;
+  fromDate: Date;
+  toDate: Date;
+  dateOption: string;
+  adults:number;
+  kids:number;
+  babies:number;
+  petsAllowed: boolean
 }

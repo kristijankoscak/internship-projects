@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NgbCalendar, NgbDate, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { SearchService } from 'src/app/search.service';
 import { DateFromTo } from '../../search.model';
@@ -15,12 +15,12 @@ import { ExploreCityService } from './explore-city.service';
 })
 export class ExploreCityComponent implements OnInit {
 
-  actionCounter = 0;
-  actions: string[] = ['Što tražite?', 'Kad dolazite?','Koliko ljudi dolazi?'];
-  currentAction: string;
+  screenPointer = 0;
+  screens: string[] = ['Što tražite?', 'Kad dolazite?','Koliko ljudi dolazi?'];
+  currentScreen: string;
 
   currentCity: string;
-  options: ExploreCityAction[];
+  searchTypes: ExploreCityAction[];
   sliderHeight: string;
 
   model: NgbDateStruct;
@@ -30,7 +30,6 @@ export class ExploreCityComponent implements OnInit {
   fromDate: NgbDate;
   toDate: NgbDate | null = null;
   dateOption: string = 'Točni datumi';
-
   dateIsPicked: boolean;
 
   personTypes: ExploreCityPerson[];
@@ -44,29 +43,27 @@ export class ExploreCityComponent implements OnInit {
     private router: Router,
     private element: ElementRef,
     private calendar: NgbCalendar,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private activeRoute:ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.initStartScreen();
+    this.initSearchTypeScreen();
     this.todayDate = this.calendar.getToday();
     this.initPersonTypeScreen();
-    this.initPersonCountChange();
-    this.saveCity();
+    this.subscribeToPersonCountChange();
+    this.fetchRouteParams();
   }
 
-  initStartScreen(): void {
-    this.currentAction = this.actions[this.actionCounter];
-    this.currentCity = this.route.snapshot.params['city'];
-    this.options = this.exploreCityService.getActions();
+  initSearchTypeScreen(): void {
+    this.searchTypes = this.exploreCityService.getSearchTypes();
     this.sliderHeight = 'slider-height-default';
   }
-
   initPersonTypeScreen(): void{
     this.personTypes = this.exploreCityService.getPersonTypes();
   }
 
-  initPersonCountChange(): void{
+  subscribeToPersonCountChange(): void{
     this.exploreCityService.personCountChanged.subscribe(value => {
       if(this.personTypes[0].count !== 0 || this.personTypes[1].count !== 0 || this.personTypes[2].count !== 0 ){
         this.personsValid = true;
@@ -76,57 +73,77 @@ export class ExploreCityComponent implements OnInit {
       }
     })
   }
-
-  saveCity(): void{
-    this.searchService.setCity(this.currentCity);
+  fetchRouteParams(): void{
+    this.route.queryParams.subscribe((params: Params) => {
+      if(params.place){
+        console.log('ima place');
+        this.screenPointer = 0;
+        this.currentCity = params.place;
+      }
+      if(params.searchType){
+        console.log('ima searchType');
+        this.screenPointer = 1;
+        this.clearCalendar();
+      }
+      if(params.fromDate){
+        console.log('ima date');
+        this.screenPointer = 2;
+      }
+      this.currentScreen = this.screens[this.screenPointer];
+    })
   }
 
-  toggleSlider(): void {
-    if (this.sliderHeight === 'slider-height-default') {
-      this.sliderHeight = 'slider-height-full';
-      console.log(this.element.nativeElement.querySelector('.cdk-overlay-container'));
-    }
-    else {
-      this.sliderHeight = 'slider-height-default';
-    }
+
+  nextScreen(): void {
+    this.handleScreen();
+    this.screenPointer++;
+    this.currentScreen = this.screens[this.screenPointer];
   }
-  nextAction(): void {
-    this.handleAction();
-    this.actionCounter++;
-    this.currentAction = this.actions[this.actionCounter];
-  }
-  handleAction(){
-    if(this.currentAction === this.actions[1]){
+  handleScreen(){
+    if(this.currentScreen === this.screens[1]){
       const dateFromTo: DateFromTo = { dateFrom:this.fromDate, dateTo:this.toDate }
-      this.searchService.setDateOptions(dateFromTo,this.dateOption);
+      this.router.navigate([], {relativeTo: this.activeRoute, queryParams: {
+        ...this.activeRoute.snapshot.queryParams,
+        fromDate: this.convertNgbDateToDate(this.fromDate),
+        toDate: this.convertNgbDateToDate(this.toDate),
+        dateOption: this.dateOption
+      }})
     }
-    if(this.currentAction === this.actions[2]){
-      this.searchService.setPersons(this.exploreCityService.getPersonTypes(),this.petsAllowed);
-      this.router.navigate(['results'], { relativeTo: this.route, queryParams: this.searchService.getCurrentSearch})
+    if(this.currentScreen === this.screens[2]){
+      this.router.navigate(['../results'], { relativeTo: this.route,
+        queryParams: {
+        ...this.activeRoute.snapshot.queryParams,
+        adults: this.personTypes[0].count,
+        kids: this.personTypes[1].count,
+        babies: this.personTypes[2].count,
+        petsAllowed: this.petsAllowed
+        }
+      })
     }
   }
-
-  previousAction(): void {
-    this.actionCounter--;
-    this.currentAction = this.actions[this.actionCounter];
-  }
-
   onBack(): void {
-    switch (this.currentAction) {
-      case this.actions[0]: {
+    switch (this.currentScreen) {
+      case this.screens[0]: {
         this.router.navigate(['/explore/search']);
         break;
       }
-      case this.actions[1]: {
-        this.previousAction();
+      case this.screens[1]: {
+        this.router.navigate([], {relativeTo: this.activeRoute, queryParams: {
+          place: this.activeRoute.snapshot.queryParams.place
+        }})
+        break;
       }
-      case this.actions[2]: {
-        this.previousAction();
+      case this.screens[2]: {
+        this.router.navigate([], {relativeTo: this.activeRoute, queryParams: {
+          place: this.activeRoute.snapshot.queryParams.place,
+          searchType: this.activeRoute.snapshot.queryParams.searchType
+        }})
+        break;
       }
     }
   }
 
-  onDateSelection(date: NgbDate): void {
+   onDateSelection(date: NgbDate): void {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
@@ -136,7 +153,6 @@ export class ExploreCityComponent implements OnInit {
       this.toDate = null;
       this.fromDate = date;
       this.dateIsPicked = false;
-      this.dateOption = '';
     }
   }
   isHovered(date: NgbDate): boolean {
@@ -149,60 +165,6 @@ export class ExploreCityComponent implements OnInit {
 
   isRange(date: NgbDate): boolean {
     return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || this.isInside(date) || this.isHovered(date);
-  }
-
-  getMonth(monthNumber): string{
-    switch(monthNumber) {
-      case 1: {
-        return 'sij';
-        break;
-      }
-      case 2: {
-        return 'vel';
-        break;
-      }
-      case 3: {
-        return 'ozu';
-        break;
-      }
-      case 4: {
-        return 'tra';
-        break;
-      }
-      case 5: {
-        return 'svi';
-        break;
-      }
-      case 6: {
-        return 'lip';
-        break;
-      }
-      case 7: {
-        return 'srp';
-        break;
-      }
-      case 8: {
-        return 'kol';
-        break;
-      }
-      case 9: {
-        return 'ruj';
-        break;
-      }
-      case 10: {
-        return 'lis';
-        break;
-      }
-      case 11: {
-        return 'stu';
-        break;
-      }
-      case 12: {
-        return 'pro';
-        break;
-      }
-
-    }
   }
   addDateOption(option): void{
     this.dateOption = option.target.innerText;
@@ -222,6 +184,30 @@ export class ExploreCityComponent implements OnInit {
     this.personTypes.forEach(person => {
       person.count = 0;
     })
+  }
+  clearCalendar(): void{
+    this.fromDate = null;
+    this.toDate = null;
+    this.dateOption = 'Točni datumi';
+    this.dateIsPicked = false;
+  }
+
+  getMonth(monthNumber: number): string{
+    return this.exploreCityService.getMonth(monthNumber);
+  }
+
+  convertNgbDateToDate(date:NgbDate): Date{
+    return new Date(date.year, date.month - 1, date.day);
+  }
+
+  toggleSlider(): void {
+    if (this.sliderHeight === 'slider-height-default') {
+      this.sliderHeight = 'slider-height-full';
+      console.log(this.element.nativeElement.querySelector('.cdk-overlay-container'));
+    }
+    else {
+      this.sliderHeight = 'slider-height-default';
+    }
   }
 
 }

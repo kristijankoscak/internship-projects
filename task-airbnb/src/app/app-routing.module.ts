@@ -35,8 +35,8 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: ExploreMainComponent},
       { path: 'search', component: ExploreSearchComponent},
-      { path: 'city/:city', component: ExploreCityComponent},
-      { path: 'city/:city/results', component: ExploreResultComponent}
+      { path: 'city', component: ExploreCityComponent},
+      { path: 'results', component: ExploreResultComponent}
     ]
   },
   {

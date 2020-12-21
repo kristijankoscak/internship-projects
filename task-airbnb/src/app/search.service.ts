@@ -11,33 +11,22 @@ export class SearchService {
   constructor() { }
 
   currentSearch: Search = {
-    city: '',
+    place: '',
     searchType: '',
-    dateFromTo: { dateFrom: new NgbDate(0,0,0), dateTo: new NgbDate(0,0,0) },
-    dateAccuracy: '',
-    persons: [],
-    petsAllowed: false
+    fromDate: new Date(),
+    toDate: new Date(),
+    dateOption: '',
+    adults: null,
+    kids: null,
+    babies: null,
+    petsAllowed: null
   };
 
-  lastSearch: Search;
+  lastSearch: Search ;
 
-  setCity(city: string): void {
-    this.currentSearch.city = city;
-    console.log(this.currentSearch);
-  }
-  setSearchType(type: string): void {
-    this.currentSearch.searchType = type;
-    console.log(this.currentSearch);
-  }
-  setDateOptions(dateFromTo: DateFromTo, dateAccuracy: string): void {
-    this.currentSearch.dateFromTo = dateFromTo;
-    this.currentSearch.dateAccuracy = dateAccuracy;
-    console.log(this.currentSearch);
-  }
-  setPersons(persons: ExploreCityPerson[], petsAllowed: boolean): void {
-    this.currentSearch.persons = persons;
-    this.currentSearch.petsAllowed = petsAllowed;
-    console.log(this.currentSearch);
+  setCurrentSearch(currentSearch: Search){
+    this.currentSearch = currentSearch;
+    this.lastSearch = this.currentSearch;
   }
 
   getCurrentSearch(): Search{

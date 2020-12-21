@@ -19,10 +19,10 @@ export class ExploreService {
   private searchResults: City[] = [
     { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Vienna,Austrija', distance: '' , map:'' },
     { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Vinkovci,Hrvatska', distance: '' , map:'' },
-    { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Vinkovićeva ulica,Zagreb', distance: '' , map:'' },
-    { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Vinkovačka ulica,Split', distance: '' , map:'' },
+    { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Vinkuran,Hrvatska', distance: '' , map:'' },
+    { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Vinkeveen', distance: '' , map:'' },
     { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Osijek,Hrvatska', distance: '' , map:'' },
-    { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Osijek-Baranja County,Croatia', distance: '' , map:'' },
+    { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Osimo, AN', distance: '' , map:'' },
     { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Oslo', distance: '' , map:'' },
     { image: 'https://cdn0.iconfinder.com/data/icons/facebook-ui-glyph/48/Sed-21-512.png', name: 'Zagreb,Hrvatska', distance: '' , map:'' }
   ];
@@ -37,8 +37,12 @@ export class ExploreService {
   }
 
   fetchCity(cityName: string): City{
-    return this.nearbyCities.find(city => {
-      return city.name === cityName;
-    })
+    let tempCity:City = this.nearbyCities[0];
+    this.nearbyCities.forEach(city => {
+      if(city.name === cityName){
+        tempCity = city;
+      }
+    });
+    return tempCity;
   }
 }

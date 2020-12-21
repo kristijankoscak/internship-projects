@@ -25,8 +25,6 @@ export class TravelComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event): void {
-    console.log($event);
-    console.log(window.pageYOffset);
     if (window.pageYOffset > this.buttonTopOffset) {
       this.button._elementRef.nativeElement.classList.add('fixed-button');
       this.buttonBlock.nativeElement.classList.add('fixed');

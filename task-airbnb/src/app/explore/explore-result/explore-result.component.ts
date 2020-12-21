@@ -1,12 +1,13 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Accommodation } from 'src/app/accommodation/accommodation.model';
 import { AccommodationService } from 'src/app/accommodation/accommodation.service';
 import { City } from '../explore-main/cities/city.model';
 import { ExploreService } from '../explore-search/explore.service';
 import { Search } from '../../search.model';
 import { SearchService } from 'src/app/search.service';
+import { AccommodationsService } from 'src/app/accommodations.service';
 
 @Component({
   selector: 'app-explore-result',
@@ -17,46 +18,77 @@ export class ExploreResultComponent implements OnInit {
 
   sliderHeight: string;
   searchContainerBackground: string;
-  currentCity: City;
   currentSearch: Search;
+  currentCity: City;
   accommodations: Accommodation[];
+  navBarIsVisible: boolean;
 
   constructor(
     private searchService: SearchService,
     private exploreService: ExploreService,
     private route: ActivatedRoute,
+    private router:Router,
     private sanitizer: DomSanitizer,
-    private accommodationService: AccommodationService
+    private accommodationsService: AccommodationsService
   ) { }
 
   ngOnInit(): void {
-    this.sliderHeight = 'slider-height-default';
-    this.searchContainerBackground = 'search-container-bg-default'
-    this.fetchSearchData();
+    this.fetchRouteParameters();
+    this.initStartHeights();
     this.fetchCurrentCity();
     this.fetchAccommodations();
   }
 
-  fetchSearchData(): void{
-    this.currentSearch = this.searchService.getCurrentSearch();
+  fetchRouteParameters(): void{
+    this.route.queryParams.subscribe((params: Params) => {
+      this.saveCurrentSearch(params as Search)
+    })
+  }
+  saveCurrentSearch(search:Search): void{
+    this.currentSearch = search;
+    this.searchService.setCurrentSearch(search);
+  }
+  initStartHeights(): void{
+    this.sliderHeight = 'slider-height-default';
+    this.searchContainerBackground = 'search-container-bg-default';
+    this.navBarIsVisible = false;
   }
   fetchCurrentCity(): void{
-    this.currentCity = this.exploreService.fetchCity(this.route.snapshot.params['city']);
+    this.currentCity = this.exploreService.fetchCity(this.currentSearch.place);
   }
   fetchMapUrl(): SafeUrl{
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.currentCity.map);
   }
   fetchAccommodations(): void{
-    this.accommodations = this.accommodationService.getAccommodations();
+    this.accommodations = this.accommodationsService.getFilteredAccommodations(this.currentSearch);
   }
+  fetchDays(): number{
+    let days:number;
+    let toDate = new Date(this.currentSearch.toDate).getDate();
+    let fromDate = new Date(this.currentSearch.fromDate).getDate();
+    days = toDate - fromDate;
+    return days;
+  }
+
   toggleSlider(): void {
     if (this.sliderHeight === 'slider-height-default') {
       this.sliderHeight = 'slider-height-full';
       this.searchContainerBackground = 'search-container-bg-white';
+      this.navBarIsVisible = true;
     }
     else {
       this.sliderHeight = 'slider-height-default';
       this.searchContainerBackground = 'search-container-bg-default';
+      this.navBarIsVisible = false;
     }
+  }
+
+  navigateToAccommodationDetail(accommodationID:number): void{
+    let params = {
+      ...this.currentSearch,
+      accommodationID: accommodationID
+    }
+    this.router.navigate(['/accommodation/'+accommodationID], {queryParams: params})
+
   }
 }

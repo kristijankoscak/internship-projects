@@ -1,9 +1,9 @@
 <button mat-button class="button-borders" (click)="setSearchType()">
   <div fxLayout="row" fxLayoutAlign="center center">
     <div fxLayout="column">
-      <span class="text-size-14 text-bold-600">{{ option.title }}</span>
-      <span class="text-size-14 text-lighter">{{ option.description }}</span>
+      <span class="text-size-14 text-bold-600">{{ type.title }}</span>
+      <span class="text-size-14 text-lighter">{{ type.description }}</span>
     </div>
-    <img class="image" [src]="option.image"/>
+    <img class="image" [src]="type.image"/>
   </div>
 </button>

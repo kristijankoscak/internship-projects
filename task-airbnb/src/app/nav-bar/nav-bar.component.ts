@@ -13,8 +13,6 @@ export class NavBarComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    console.log(this.authService.getUser());
-    console.log('pravim');
     const user = this.authService.getUser();
     if (user.userName !== ''){
       this.userIsLogged = true;

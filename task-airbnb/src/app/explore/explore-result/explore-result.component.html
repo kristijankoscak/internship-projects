@@ -20,7 +20,10 @@
   </div>
 </div>
 <div fxLayout="row" class="slide-accommodation-container">
-  <app-accommodation-small-item *ngFor="let accommodation of accommodations" [accommodation]="accommodation"></app-accommodation-small-item>
+  <app-accommodation-small-item
+    *ngFor="let accommodation of accommodations"
+    [accommodation]="accommodation"
+    (click)="navigateToAccommodationDetail(accommodation.id)"></app-accommodation-small-item>
 </div>
 <div
   fxLayout="column"
@@ -36,7 +39,11 @@
     </span>
   </div>
   <div class="scroll-accomodation-container">
-    <app-accommodation-big-item *ngFor="let accommodation of accommodations" [accommodation]="accommodation"></app-accommodation-big-item>
+    <app-accommodation-big-item
+      *ngFor="let accommodation of accommodations"
+      [accommodation]="accommodation"
+      [days]="fetchDays()"
+      (click)="navigateToAccommodationDetail(accommodation.id)"></app-accommodation-big-item>
     <div fxLayout="row" class="map-button-container" fxLayoutAlign="center">
       <button mat-flat-button color="primary" class="map-button" (click)="toggleSlider()">
         <mat-icon> map</mat-icon>
@@ -45,5 +52,7 @@
     </div>
   </div>
 
-
+</div>
+<div class="nav-bar" *ngIf="navBarIsVisible">
+  <app-nav-bar></app-nav-bar>
 </div>

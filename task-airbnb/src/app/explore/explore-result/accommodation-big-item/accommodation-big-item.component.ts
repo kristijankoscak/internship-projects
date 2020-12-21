@@ -9,6 +9,7 @@ import { AccommodationService } from 'src/app/accommodation/accommodation.servic
 })
 export class AccommodationBigItemComponent implements OnInit {
 
+  @Input() days:number;
   @Input() accommodation: Accommodation;
 
   currentActive: number = 0;

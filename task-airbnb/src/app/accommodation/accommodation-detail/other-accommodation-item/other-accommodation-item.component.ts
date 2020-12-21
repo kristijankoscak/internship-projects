@@ -9,6 +9,7 @@ import { Accommodation } from '../../accommodation.model';
 export class OtherAccommodationItemComponent implements OnInit {
 
   @Input() accommodation: Accommodation;
+  @Input() days: number;
   description: string;
 
   constructor() { }

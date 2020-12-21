@@ -2,15 +2,11 @@ import { Injectable } from '@angular/core';
 import { AccommodationContent } from './accommodation-detail/accommodation-content-item/accommodation-content.model';
 import { AccommodationInfo } from './accommodation-detail/accommodation-info-item/accommodation-info.model';
 import { Accommodation } from './accommodation.model';
-import * as accommodationsResponse from './accommodations.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccommodationService {
-
-
-  accommodations : Accommodation[] = accommodationsResponse.accommodations;
 
   filteredAccommodationInfo : AccommodationInfo[] = [];
   accommodationInfo : AccommodationInfo[] = [
@@ -105,10 +101,6 @@ export class AccommodationService {
 
   constructor() { }
 
-
-  getAccommodations(): Accommodation[]{
-    return this.accommodations;
-  }
   getAccommodationInfo(type:string,desc:string): AccommodationInfo{
     this.updateAccommodationInfo(type,desc);
     const accommodationInfo = this.accommodationInfo.find(info => {
@@ -119,7 +111,6 @@ export class AccommodationService {
 
   updateAccommodationInfo(type:string,desc:string){
     if( type ==='comming'){
-      console.log(this.accommodationInfo[2])
       this.accommodationInfo[2].description = desc;
     }
     else if(type ==='cancel'){

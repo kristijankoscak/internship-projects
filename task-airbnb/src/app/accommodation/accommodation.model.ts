@@ -34,6 +34,7 @@ export class AccommodationComment{
   user: string;
   date: string;
   comment: string;
+  imagePath:string;
 }
 
 export class AccommodationOwner{
@@ -41,4 +42,5 @@ export class AccommodationOwner{
   accommodationInfo: string;
   responseRate: number;
   responseTime: string;
+  imagePath:string;
 }

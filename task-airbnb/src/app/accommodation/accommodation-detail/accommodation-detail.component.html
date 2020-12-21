@@ -1,12 +1,18 @@
 <div fxLayout="row" class="reserve-container" fxLayoutAlign="space-between center">
   <div class="column" class="reserve-info">
-    <span class="text-size-14 text-bold color-gray text-line-through">265 kn &nbsp;</span>
-    <span class="text-size-14 text-bold ">211 kn &nbsp;</span>
+    <span class="text-size-14 text-bold color-gray text-line-through">
+      {{currentAccommodation.oldPrice}} kn &nbsp;
+    </span>
+    <span class="text-size-14 text-bold ">{{currentAccommodation.newPrice}} kn &nbsp;</span>
     <span class="text-size-14 ">po noćenju</span>
     <div fxLayout="row">
       <mat-icon color="accent" class="star-icon mr-1">grade</mat-icon>
-      <span class="text-size-12 text-bold-600">4,96</span>
-      <span class="text-size-12 color-gray">(619)</span>
+      <span class="text-size-12 text-bold-600">
+        {{currentAccommodation.grade}}
+      </span>
+      <span class="text-size-12 color-gray">
+        &nbsp;({{currentAccommodation.votesCount}})
+      </span>
     </div>
   </div>
   <button mat-flat-button color="accent">Rezerviraj</button>
@@ -16,11 +22,11 @@
   <div class="images-container">
     <div class="slide-container" (scroll)="handleScroll($event)">
       <button mat-button class="images-button"
-        *ngFor="let imagePath of accommodationImages; let i=index;"
+        *ngFor="let imagePath of currentAccommodation.images; let i=index;"
         [ngStyle]="{'background-image': 'url(' + imagePath + ')'}"></button>
     </div>
     <div class="actions-container">
-      <button mat-flat-button class="icon back">
+      <button mat-flat-button class="icon back" (click)="navigateToResultsScreen()">
         <mat-icon>keyboard_backspace</mat-icon>
       </button>
       <button mat-flat-button class="icon save">
@@ -33,47 +39,58 @@
     <div class="counter-container">
       <span class="text-weight-500 color-white">{{currentImage}}</span>
       <span class="text-weight-500 color-white">/</span>
-      <span class="text-weight-500 color-white">{{accommodationImages.length}}</span>
+      <span class="text-weight-500 color-white">{{imagesCount}}</span>
     </div>
   </div>
 </div>
 <div class="accommodation-info-container">
   <div fxLayout="row">
-    <span class="text-size-24 text-bold-600"> Description </span>
+    <span class="text-size-24 text-bold-600"> {{currentAccommodation.description}} </span>
   </div>
   <div fxLayout="row" class="color-gray" fxLayoutAlign="start center">
     <mat-icon color="accent" class="star-icon mr-1">grade</mat-icon>
-    <span class="text-size-14 mr-1"> 4.79 </span>
-    <span class="text-size-14 mr-1"> (48) </span>
+    <span class="text-size-14 mr-1"> {{currentAccommodation.grade}} </span>
+    <span class="text-size-14 mr-1"> ({{currentAccommodation.votesCount}}) </span>
+    <mat-icon color="accent" class="star-icon mr-1"
+      *ngIf="currentAccommodation.grade > 4.8">whatshot</mat-icon>
+    <span class="text-size-14 mr-1"
+      *ngIf="currentAccommodation.grade > 4.8"> Superhost </span>
     <span class="text-size-14 mr-1"> - </span>
-    <span class="text-size-14 mr-1"> Grad </span>
-    <span class="text-size-14 mr-1"> ,Država </span>
+    <span class="text-size-14 mr-1"> {{currentAccommodation.location}} </span>
+    <span class="text-size-14 mr-1"> ,{{currentAccommodation.country}} </span>
+  </div>
+  <div class="divider" *ngIf="currentAccommodation.grade > 4.8">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="currentAccommodation.grade > 4.8">
+    <div fxLayout="column" fxFlex="90">
+      <span class="text-size-14 text-bold-600"> Ovo je jedinstvnea prilika.</span>
+      <span class="text-size-14"> Smještaj koji {{currentAccommodation.ownerInfo.name}} oglašava na Airbnbu obično je uvijek popunjen.</span>
+    </div>
+    <div class="diamond-icon" fxFlex="10"></div>
   </div>
   <div class="divider">
     <mat-divider></mat-divider>
   </div>
   <div fxLayout="row" fxLayoutAlign="space-between center" >
     <div fxLayout="column">
-      <span class="text-size-20 text-bold-600"> Type </span>
-      <span class="text-size-14 text-bold-600"> Domaćin je ... </span>
+      <span class="text-size-20 text-bold-600"> {{currentAccommodation.type}} </span>
+      <span class="text-size-14 text-bold-600"> Domaćin je {{currentAccommodation.ownerInfo.name}} </span>
     </div>
-    <div class="user-image"></div>
+    <div class="user-image" [ngStyle]="{'background-image': 'url(' + currentAccommodation.ownerInfo.imagePath + ')'}"></div>
   </div>
-  <div fxLayout="row">
-    <span class="text-size-14 mr-1">2 gosta</span>
-    <span class="text-size-14 mr-1">1 spavaća soba</span>
-    <span class="text-size-14 mr-1">1 krevet</span>
-    <span class="text-size-14 mr-1">3 kupaonice</span>
+  <div fxLayout="row" *ngFor="let room of currentAccommodation.room">
+    <span class="text-size-14 mr-1">{{currentAccommodation.guestCount}} gosta</span>
+    <span class="text-size-14 mr-1">{{room.type}}</span>
+    <span class="text-size-14 mr-1">{{room.description}}</span>
   </div>
   <div class="divider">
     <mat-divider></mat-divider>
   </div>
   <div fxLayout="column">
     <app-accommodation-info-item
-      *ngFor="let info of accommodationInformations"
-      [info]="fetchInfo(info.type,info.description)"
-      [accommodationType]="type"
-      [endDate]="endDate"></app-accommodation-info-item>
+      *ngFor="let info of currentAccommodation.info"
+      [info]="fetchInfo(info.type,info.description)"></app-accommodation-info-item>
   </div>
   <div class="divider">
     <mat-divider></mat-divider>
@@ -86,7 +103,7 @@
       </button>
     </div>
     <div fxLayout="row">
-      <span class="text-size-14 mt-2">Each bed has it's own free locker and power point nearby. Big windows facing the court yard let in lots of sungliht. This is a party hostel. We have a very active bar till midnight then we go into town...</span>
+      <span class="text-size-14 mt-2">{{currentAccommodation.welcomeMessageEng}}</span>
     </div>
     <div fxLayout="row">
       <span class="text-size-14 text-bold-600 text-underline mt-2">Prikaži još</span>
@@ -99,10 +116,10 @@
     <div fxLayout="row">
         <span class="text-size-20 text-bold-600 mt-1 mb-1">Raspored spavanja</span>
     </div>
-    <div fxLayout="column" class="room-container">
+    <div fxLayout="column" class="room-container" *ngFor="let room of currentAccommodation.room">
       <div class="bed-icon"></div>
-      <span class="text-size-14 text-bold-600">Spavaća soba 1</span>
-      <span class="text-size-14 color-gray">1 bračni krevet</span>
+      <span class="text-size-14 text-bold-600">{{room.type}}</span>
+      <span class="text-size-14 color-gray">{{room.description}}</span>
     </div>
   </div>
   <div class="divider">
@@ -115,7 +132,7 @@
     <div fxLayout="column">
       <app-accommodation-content-item
         *ngFor="let content of fetchFilteredContent()"
-        [ngClass]="{'text-line-through color-gray' : !accommodationContent.includes(content.type)}"
+        [ngClass]="{'text-line-through color-gray' : !currentAccommodation.content.includes(content.type)}"
         [accommodationContent] = "content"></app-accommodation-content-item>
     </div>
     <button mat-stroked-button fxLayoutAlign="center" class="all-content-button">
@@ -130,7 +147,7 @@
         <span class="text-size-20 text-bold-600 margin-top-bottom-1">Lokacija</span>
     </div>
     <div fxLayout="row">
-      <span class="text-size-14">Kačićeva uica 3b,Zagreb,1000,Zagreb</span>
+      <span class="text-size-14">{{currentAccommodation.street}}</span>
     </div>
     <div fxLayout="row">
       <iframe
@@ -150,20 +167,22 @@
   <div fxLayout="column">
     <div fxLayout="row" fxLayoutAlign="start center">
       <mat-icon color="accent" class="mr-1">grade</mat-icon>
-      <span class="text-size-20 text-bold-600 mt-1 mb-1">4.79 (48 recenzija)</span>
+      <span class="text-size-20 text-bold-600 mt-1 mb-1">
+        {{currentAccommodation.grade}} ({{currentAccommodation.review.length}} recenzija)</span>
     </div>
     <div fxLayout="row" class="margin-top-bottom-1">
-      <div class="review-user-image mr-3"></div>
+      <div class="review-user-image mr-3"
+      [ngStyle]="{'background-image': 'url(' + currentAccommodation.review[0].imagePath + ')'}"></div>
       <div fxLayout="column">
-        <span class="text-size-14 text-bold-600">Krešimir</span>
-        <span class="text-size-12 text-bold-600 color-gray">studeni 2018.</span>
+        <span class="text-size-14 text-bold-600">{{currentAccommodation.review[0].user}}</span>
+        <span class="text-size-12 text-bold-600 color-gray">{{currentAccommodation.review[0].date}}</span>
       </div>
     </div>
     <div fxLayout="row" class="margin-top-bottom-1">
-      <span class="text-size-14">Svaka preporuku dajem!</span>
+      <span class="text-size-14">{{currentAccommodation.review[0].comment}}</span>
     </div>
     <button mat-stroked-button fxLayoutAlign="center" class="all-content-button">
-      <span>Prikaži 48 recenzija</span>
+      <span>Prikaži {{currentAccommodation.review.length }} recenzija</span>
     </button>
   </div>
   <div class="divider">
@@ -171,22 +190,23 @@
   </div>
   <div fxLayout="column">
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <span class="text-size-20 text-bold-600">Domaćin je Joško</span>
-      <div class="review-user-image ml-3"></div>
+      <span class="text-size-20 text-bold-600">Domaćin je {{currentAccommodation.ownerInfo.name}}</span>
+      <div class="review-user-image ml-3"
+      [ngStyle]="{'background-image': 'url(' + currentAccommodation.ownerInfo.imagePath + ')'}"></div>
     </div>
     <div fxLayout="row" class="margin-top-bottom-1" fxLayoutAlign="start center">
       <mat-icon color="accent" class="mr-1">grade</mat-icon>
-      <span class="text-size-14 mt-1 mb-1">56 recenzija</span>
+      <span class="text-size-14 mt-1 mb-1">{{currentAccommodation.grade}} recenzija</span>
     </div>
     <div fxLayout="row" class="margin-top-bottom-1">
       <span class="text-size-14">
-        This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...
+        {{currentAccommodation.ownerInfo.accommodationInfo}}
       <span class="text-underline text-bold-600">pročitajte više</span>
       </span>
     </div>
     <div fxLayout="column" class="margin-top-bottom-1" >
-      <span class="text-size-14">Stopa odgovora: 100 %</span>
-      <span class="text-size-14">Vrijeme odgovora: u roku od sat vremena</span>
+      <span class="text-size-14">Stopa odgovora: {{currentAccommodation.ownerInfo.responseRate}} %</span>
+      <span class="text-size-14">Vrijeme odgovora: u roku od {{currentAccommodation.ownerInfo.responseTime}}</span>
     </div>
     <button mat-stroked-button fxLayoutAlign="center" class="all-content-button">
       <span>Obratite se domaćinu</span>
@@ -198,7 +218,7 @@
   <button class="button-option" fxLayout="row" fxLayoutAlign="space-between center" mat-button >
     <div fxLayout="column" class="text-align-start">
       <span class="text-size-20 text-bold-600">Dostupno</span>
-      <span class="text-size-14 color-gray">19. - 20.pro</span>
+      <span class="text-size-14 color-gray">{{fetchAvaliableTime()}}</span>
     </div>
     <mat-icon>keyboard_arrow_right</mat-icon>
   </button>
@@ -252,7 +272,7 @@
     <span class="text-size-20 text-bold-600">Još smještaja</span>
   </div>
   <div class="slide-container">
-    <app-other-accommodation-item *ngFor="let accommodation of otherAccommodations" [accommodation]="accommodation"></app-other-accommodation-item>
+    <app-other-accommodation-item *ngFor="let accommodation of otherAccommodations" [accommodation]="accommodation" [days]="toDate.day-fromDate.day"></app-other-accommodation-item>
   </div>
 
 </div>

@@ -24,6 +24,9 @@
   padding: 0;
   min-width:auto;
 }
+.mat-button > ::ng-deep .mat-button-wrapper{
+  display:grid;
+}
 .icon{
   display: block;
   width:2rem;

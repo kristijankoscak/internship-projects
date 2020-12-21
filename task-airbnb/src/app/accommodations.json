@@ -49,17 +49,17 @@
       ],
       "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
       "review": [
-        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!","imagePath":"https://webpanel.guidego.com/img/avatar5.png"}
       ],
       "ownerInfo": {
-        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+        "name":"Pero","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena","imagePath":"https://webpanel.guidego.com/img/avatar5.png"
       }
     },
     {
       "id":1,
       "type": "Hotelska soba",
       "location": "Zagreb",
-      "description": "10 be mixed dorm",
+      "description": "10 bed mixed dorm",
       "oldPrice": 157,
       "newPrice": 101,
       "grade": 4.79,
@@ -106,10 +106,10 @@
       ],
       "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
       "review": [
-        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!","imagePath":"https://webpanel.guidego.com/img/avatar5.png"}
       ],
       "ownerInfo": {
-        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+        "name":"Djuro","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena","imagePath":"https://webpanel.guidego.com/img/avatar5.png"
       }
     },
     {
@@ -163,17 +163,17 @@
       ],
       "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
       "review": [
-        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!","imagePath":"https://webpanel.guidego.com/img/avatar5.png"}
       ],
       "ownerInfo": {
-        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+        "name":"Slavko","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena","imagePath":"https://webpanel.guidego.com/img/avatar5.png"
       }
     },
     {
       "id":3,
       "type": "Hotelska soba",
       "location": "Zagreb",
-      "description": "10 be mixed dorm",
+      "description": "10 bed mixed dorm",
       "oldPrice": 157,
       "newPrice": 101,
       "grade": 4.79,
@@ -220,10 +220,10 @@
       ],
       "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
       "review": [
-        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!","imagePath":"https://webpanel.guidego.com/img/avatar5.png"}
       ],
       "ownerInfo": {
-        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+        "name":"Marko","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena","imagePath":"https://webpanel.guidego.com/img/avatar5.png"
       }
     },
     {
@@ -277,17 +277,17 @@
       ],
       "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
       "review": [
-        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!","imagePath":"https://webpanel.guidego.com/img/avatar5.png"}
       ],
       "ownerInfo": {
-        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+        "name":"Ilija","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena","imagePath":"https://webpanel.guidego.com/img/avatar5.png"
       }
     },
     {
       "id":5,
       "type": "Hotelska soba",
       "location": "Zagreb",
-      "description": "10 be mixed dorm",
+      "description": "10 bed mixed dorm",
       "oldPrice": 157,
       "newPrice": 101,
       "grade": 4.79,
@@ -334,10 +334,10 @@
       ],
       "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
       "review": [
-        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!","imagePath":"https://webpanel.guidego.com/img/avatar5.png"}
       ],
       "ownerInfo": {
-        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+        "name":"Ivanka","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena","imagePath":"https://webpanel.guidego.com/img/avatar5.png"
       }
     },
     {
@@ -391,10 +391,10 @@
       ],
       "street": "Kačićeva ulica 3b, Zagreb, 1000, Croatia",
       "review": [
-        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!"}
+        {"user":"Krešimir","date":"studeni 2018.","comment":"Svaka preporuku dajem!","imagePath":"https://webpanel.guidego.com/img/avatar5.png"}
       ],
       "ownerInfo": {
-        "name":"","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena"
+        "name":"Slavica","accommodationInfo":"This is a brand new hostel right in the heart of Zagreb. When I say brand new I mean we opened April 1st 2017. This building was previously a hostel but was dead for 6 months so we...","responseRate":100,"responseTime":" sat vremena","imagePath":"https://webpanel.guidego.com/img/avatar5.png"
       }
     }
   ]
