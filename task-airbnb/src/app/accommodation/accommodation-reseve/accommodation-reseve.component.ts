@@ -69,4 +69,10 @@ export class AccommodationReseveComponent implements OnInit {
     info = info.replace('otkažete',newInfo);
     return info;
   }
+  onBack(): void{
+    this.router.navigate(['../'],{
+      relativeTo: this.activeRoute,
+      queryParams: this.currentSearch
+    });
+  }
 }
