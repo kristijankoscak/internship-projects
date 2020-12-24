@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccommodationDetailComponent } from './accommodation/accommodation-detail/accommodation-detail.component';
-import { AccommodationReseveComponent } from './accommodation/accommodation-reseve/accommodation-reseve.component';
+import { AccommodationReserveComponent } from './accommodation/accommodation-reserve/accommodation-reserve.component';
 import { AccommodationComponent } from './accommodation/accommodation.component';
 import { ExploreCityComponent } from './explore/explore-city/explore-city.component';
 import { ExploreMainComponent } from './explore/explore-main/explore-main.component';
@@ -66,7 +66,7 @@ const appRoutes: Routes = [
     component: AccommodationComponent,
     children: [
       { path: '', component: AccommodationDetailComponent},
-      { path: 'reserve', component: AccommodationReseveComponent}
+      { path: 'reserve', component: AccommodationReserveComponent}
     ]
   }
 ];

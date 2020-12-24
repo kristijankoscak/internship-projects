@@ -62,7 +62,7 @@ import { AccommodationDetailComponent } from './accommodation/accommodation-deta
 import { AccommodationInfoItemComponent } from './accommodation/accommodation-detail/accommodation-info-item/accommodation-info-item.component';
 import { AccommodationContentItemComponent } from './accommodation/accommodation-detail/accommodation-content-item/accommodation-content-item.component';
 import { OtherAccommodationItemComponent } from './accommodation/accommodation-detail/other-accommodation-item/other-accommodation-item.component';
-import { AccommodationReseveComponent } from './accommodation/accommodation-reseve/accommodation-reseve.component';
+import { AccommodationReserveComponent } from './accommodation/accommodation-reserve/accommodation-reserve.component';
 
 
 @NgModule({
@@ -106,7 +106,7 @@ import { AccommodationReseveComponent } from './accommodation/accommodation-rese
     AccommodationInfoItemComponent,
     AccommodationContentItemComponent,
     OtherAccommodationItemComponent,
-    AccommodationReseveComponent
+    AccommodationReserveComponent
   ],
   imports: [
     BrowserModule,

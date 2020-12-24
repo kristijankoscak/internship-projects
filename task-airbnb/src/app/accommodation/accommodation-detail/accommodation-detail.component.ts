@@ -133,8 +133,8 @@ export class AccommodationDetailComponent implements OnInit {
     };
     return params;
   }
-  navigateToConfirmReservationScreen(): void{
-    this.router.navigate(['reserve'],{
+  navigateToConfirmReservationScreen(): void {
+    this.router.navigate(['reserve'], {
       relativeTo: this.route,
       queryParams: this.currentSearch
     });
