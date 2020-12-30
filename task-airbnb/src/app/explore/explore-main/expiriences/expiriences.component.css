@@ -1,7 +1,8 @@
 .background {
   background-color: black;
   width:100vw;
-  padding:1rem 1rem;
+  padding:1rem 0rem;
+  padding-left:2rem;
   color: white;
 }
 
@@ -22,4 +23,22 @@ h2{
   font-weight: 600 !important;
   font-size: 1.2rem;
   line-height: 2.5rem;
+}
+
+@media screen and (min-width: 350px) {
+  .background{
+    padding-left:8rem;
+  }
+  .background > div > .text-title{
+    font-size: 2.5rem;
+  }
+  .background > div > .text-size-12{
+    font-size: 2rem;
+    font-weight: normal;
+    padding-right:8rem;
+  }
+  .mat-stroked-button{
+    font-size: 2.2rem;
+    line-height: 4.5rem;
+  }
 }

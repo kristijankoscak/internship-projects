@@ -1,7 +1,9 @@
-<div
-  fxLayout="row"
-  class="background">
-    <app-item-city
-      *ngFor="let city of cities" [city]="city">
-    </app-item-city>
+<div fxLayout="column" class="background">
+  <div
+    fxLayout="row"
+    class="slide-container">
+      <app-item-city
+        *ngFor="let city of cities" [city]="city">
+      </app-item-city>
+  </div>
 </div>

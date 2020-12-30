@@ -7,11 +7,22 @@
 }
 
 .action-text{
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.2rem;
   float:left;
 }
 
 button{
   padding: 1rem;
+}
+
+
+@media screen and (min-width: 350px) {
+  .action-image{
+    width:30rem;
+    height:30rem;
+  }
+  .action-text{
+    font-size:1.8rem;
+  }
 }

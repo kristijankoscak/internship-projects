@@ -72,12 +72,12 @@ input:-webkit-autofill:active  {
   margin-top: -0.1rem;
 }
 .rounded-top{
-  border-top-left-radius: 1.0rem;
-  border-top-right-radius: 1.0rem;
+  border-top-left-radius: 1.0rem !important;
+  border-top-right-radius: 1.0rem !important;
 }
 .rounded-bottom{
-  border-bottom-left-radius: 1.0rem;
-  border-bottom-right-radius: 1.0rem;
+  border-bottom-left-radius: 1.0rem !important;
+  border-bottom-right-radius: 1.0rem !important;
 }
 
 .borders-default{
@@ -104,7 +104,8 @@ input:-webkit-autofill:active  {
   padding:1rem 0rem;
 }
 .mat-flat-button{
-  width:100%;
+  width: 100%;
+  border-radius: 1rem;
 }
 .mat-stroked-button{
   margin:1rem 0rem;
@@ -139,3 +140,61 @@ input:-webkit-autofill:active  {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjU0MS44NzhweCIgaGVpZ2h0PSI1NDEuODc4cHgiIHZpZXdCb3g9IjAgMCA1NDEuODc4IDU0MS44NzgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU0MS44NzggNTQxLjg3ODsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yNTMuOTM3LDEuNjgzaDMxLjkyYzQuOTM0LDAsOC44NDQtMC45OTUsOS42NDgtMS41NEwyOTUuNjA5LDBoLTUwLjAwMWwwLjIyOSwwLjU2NA0KCQkJQzI0Ni45NjUsMS4wNDIsMjQ5LjkxMSwxLjY4MywyNTMuOTM3LDEuNjgzeiIvPg0KCQk8cGF0aCBkPSJNMzg3LjA4NSwwLjAxaC04My40MTRjMCwwLjc4NC0wLjIwMSwxLjU2OC0wLjcyNywyLjIyOGwtMi4xMDQsMi42MzljLTMuMDA0LDMuNzc3LTEzLjAxNiwzLjk3OC0xNC45ODYsMy45NzhoLTMxLjkxOA0KCQkJYy0zLjc2OCwwLTEyLjcwOS0wLjQ3OC0xNC40NjgtNC44ODZsLTEuMDYyLTIuNjU5Yy0wLjE3Mi0wLjQzLTAuMjI5LTAuODctMC4yMjktMS4zMWgtODMuMzc1DQoJCQljLTEzLjkxMywwLTI1LjIwNywxMS4xMzEtMjUuMjA3LDI0Ljg1M3Y0ODIuMDgzYzAsMTMuNzIzLDI2LjQwMiwzNC45NDEsNDAuMzI1LDM0Ljk0MWgyMDIuMDM2DQoJCQljMTMuOTI0LDAsNDAuMzI2LTIxLjIxOSw0MC4zMjYtMzQuOTQxVjI0Ljg1M0M0MTIuMjkxLDExLjE0MSw0MDEuMDA3LDAuMDEsMzg3LjA4NSwwLjAxeiBNMTk3LjI5OCw1MTguMTkyaC0xMS4wMzVsLTMuMTQ2LTkuMjQ3DQoJCQloMTQuMTcxYzIuNTUzLDAsNC42MTksMi4wNzUsNC42MTksNC42MDhDMjAxLjkyNiw1MTYuMTE3LDE5OS44NTEsNTE4LjE5MiwxOTcuMjk4LDUxOC4xOTJ6IE0yOTYuMDExLDUyMy4yMjJoLTUxLjI0NQ0KCQkJYy0zLjk1LDAtNy4xNDQtMy4yMDMtNy4xNDQtNy4xNDRjMC0zLjkzOSwzLjE5NC03LjEzMyw3LjE0NC03LjEzM2g1MS4yNDVjMy45NDksMCw3LjE0MywzLjE5Myw3LjE0Myw3LjEzMw0KCQkJQzMwMy4xNTQsNTIwLjAxOSwyOTkuOTYsNTIzLjIyMiwyOTYuMDExLDUyMy4yMjJ6IE0zNjAuMTk1LDUyMy45M2gtMjMuNzY0Yy0xLjMxOCwwLTIuMzkxLTEuMDcxLTIuMzkxLTIuMzkxDQoJCQljMC0xLjMyLDEuMDcyLTIuMzkxLDIuMzkxLTIuMzkxaDIzLjc2NGMxLjMyLDAsMi4zOTEsMS4wNywyLjM5MSwyLjM5MUMzNjIuNTg1LDUyMi44NTgsMzYxLjUxNSw1MjMuOTMsMzYwLjE5NSw1MjMuOTN6DQoJCQkgTTM2MC4xOTUsNTE3LjYyOGgtMjMuNzY0Yy0xLjMxOCwwLTIuMzkxLTEuMDcxLTIuMzkxLTIuMzkxYzAtMS4zMiwxLjA3Mi0yLjM5MSwyLjM5MS0yLjM5MWgyMy43NjQNCgkJCWMxLjMyLDAsMi4zOTEsMS4wNywyLjM5MSwyLjM5MUMzNjIuNTg1LDUxNi41NTcsMzYxLjUxNSw1MTcuNjI4LDM2MC4xOTUsNTE3LjYyOHogTTM2MC4xOTUsNTExLjMzNmgtMjMuNzY0DQoJCQljLTEuMzE4LDAtMi4zOTEtMS4wNzEtMi4zOTEtMi4zOTFjMC0xLjMyLDEuMDcyLTIuMzkxLDIuMzkxLTIuMzkxaDIzLjc2NGMxLjMyLDAsMi4zOTEsMS4wNywyLjM5MSwyLjM5MQ0KCQkJQzM2Mi41ODUsNTEwLjI2NSwzNjEuNTE1LDUxMS4zMzYsMzYwLjE5NSw1MTEuMzM2eiBNNDAzLjU4LDQ4OC4xMzdIMTM4LjMxNlY0Ny43MTdINDAzLjU4VjQ4OC4xMzd6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=)
 }
 
+@media screen and (min-width: 350px) {
+  .background{
+    padding:0rem 8rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .mat-stroked-button{
+    height: 5rem;
+  }
+  .mat-form-field{
+    height: 7rem;
+  }
+  ::ng-deep .mat-select-value{
+    font-size: 2rem !important;
+  }
+  mat-label{
+    font-size: 2rem;
+  }
+  .mat-input-element {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+  ::ng-deep  .mat-form-field-wrapper{
+    padding:0.5rem;
+    margin-top: 0.5rem;
+  }
+  .mat-option{
+    font-size: 2rem !important;
+  }
+  ::ng-deep .mat-select-trigger {
+    margin-top: 0.7rem !important;
+  }
+  .warning-icon {
+    margin-top: 0.3rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+}
+  .warning-message{
+    font-size:1.5rem;
+  }
+  .note{
+    font-size:1.5rem;
+  }
+  .mat-flat-button{
+    height:5rem;
+  }
+  .mat-stroked-button{
+    font-size:1.6rem;
+    font-weight: bold;
+  }
+  .icon{
+    margin-top:0.3rem;
+    width:3rem;
+    height:3rem;
+  }
+}

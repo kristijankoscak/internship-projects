@@ -7,6 +7,7 @@
 }
 
 .expirience-text{
+  padding-top: 1rem;
   width:20rem;
   font-size: 1.4rem;
   color:white;
@@ -22,4 +23,18 @@ button{
   white-space: normal;
   padding: 0;
   margin-right: 1rem;
+}
+
+
+@media screen and (min-width: 350px) {
+  .expirience-image{
+    height:30rem;
+    width: 30rem;
+    border-radius: 1.5rem;
+  }
+  .expirience-text{
+    width:30rem;
+    font-size: 1.8rem;
+    background-color: unset;
+  }
 }

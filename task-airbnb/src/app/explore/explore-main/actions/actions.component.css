@@ -1,7 +1,8 @@
 .background {
   background-color: white;
   width:100vw;
-  padding:1rem;
+  padding:1rem 0rem;
+  padding-left:2rem;
   color: black;
 }
 
@@ -14,4 +15,14 @@ h2{
   overflow-x: scroll;
   display: grid !important;
   grid-template-columns: auto auto auto;
+}
+
+
+@media screen and (min-width: 350px) {
+  .background {
+    padding-left:8rem;
+  }
+  .background > div > .text-title{
+    font-size: 2.5rem;
+  }
 }
