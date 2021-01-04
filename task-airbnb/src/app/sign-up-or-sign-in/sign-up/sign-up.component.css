@@ -80,3 +80,52 @@ mat-label{
 ::ng-deep .mat-slide-toggle-bar{
   height:2rem !important;
 }
+
+@media screen and (min-width: 350px) {
+  .text-size-20{
+    font-size: 3rem;
+  }
+  .text-size-12{
+    font-size: 1.8rem;
+  }
+  .text-size-14 {
+    font-size: 2rem;
+  }
+  .mat-flat-button{
+    height: 6rem;
+  }
+  ::ng-deep .mat-button-wrapper{
+    font-size:2rem;
+  }
+  .mat-form-field{
+    height:5rem;
+  }
+  ::ng-deep .mat-input-element, mat-label{
+    font-size:2rem !important;
+  }
+  ::ng-deep .mat-form-field-label{
+    top:unset !important;
+  }
+
+  ::ng-deep .mat-slide-toggle-thumb{
+    height:2.5rem !important;
+    width:2.5rem !important;
+  }
+  ::ng-deep .mat-slide-toggle-bar{
+    height:2.7rem !important;
+    width: 4rem !important;
+  }
+
+  ::ng-deep .cdk-overlay-pane{
+    right:0 !important;
+    padding:0rem 2rem;
+    width:100%;
+  }
+  ::ng-deep .mat-datepicker-content{
+    width: 100%;
+  }
+  ::ng-deep .mat-calendar {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

@@ -9,3 +9,13 @@
   text-align: start;
   white-space: normal;
 }
+@media screen and (min-width: 350px) {
+  .text-size-16 {
+    font-size: 1.8rem;
+  }
+  mat-icon{
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+  }
+}
