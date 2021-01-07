@@ -20,3 +20,14 @@
     border-radius: 1.5rem;
     box-shadow: 0rem 0.3rem 0.5rem 0rem rgba(128, 128, 128, 0.4);
 }
+@media screen and (min-width: 350px) {
+  .text-size-14 {
+    font-size: 2rem;
+  }
+  .text-lighter{
+    font-size:1.8rem;
+  }
+  .mat-button{
+    padding:2rem 1rem;
+  }
+}

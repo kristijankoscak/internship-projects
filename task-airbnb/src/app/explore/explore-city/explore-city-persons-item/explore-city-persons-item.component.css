@@ -11,3 +11,24 @@
   padding:0;
   border-radius: 50%;
 }
+@media screen and (min-width: 350px) {
+  .text-size-14 {
+    font-size: 2rem;
+  }
+  .text-size-12 {
+    font-size: 1.8rem;
+  }
+  .countAction{
+    width: 4rem;
+    height: 4rem;
+  }
+
+  ::ng-deep .mat-slide-toggle-thumb{
+    height:2.5rem !important;
+    width:2.5rem !important;
+  }
+  ::ng-deep .mat-slide-toggle-bar{
+    height:2.7rem !important;
+    width: 4rem !important;
+  }
+}

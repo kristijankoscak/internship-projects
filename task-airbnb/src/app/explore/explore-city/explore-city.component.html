@@ -52,7 +52,7 @@
             </span>
           </ng-template>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between center" class="x-slide padding-top-bottom-1" *ngIf="dateIsPicked">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="x-slide" *ngIf="dateIsPicked">
           <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">Točni datumi</button>
           <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">	&plusmn; 1 dan</button>
           <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">	&plusmn; 3 dana</button>

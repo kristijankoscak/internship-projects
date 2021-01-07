@@ -20,3 +20,18 @@
   background-color: rgb(128, 128, 128,0.2);
 }
 
+@media screen and (min-width: 350px) {
+  .mat-button{
+    padding:1rem 8rem;
+  }
+  .image{
+    height: 6rem;
+    width: 6rem;
+  }
+  .text-lighter{
+    font-size: 2rem;
+  }
+  .text-size-12 {
+    font-size: 1.6rem;
+}
+}

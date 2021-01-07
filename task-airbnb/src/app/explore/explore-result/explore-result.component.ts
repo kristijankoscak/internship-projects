@@ -21,6 +21,7 @@ export class ExploreResultComponent implements OnInit {
   currentCity: City;
   accommodations: Accommodation[];
   navBarIsVisible: boolean;
+  shortCurrentSearch: string;
 
   constructor(
     private searchService: SearchService,
@@ -36,6 +37,7 @@ export class ExploreResultComponent implements OnInit {
     this.initStartHeights();
     this.fetchCurrentCity();
     this.fetchAccommodations();
+    this.initShortCurrentSearch();
   }
 
   fetchRouteParameters(): void {
@@ -61,6 +63,26 @@ export class ExploreResultComponent implements OnInit {
   fetchAccommodations(): void {
     this.accommodations = this.accommodationsService.getFilteredAccommodations(this.currentSearch);
   }
+  initShortCurrentSearch(): void{
+    const fromDate = new Date(this.currentSearch.fromDate);
+    const toDate = new Date(this.currentSearch.toDate);
+    const guestsNumber = (+this.currentSearch.adults + +this.currentSearch.babies + +this.currentSearch.kids);
+    this.shortCurrentSearch = '';
+    this.shortCurrentSearch = this.shortCurrentSearch + fromDate.getDate() +'. ';
+    this.shortCurrentSearch += this.exploreService.getMonth(+(fromDate.getMonth()+1));
+    this.shortCurrentSearch += ' - ';
+    this.shortCurrentSearch = this.shortCurrentSearch + toDate.getDate() +'. ';
+    this.shortCurrentSearch += this.exploreService.getMonth(+(toDate.getMonth()+1));
+    this.shortCurrentSearch += ' ';
+    this.shortCurrentSearch +=  guestsNumber;
+    if(guestsNumber > 1){
+      this.shortCurrentSearch += ' gosta';
+    }
+    else{
+      this.shortCurrentSearch += ' gost';
+    }
+  }
+
   fetchDays(): number {
     let days: number;
     const toDate = new Date(this.currentSearch.toDate).getDate();

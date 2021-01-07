@@ -24,7 +24,7 @@
 .accomomodation-info{
   display:inline-flex;
   height:10rem;
-  width: auto;
+  width: 18rem;
   background-color: white;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -41,6 +41,7 @@
 
 .small-accommodation-button > ::ng-deep .mat-button-wrapper{
   display:flex;
+  width: 28rem;
 }
 
 .star-icon{
@@ -54,4 +55,43 @@
   font-size: 1.4rem;
   width: 1.4rem;
   height: 1.4rem;
+}
+.border-dots{
+  width:85%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 350px) {
+  .small-accommodation-button > ::ng-deep .mat-button-wrapper{
+    width:40rem;
+  }
+  .accommodation-image{
+    width:15rem;
+    height:15rem;
+  }
+  .accomomodation-info{
+    height:15rem;
+    width:25rem;
+  }
+  .text-size-12{
+    font-size: 1.6rem;
+  }
+  .border-dots{
+    width:90%;
+  }
+  .star-icon{
+    font-size: 1.8rem;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+  .save-icon {
+    font-size: 1.8rem;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+  .accommodation-image-badge{
+    font-size:1.5rem;
+  }
 }

@@ -11,10 +11,10 @@
   <div fxLayout="row" fxLayoutAlign="space-between" class="search-options-block">
     <div fxLayout="row" fxLayoutAlign="start center">
       <mat-icon class="icon mr-3" routerLink="/explore">keyboard_backspace</mat-icon>
-      <span class="text-size-12 text-bold">Grad</span>
+      <span class="text-size-12 text-bold">{{currentCity.name}}</span>
     </div>
     <div fxLayout="row" fxLayoutAlign="start center">
-      <span class="text-size-12 text-bold color-gray mr-3">Datum |</span>
+      <span class="text-size-12 text-bold color-gray shortSearch border-dots">{{shortCurrentSearch}} |</span>
       <mat-icon>tune</mat-icon>
     </div>
   </div>

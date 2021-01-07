@@ -5,7 +5,7 @@
     <div class="accommodation-image" >
       <div class="accommodation-image-badge" *ngIf="accommodation.grade > 4.8"><span>SUPERDOMAĆIN</span></div>
     </div>
-    <div fxLayout="column" fxLayoutAlign="center start" class="accomomodation-info">
+    <div fxLayout="column" fxLayoutAlign="space-evenly start" class="accomomodation-info">
       <div fxLayout="row" fxLayoutAlign=" center">
         <mat-icon color="accent" class="star-icon">grade</mat-icon>
         <span clasS="text-size-12" *ngIf="accommodation.grade === null">&nbsp; Novo</span>
@@ -19,7 +19,7 @@
         <span clasS="text-size-12 ">{{accommodation.location}}</span>
       </div>
       <div fxLayoutAlign="row">
-        <span clasS="text-size-12 ">{{accommodation.description}}</span>
+        <span clasS="text-size-12 border-dots">{{accommodation.description}}</span>
       </div>
       <div fxLayoutAlign="row">
         <span clasS="text-size-12 text-bold">{{accommodation.newPrice}} kn</span>
