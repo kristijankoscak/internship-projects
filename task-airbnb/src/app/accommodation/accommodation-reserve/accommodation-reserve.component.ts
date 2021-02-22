@@ -50,9 +50,8 @@ export class AccommodationReserveComponent implements OnInit {
   }
 
   fetchDateRange(): string {
-    let dateRange = '';
-    dateRange += this.fromDate.year + '.' + this.fromDate.month + '.' + this.fromDate.day + '-';
-    dateRange += this.toDate.year + '.' + this.toDate.month + '.' + this.toDate.day;
+    let dateRange = ``;
+    dateRange = `${this.fromDate.year}. ${this.fromDate.month}. ${this.fromDate.day}. - ${this.toDate.year} ${this.toDate.month} ${this.toDate.day}`;
     return dateRange;
   }
   countPersons(): void {
@@ -62,7 +61,7 @@ export class AccommodationReserveComponent implements OnInit {
     return (+this.currentAccommodation.newPrice * +this.numberOfDays) + this.otherFees;
   }
   fetchCancelInfo(): string {
-    const newInfo = 'otkažete do 11 AM ' + this.fromDate.day + '.' + this.fromDate.month + '.';
+    const newInfo = `otkažete do 11 AM ${this.fromDate.day}.${this.fromDate.month}. `;
     let info = this.currentAccommodation.info.find(info => info.type === 'cancel').description;
     info = info.replace('otkažete', newInfo);
     return info;

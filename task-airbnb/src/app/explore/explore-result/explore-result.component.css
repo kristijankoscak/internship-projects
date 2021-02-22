@@ -87,6 +87,8 @@
 .scroll-accomodation-container{
   height: auto;
   width: 100%;
+}
+.accommodations-container{
   display: grid;
 }
 
@@ -146,5 +148,19 @@
   }
   .slide-accommodation-container{
     padding:1rem 8rem;
+  }
+  .slide-container{
+    padding: 1rem 8rem;
+  }
+  .accommodations-container{
+    display: grid !important;
+    grid-template-columns: auto auto ;
+  }
+  .map-button-container{
+    position: sticky;
+    width: auto;
+    height: 4rem;
+    left: 23%;
+    bottom: 12%;
   }
 }

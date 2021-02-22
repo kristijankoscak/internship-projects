@@ -28,3 +28,21 @@
   height:1.6rem;
   width:1.6rem;
 }
+.small-info > span{
+  font-size: 1.2rem;
+}
+.big-info > span{
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width:350px){
+  .small-info > span{
+    font-size: 1.4rem;
+  }
+  .big-info > span{
+    font-size: 1.6rem;
+  }
+  .accommodation-image-container{
+    width: 40vw;
+  }
+}

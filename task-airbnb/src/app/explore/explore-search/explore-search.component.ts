@@ -40,12 +40,7 @@ export class ExploreSearchComponent implements OnInit {
     this.searchCities = this.exploreServices.getData('searchAllResults');
   }
   toggleCloseButton(data): void {
-    if (data !== '') {
-      this.closeButtonVisible = true;
-    }
-    else {
-      this.closeButtonVisible = false;
-    }
+    this.closeButtonVisible = data !== '';
   }
   displayNearbyCities(state): void {
     this.nearbyCitiesVisible = state;

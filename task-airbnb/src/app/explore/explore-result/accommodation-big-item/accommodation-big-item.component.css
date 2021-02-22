@@ -84,3 +84,30 @@
   height:1.6rem;
   width:1.6rem;
 }
+
+@media screen and (min-width: 350px) {
+  .accommodation-button{
+    width: 28rem;
+  }
+  .accommodation-image-container{
+    height:22rem;
+  }
+  .dots-container{
+    top: 21vh;
+  }
+  .text-size-14 {
+    font-size: 1.6rem;
+  }
+  .text-size-12 {
+    font-size: 1.4rem;
+}
+  .star-icon{
+    font-size: 1.8rem;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+  .accommodation-image-badge{
+    font-size: 1.5rem;
+    padding: 0.4rem;
+  }
+}

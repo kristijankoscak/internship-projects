@@ -26,11 +26,11 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.accountOptions = this.userOptionsService.getAccountOptions();
-    this.hostingOptions = this.userOptionsService.getHostingOptions();
-    this.inviteOptions = this.userOptionsService.getInviteOptions();
-    this.supportOptions = this.userOptionsService.getSupportOptions();
-    this.legalOptions = this.userOptionsService.getLegalOptions();
+    this.accountOptions = this.userOptionsService.getOptions('accountOptions');
+    this.hostingOptions = this.userOptionsService.getOptions('hostingOptions');
+    this.inviteOptions = this.userOptionsService.getOptions('inviteOptions');
+    this.supportOptions = this.userOptionsService.getOptions('supportOptions');
+    this.legalOptions = this.userOptionsService.getOptions('legalOptions');
     this.loggedUser = this.authService.getUser();
   }
 }

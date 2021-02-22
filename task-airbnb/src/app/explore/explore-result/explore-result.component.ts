@@ -67,20 +67,9 @@ export class ExploreResultComponent implements OnInit {
     const fromDate = new Date(this.currentSearch.fromDate);
     const toDate = new Date(this.currentSearch.toDate);
     const guestsNumber = (+this.currentSearch.adults + +this.currentSearch.babies + +this.currentSearch.kids);
-    this.shortCurrentSearch = '';
-    this.shortCurrentSearch = this.shortCurrentSearch + fromDate.getDate() +'. ';
-    this.shortCurrentSearch += this.exploreService.getMonth(+(fromDate.getMonth()+1));
-    this.shortCurrentSearch += ' - ';
-    this.shortCurrentSearch = this.shortCurrentSearch + toDate.getDate() +'. ';
-    this.shortCurrentSearch += this.exploreService.getMonth(+(toDate.getMonth()+1));
-    this.shortCurrentSearch += ' ';
-    this.shortCurrentSearch +=  guestsNumber;
-    if(guestsNumber > 1){
-      this.shortCurrentSearch += ' gosta';
-    }
-    else{
-      this.shortCurrentSearch += ' gost';
-    }
+    this.shortCurrentSearch = ``;
+    this.shortCurrentSearch = `${fromDate.getDate()}. ${this.exploreService.getMonth(+(fromDate.getMonth()+1))} -
+      ${toDate.getDate()}. ${this.exploreService.getMonth(+(toDate.getMonth()+1))} ${guestsNumber} ${guestsNumber > 1 ? 'gosta' : 'gost'}`;
   }
 
   fetchDays(): number {

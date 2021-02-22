@@ -14,12 +14,14 @@
         <mat-icon color="accent" class="reserve-icon">grade</mat-icon>
         <span class="text-size-12 text-bold-600">{{ currentAccommodation.grade }}</span>
         <span class="text-size-12 color-gray">({{ currentAccommodation.votesCount }})</span>
-        <mat-icon color="accent" class="reserve-icon" *ngIf="currentAccommodation.grade > 4.8">whatshot</mat-icon>
-        <span class="text-size-12 color-gray" *ngIf="currentAccommodation.grade > 4.8">Superhost</span>
+        <div *ngIf="currentAccommodation.grade > 4.8">
+          <mat-icon color="accent" class="reserve-icon">whatshot</mat-icon>
+          <span class="text-size-12 color-gray">Superhost</span>
+        </div>
       </div>
     </div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="space-between" class="mt-1" *ngIf="currentAccommodation.grade > 4.8">
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-1" *ngIf="currentAccommodation.grade > 4.8">
     <span class="text-size-12" fxFlex="80">
       <span class="text-bold-600">Ovo je jedinstvena prilika</span>
       Smještaji koji nudi {{currentAccommodation.ownerInfo.name}} najčešće je popunjen.

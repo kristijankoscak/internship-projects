@@ -20,8 +20,12 @@
     border-radius: 1.5rem;
     box-shadow: 0rem 0.3rem 0.5rem 0rem rgba(128, 128, 128, 0.4);
 }
+.button-borders > div > div > span {
+  font-size: 1.4rem;
+}
+
 @media screen and (min-width: 350px) {
-  .text-size-14 {
+  .button-borders > div > div > span {
     font-size: 2rem;
   }
   .text-lighter{

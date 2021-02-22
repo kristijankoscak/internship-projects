@@ -76,8 +76,14 @@
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-top-bottom-1">
-          <button mat-flat-button class="text-underline" *ngIf="checkPersonsCount() === false">Preskoči</button>
-          <button mat-flat-button class="text-underline" *ngIf="checkPersonsCount() === true" (click)="clearPersonsCount()">Izbriši</button>
+          <ng-container *ngIf="checkPersonsCount(); then clearButton; else skipButton">
+          </ng-container>
+          <ng-template #skipButton>
+            <button mat-flat-button class="text-underline">Preskoči</button>
+          </ng-template>
+          <ng-template #clearButton>
+            <button mat-flat-button class="text-underline" (click)="clearPersonsCount()">Izbriši</button>
+          </ng-template>
           <button mat-flat-button color="accent" [disabled]="!personsValid" (click)="nextScreen()">Pretraživanje</button>
         </div>
     </div>

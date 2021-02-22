@@ -20,13 +20,7 @@ export class SignUpComponent implements OnInit {
     this.formInvalid = true;
     this.initForm();
     this.userDataForm.valueChanges.subscribe(val => {
-      if (this.userDataForm.status === 'VALID'){
-        this.formInvalid = false;
-      }
-      if (this.userDataForm.status === 'INVALID'){
-        this.formInvalid = true;
-      }
-
+      this.formInvalid = !(this.userDataForm.status === 'VALID');
     });
   }
 

@@ -30,5 +30,6 @@
   ::ng-deep .mat-slide-toggle-bar{
     height:2.7rem !important;
     width: 4rem !important;
+    border-radius: 1.3rem !important;
   }
 }

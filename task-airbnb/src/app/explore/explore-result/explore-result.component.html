@@ -39,11 +39,13 @@
     </span>
   </div>
   <div class="scroll-accomodation-container">
-    <app-accommodation-big-item
+    <div class="accommodations-container">
+      <app-accommodation-big-item
       *ngFor="let accommodation of accommodations"
       [accommodation]="accommodation"
       [days]="fetchDays()"
       (click)="navigateToAccommodationDetail(accommodation.id)"></app-accommodation-big-item>
+    </div>
     <div fxLayout="row" class="map-button-container" fxLayoutAlign="center">
       <button mat-flat-button color="primary" class="map-button" (click)="toggleSlider()">
         <mat-icon> map</mat-icon>

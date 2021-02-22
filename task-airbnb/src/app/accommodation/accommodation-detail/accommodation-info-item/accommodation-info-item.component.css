@@ -11,3 +11,11 @@
   margin-right: 1rem;
 }
 
+@media screen and (min-width:350px){
+  .text-size-14{
+    font-size:1.6rem;
+  }
+  .accommodation-info-icon{
+    height:4rem;
+  }
+}

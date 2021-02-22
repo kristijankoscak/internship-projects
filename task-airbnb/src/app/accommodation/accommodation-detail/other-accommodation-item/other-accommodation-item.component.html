@@ -5,19 +5,19 @@
       [src]="accommodation.images[0]"/>
   </div>
   <div fxLayout="column">
-    <div fxLayout="row" fxLayoutAlign="start center">
+    <div fxLayout="row" fxLayoutAlign="start center" class="small-info">
       <mat-icon color="accent" class="star-icon">grade</mat-icon>
-      <span clasS="text-size-12" *ngIf="accommodation.grade === null">&nbsp; Novo</span>
-      <span clasS="text-size-12" *ngIf="accommodation.grade !== null">&nbsp; {{accommodation.grade}}</span>
-      <span clasS="text-size-12 color-gray">&nbsp; ({{accommodation.votesCount}})</span>
+      <span *ngIf="accommodation.grade === null">&nbsp; Novo</span>
+      <span *ngIf="accommodation.grade !== null">&nbsp; {{accommodation.grade}}</span>
+      <span class="color-gray">&nbsp; ({{accommodation.votesCount}})</span>
     </div>
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <span clasS="text-size-14 ">{{accommodation.type}} &nbsp;</span>
-      <span clasS="text-size-14 ">{{getRoomDescription()}}</span>
+    <div fxLayout="row" fxLayoutAlign="start center"  class="big-info">
+      <span >{{accommodation.type}} &nbsp;</span>
+      <span >{{getRoomDescription()}}</span>
     </div>
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <span clasS="text-size-14 text-bold-600">{{accommodation.newPrice*days}} kn &nbsp;</span>
-      <span clasS="text-size-14 ">Ukupno</span>
+    <div fxLayout="row" fxLayoutAlign="start center" class="big-info">
+      <span class="text-bold-600">{{accommodation.newPrice*days}} kn &nbsp;</span>
+      <span >Ukupno</span>
     </div>
   </div>
 </button>
