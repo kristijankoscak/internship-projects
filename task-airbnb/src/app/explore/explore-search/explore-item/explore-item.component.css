@@ -1,0 +1,37 @@
+
+.mat-button{
+  display:flex;
+  line-height: normal !important;
+  width:100vw;
+  padding:1rem 2rem;
+  border-radius: unset;
+}
+
+.image{
+  height: 4.8rem;
+  width: 4.8rem;
+  border:none;
+  border-radius: 1rem;
+  background-size: contain;
+  margin-right:3rem;
+}
+
+.gray-background{
+  background-color: rgb(128, 128, 128,0.2);
+}
+
+@media screen and (min-width: 350px) {
+  .mat-button{
+    padding:1rem 8rem;
+  }
+  .image{
+    height: 6rem;
+    width: 6rem;
+  }
+  .text-lighter{
+    font-size: 2rem;
+  }
+  .text-size-12 {
+    font-size: 1.6rem;
+}
+}

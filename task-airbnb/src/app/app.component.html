@@ -1,0 +1,11 @@
+<div fxLayout="column" class="background">
+  <div
+    fxLayout="row">
+    <router-outlet></router-outlet>
+  </div>
+  <div
+    fxLayout="row"
+    *ngIf="showNavbar">
+    <app-nav-bar></app-nav-bar>
+  </div>
+</div>

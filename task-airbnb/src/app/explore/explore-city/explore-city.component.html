@@ -1,0 +1,91 @@
+<div class="background">
+  <div fxLayout="row" class="padding-left-right-2 question">
+    <span class="text-size-24 text-bold-600">{{ currentScreen }}</span>
+  </div>
+  <div fxLayout="row" class="slide-container borders-top" [ngClass]="sliderHeight">
+    <div fxLayout="column" fxFlex="100">
+      <div fxLayout="row" class="slide-header" fxLayoutAlign="center">
+        <mat-icon class="maximize-icon" (click)="toggleSlider()">maximize</mat-icon>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button mat-button class="back-icon">
+          <mat-icon class="icon" (click)="onBack()">keyboard_backspace</mat-icon>
+        </button>
+        <span class="text-size-14 text-bold-600">{{ currentCity }}</span>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <span *ngIf="fromDate && currentScreen === screens[1]" class="text-lighter text-size-12" >
+          {{ fromDate.day }}. -
+        </span>
+        <span *ngIf="toDate && currentScreen === screens[1]" class="text-lighter text-size-12">
+          {{ toDate.day }}. {{ getMonth(toDate.month) }}
+        </span>
+        <span *ngIf="toDate !== null && dateOption !== 'Točni datumi' && currentScreen === screens[1]" class="text-lighter text-size-12 ml-1">
+          ( {{ dateOption }} )
+        </span>
+        <span *ngIf="personCount > 0 && currentScreen === screens[2]" class="text-lighter text-size-12 ml-1">
+          Gostiju: {{personCount}}
+        </span>
+      </div>
+      <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentScreen === screens[0]">
+        <app-explore-city-action-item *ngFor="let type of searchTypes" [type]="type" (click)="nextScreen()"></app-explore-city-action-item>
+      </div>
+      <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentScreen === screens[1]">
+        <div fxLayout="row">
+          <ngb-datepicker
+            #datePicker
+            [(ngModel)]="model"
+            (navigate)="date = $event.next"
+            (dateSelect)="onDateSelection($event)"
+            [dayTemplate]="t"
+            outsideDays="hidden"
+            [minDate]="todayDate"></ngb-datepicker>
+          <ng-template #t let-date let-focused="focused">
+            <span class="custom-day"
+
+                  [class.focused]="focused"
+                  [class.range]="isRange(date)"
+                  [class.faded]="isHovered(date) || isInside(date)"
+                  (mouseenter)="hoveredDate = date"
+                  (mouseleave)="hoveredDate = null">
+              {{ date.day }}
+            </span>
+          </ng-template>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="x-slide" *ngIf="dateIsPicked">
+          <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">Točni datumi</button>
+          <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">	&plusmn; 1 dan</button>
+          <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">	&plusmn; 3 dana</button>
+          <button mat-stroked-button (click)="addDateOption($event)" class="dateOption">	&plusmn; 7 dana</button>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-top-bottom-1">
+          <button mat-flat-button class="text-underline" (click)="clearCalendar()">Izbriši</button>
+          <button mat-flat-button class="bg-color-black color-white" [disabled]="!dateIsPicked" (click)="nextScreen()">Sljedeće</button>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex="100" class="options-container" *ngIf="currentScreen === screens[2]">
+        <app-explore-city-persons-item [personType]="person" *ngFor="let person of personTypes"></app-explore-city-persons-item>
+        <div fxLayout="row" class="personType" fxLayoutAlign="space-between center">
+          <div fxLayout="column">
+            <span class="text-bold text-size-14">Kućni ljubimci?</span>
+            <span class="text-lighter text-size-12">Dovodite li kućnog ljubimca?</span>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-slide-toggle [(ngModel)]="petsAllowed"></mat-slide-toggle>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-top-bottom-1">
+          <ng-container *ngIf="checkPersonsCount(); then clearButton; else skipButton">
+          </ng-container>
+          <ng-template #skipButton>
+            <button mat-flat-button class="text-underline">Preskoči</button>
+          </ng-template>
+          <ng-template #clearButton>
+            <button mat-flat-button class="text-underline" (click)="clearPersonsCount()">Izbriši</button>
+          </ng-template>
+          <button mat-flat-button color="accent" [disabled]="!personsValid" (click)="nextScreen()">Pretraživanje</button>
+        </div>
+    </div>
+  </div>
+</div>

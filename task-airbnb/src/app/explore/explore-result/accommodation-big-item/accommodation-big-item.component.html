@@ -1,0 +1,47 @@
+<button mat-button class="accommodation-button" ><!-- routerLink="" -->
+  <div
+    class="accommodation-image-container">
+    <div class="accommodation-slide-container" (scroll)="handleScroll($event)">
+      <div class="accommodation-image"
+      *ngFor="let imagePath of accommodationImages; let i=index;"
+      [ngStyle]="{'background-image': 'url(' + imagePath + ')'}">
+    </div>
+    </div>
+    <div class="save-button-container">
+      <div class="accommodation-image-badge" *ngIf="accommodation.grade > 4.8"><span>SUPERDOMAĆIN</span></div>
+      <mat-icon class="save-icon">favorite_border</mat-icon>
+    </div>
+    <div class="dots-container" *ngIf="accommodationImages">
+      <span
+        class="dot dot-normal"
+        *ngFor="let accommodation of accommodationImages; let i = index"
+        [ngClass]="{ 'dot-active': currentActive === i }"
+      ></span>
+    </div>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon color="accent" class="star-icon">grade</mat-icon>
+      <span clasS="text-size-12" *ngIf="accommodation.grade === null">&nbsp; Novo</span>
+      <span clasS="text-size-12" *ngIf="accommodation.grade !== null">&nbsp; {{accommodation.grade}}</span>
+      <span clasS="text-size-12 color-gray">&nbsp; ({{accommodation.votesCount}})</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span clasS="text-size-14 ">{{accommodation.type}} &nbsp;</span>
+      <span clasS="text-size-14 "> - &nbsp;</span>
+      <span clasS="text-size-14 ">{{accommodation.location}}</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span clasS="text-size-14 ">{{accommodation.description}}</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span clasS="text-size-14 text-bold color-gray text-line-through">{{accommodation.oldPrice}} kn</span>
+      <span clasS="text-size-14 text-bold">&nbsp; {{accommodation.newPrice}} </span>
+      <span clasS="text-size-14 ">&nbsp; po noćenju</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" class="color-gray">
+      <span clasS="text-size-12 text-underline">Ukupno&nbsp;</span>
+      <span clasS="text-size-12 text-underline">{{days * accommodation.newPrice}} kn</span>
+    </div>
+  </div>
+</button>

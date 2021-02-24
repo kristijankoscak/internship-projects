@@ -1,0 +1,43 @@
+<div fxLayout="column"
+  class="background"
+  fxLayoutAlign="start stretch">
+  <div fxLayout="row" class="left-right-padding-2 padding-bottom-2">
+      <span class="text-size-24 text-bold">Putovanja</span>
+  </div>
+  <div fxLayout="row">
+    <mat-tab-group>
+      <mat-tab label="Predstojeće" >
+        <div fxLayout="column">
+          <span class="text-size-14 text-lighter mt-1 mb-1 left-right-padding-2 "> Kad ponovno budete spremni planirati putovanje, rado ćemo vam pomoći.<br>
+            <a class="text-bold">Saznajte više</a>
+          </span>
+          <div class="travel-image"></div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Prethodno">
+        <div fxLayout="column">
+          <span class="text-size-14 text-lighter mt-1 mb-1 left-right-padding-2 ">Još nema prethodnih putovanja, a kad ih bude, moći ćete ih vidjeti ovdje.<br></span>
+          <div class="travel-image"></div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div fxLayout="row" class="p-2">
+    <button
+      mat-flat-button routerLink="/explore">Istraži Airbnb</button>
+  </div>
+  <div fxLayout="row" class="left-right-padding-2">
+    <mat-divider></mat-divider>
+  </div>
+
+  <div fxLayout="row"class="mb-2">
+    <button
+      mat-button>
+      <div fxLayout="column" fxLayoutAlign="start start" >
+        <span class="text-size-12 text-lighter">Ne uspijevate ovdje pronaći svoju rezervaciju? </span>
+        <span class="text-size-12 text-bold">Posjetite Centar za pomoć.</span>
+      </div>
+    </button>
+  </div>
+</div>

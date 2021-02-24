@@ -1,0 +1,16 @@
+.content-icon{
+  display: inline-block;
+  background-size: cover;
+  width:2rem;
+  height:2rem;
+}
+
+@media screen and (min-width:350px){
+  .text-size-14{
+    font-size: 1.6rem;
+  }
+  .content-icon{
+    width: 3rem;
+    height: 3rem;
+  }
+}

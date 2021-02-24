@@ -1,0 +1,27 @@
+.suggestion-image{
+  display: block;
+  background-size: cover;
+  height:20rem;
+  width: 20rem;
+  border-radius: 1.5rem;
+}
+
+.suggestion-text{
+  font-weight: 600;
+  float: left;
+  font-size: 1.3rem;
+}
+
+button{
+  padding: 1rem;
+}
+
+@media screen and (min-width: 350px) {
+  .suggestion-image{
+    width:30rem;
+    height:30rem;
+  }
+  .suggestion-text{
+    font-size:2rem;
+  }
+}

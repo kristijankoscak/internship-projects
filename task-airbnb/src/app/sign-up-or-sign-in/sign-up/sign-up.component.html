@@ -1,0 +1,81 @@
+ <div class="background">
+  <form [formGroup]="userDataForm" (ngSubmit)="onSubmit()">
+    <div fxLayout="row">
+      <button mat-button routerLink=".." class="color-black">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-2">
+      <span class="text-size-20 color-black">Unesite svoje podatke</span>
+    </div>
+    <div fxLayout="row">
+        <div fxLayout="column" class="full-width" [formGroup]="userDataForm">
+          <mat-form-field class="borders rounded-top">
+            <mat-label>Ime</mat-label>
+            <input matInput type="tel" autocomplete="off" formControlName="userName"/>
+          </mat-form-field>
+          <mat-form-field class="borders rounded-bottom">
+            <mat-label>Prezime</mat-label>
+            <input matInput type="tel" autocomplete="off" formControlName="userSurname"/>
+          </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <span class="text-size-12">
+        Vodite računa o tome a ime i prezime moraju odgovarati podacima na vašem službenom osobnom dokumentu.
+      </span>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <mat-form-field class="borders rounded-top rounded-bottom" (click)="picker.open()">
+        <mat-label>Rođendan (dd/mm/gggg)</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="userBirthDate">
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <span class="text-size-12">
+        Da biste se registrirali, morate imati najmanje 18 godina. Drugi korisnici Airbnba neće vidjeti vaš datum rođenja.
+      </span>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <mat-form-field class="borders rounded-top rounded-bottom">
+        <mat-label>Email</mat-label>
+        <input matInput autocomplete="off" formControlName="userEmail"/>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <span class="text-size-12">
+        Potvrdu rezervacije poslat ćemo vam e-mailom.
+      </span>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <span class="text-size-14 text-bold-600">
+        Odabirom opcije "Prihvatite i nastavite" ponuđene u nastavku prihvaćam sljedeća Airbnbova pravila i uvjete:
+        <span class="text-underline">Uvjete korištenja, Uvjete plaćanja, Pravila o privatnosti i Antidiskriminacijska pravila.</span>
+      </span>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-2">
+      <button
+        mat-flat-button
+        [disabled]="formInvalid"
+        [ngClass]="{'button-active':!formInvalid}"
+        type="submit">
+        Prihvatite i nastavite
+      </button>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1">
+      <span class="text-size-14 text-bold-600">
+        Airbnb će vam slati ekskluzivne ponude za korisnike platforme, inspirativne sadržaje, e-mailove s marketinškim sadržajem te push obavijesti.
+        U postavkama ili putem poveznice u poruci s marketinškim sadržajem u svakom trenutku možete obustaviti slanje te vrste sadržaja.
+      </span>
+    </div>
+    <div fxLayout="row" class="margin-top-bottom-1" fxLayoutAlign="space-between">
+      <span class="text-size-14 text-bold-600">
+        Ne želim od Airbnba primat poruke marketinškog sadržaja.
+      </span>
+      <mat-slide-toggle formControlName="userDontSendAds"></mat-slide-toggle>
+    </div>
+  </form>
+
+
+</div>

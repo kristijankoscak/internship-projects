@@ -1,0 +1,60 @@
+<div class="map-container">
+  <iframe
+  [src]="fetchMapUrl()"
+  class="map-block"
+  frameborder="0"
+>
+</iframe>
+</div>
+
+<div fxLayout="row" class="search-container" [ngClass]="searchContainerBackground">
+  <div fxLayout="row" fxLayoutAlign="space-between" class="search-options-block">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon class="icon mr-3" routerLink="/explore">keyboard_backspace</mat-icon>
+      <span class="text-size-12 text-bold">{{currentCity.name}}</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span class="text-size-12 text-bold color-gray shortSearch border-dots">{{shortCurrentSearch}} |</span>
+      <mat-icon>tune</mat-icon>
+    </div>
+  </div>
+</div>
+<div fxLayout="row" class="slide-accommodation-container">
+  <app-accommodation-small-item
+    *ngFor="let accommodation of accommodations"
+    [accommodation]="accommodation"
+    (click)="navigateToAccommodationDetail(accommodation.id)"></app-accommodation-small-item>
+</div>
+<div
+  fxLayout="column"
+  class="slide-container"
+  [ngClass]="sliderHeight"
+  fxFlex="100">
+  <div fxLayout="row" class="slide-header" fxLayoutAlign="center">
+    <mat-icon class="maximize-icon" (click)="toggleSlider()">maximize</mat-icon>
+  </div>
+  <div fxLayout="row">
+    <span class="text-size-14">Prije ugovaranja rezervacije provjerite koja su ograničenja za putovanja zbog pandemije bolesti COVID-19.
+      <span class="text-underline">Saznajte više.</span>
+    </span>
+  </div>
+  <div class="scroll-accomodation-container">
+    <div class="accommodations-container">
+      <app-accommodation-big-item
+      *ngFor="let accommodation of accommodations"
+      [accommodation]="accommodation"
+      [days]="fetchDays()"
+      (click)="navigateToAccommodationDetail(accommodation.id)"></app-accommodation-big-item>
+    </div>
+    <div fxLayout="row" class="map-button-container" fxLayoutAlign="center">
+      <button mat-flat-button color="primary" class="map-button" (click)="toggleSlider()">
+        <mat-icon> map</mat-icon>
+        <span class="ml-1">Karta</span>
+      </button>
+    </div>
+  </div>
+
+</div>
+<div class="nav-bar" *ngIf="navBarIsVisible">
+  <app-nav-bar></app-nav-bar>
+</div>

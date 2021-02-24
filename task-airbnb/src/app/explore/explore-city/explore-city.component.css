@@ -1,0 +1,243 @@
+.background {
+  display: block;
+  background: rgb(74,70,145);
+  background: linear-gradient(90deg, rgba(74,70,145,1) 0%, rgba(80,80,173,1) 7%, rgba(194,90,55,1) 100%, rgba(0,212,255,1) 100%);
+  height: 90vh;
+  width: 100vw;
+}
+
+.question {
+  position: fixed;
+  height: 10%;
+  top: 20%;
+  color: white;
+}
+
+.slide-container {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  bottom: 0;
+  padding: 0rem 2rem;
+}
+.slider-height-default {
+  height: 70%;
+  transition: 1s;
+}
+.slider-height-full {
+  height: 100%;
+  transition: 1s;
+}
+
+.slide-header {
+  width: 100%;
+  text-align: center;
+  color: gray;
+}
+.maximize-icon {
+  width: 3rem;
+  font-size: 3rem;
+}
+
+.borders-top {
+  border-top-left-radius: 2rem !important;
+  border-top-right-radius: 2rem !important;
+}
+
+.mat-button {
+  min-width: unset;
+  line-height: normal;
+  padding: 1rem;
+}
+
+.back-icon {
+  padding: 0;
+  width: unset;
+  border-radius: 50%;
+  position: absolute;
+  left: 2rem;
+}
+
+.options-container {
+  margin-top: 3rem;
+}
+
+::ng-deep ngb-datepicker {
+  width: 100% !important;
+  border: unset !important;
+}
+::ng-deep ngb-datepicker-month {
+  width: 100% !important;
+}
+::ng-deep .ngb-dp-month {
+  width: 100% !important;
+}
+::ng-deep .ngb-dp-week {
+  width: 100% !important;
+  text-align: center !important;
+  place-content: center space-between !important;
+  align-items: center !important;
+  padding: 0.5rem 0rem;
+}
+::ng-deep .ngb-dp-weekday {
+  width: 3rem !important;
+  height: 3rem !important;
+  line-height: unset !important;
+  font-size: 2rem !important;
+  color: gray !important;
+  font-style: unset !important;
+  font-weight: 100;
+  text-transform: lowercase;
+}
+::ng-deep .ngb-dp-day {
+  width: 3rem;
+  height: 3rem;
+  line-height: normal;
+  font-size: 2rem;
+}
+::ng-deep .ngb-dp-arrow-btn {
+  color: black !important;
+}
+::ng-deep .custom-select {
+  font-size: 1.5rem !important;
+  height: 3rem !important;
+  padding: 0rem !important;
+}
+.custom-day {
+  text-align: center;
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+  line-height: unset;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: rgba(0, 0, 0);
+  border-radius: 50%;
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgb(0, 0, 0, 0.61);
+  border-radius: 50%;
+}
+
+.x-slide {
+  overflow-x: scroll;
+  padding: 1rem;
+  grid-template-columns: auto auto auto auto;
+  width: 100%;
+  margin-top:1rem;
+  border-bottom: 1px solid rgb(128, 128, 128,0.5);
+  border-top: 1px solid rgb(128, 128, 128,0.5);
+}
+.padding-top-bottom-1 {
+  padding: 1rem 0rem;
+}
+
+.dateOption{
+  border-radius: 2rem;
+  min-width: unset;
+  margin: 0rem 0.5rem;
+  border-color: gray;
+}
+.dateOption:focus{
+  border-color: black;
+}
+
+::ng-deep .ngb-dp-day.disabled{
+  color:rgba(0, 0, 0, 0.3);
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+.bg-color-black {
+  background-color: black;
+}
+
+::ng-deep .mat-slide-toggle-thumb-container{
+  top:0 !important;
+  margin-top:0.1rem;
+}
+::ng-deep .mat-slide-toggle-bar{
+  background-color:rgba(0, 0, 0, 0.38) !important;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+  background-color: rgb(0, 0, 0,0.8);
+}
+::ng-deep .mat-slide-toggle-thumb{
+  height:1.8rem !important;
+  width:1.8rem !important;
+}
+::ng-deep .mat-slide-toggle-bar{
+  height:2rem !important;
+}
+
+@media screen and (min-width: 350px) {
+  .question{
+    top:15%;
+    padding:0rem 8rem;
+  }
+  .text-size-24 {
+    font-size: 3rem;
+  }
+  .slider-height-default{
+    height: 75%;
+  }
+  .maximize-icon{
+    width: 6rem;
+    font-size: 6rem;
+  }
+  ::ng-deep .mat-button-wrapper > .mat-icon{
+    width:3rem;
+    height:3rem;
+    font-size:3rem;
+  }
+  .text-size-14 {
+    font-size: 2rem;
+  }
+  .slide-container{
+    padding:0rem 8rem;
+  }
+  .back-icon{
+    left:8rem;
+  }
+  ::ng-deep .custom-select {
+    font-size: 2rem !important;
+    height: 4rem !important;
+    font-weight: 600;
+  }
+  ngb-datepicker{
+    height:auto;
+  }
+  ::ng-deep .ngb-dp-header, ::ng-deep .ngb-dp-weekdays {
+    background-color: unset !important;
+  }
+  ::ng-deep .ngb-dp-week{
+    height:6rem;
+  }
+  ::ng-deep .mat-button-wrapper{
+    font-size: 2rem;
+  }
+  .color-white{
+    color: white !important;
+  }
+  .text-size-12 {
+    font-size: 1.6rem;
+  }
+  .padding-top-bottom-1{
+    border-top: 0.1rem solid darkgray;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 8rem;
+  }
+  .mat-flat-button{
+    height:5rem;
+  }
+}

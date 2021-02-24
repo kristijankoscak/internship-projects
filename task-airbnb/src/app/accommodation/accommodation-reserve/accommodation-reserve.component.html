@@ -1,0 +1,202 @@
+<div class="row" fxLayoutAlign="start center" class="header-container">
+  <mat-icon (click)="onBack()">keyboard_backspace</mat-icon>
+  <span class="text-size-14 text-bold ml-3">Potvrdite i platite</span>
+</div>
+<div class="accommodation-container">
+  <div fxLayout="row">
+    <div fxLayout="row" fxFlex="35" class="accommodation-image"
+      [ngStyle]="{'background-image': 'url(' + currentAccommodation.images[0] + ')'}"></div>
+    <div fxLayout="column" fxFlex="65" class="accommodation-info">
+      <span class="text-size-12 color-gray">{{ currentAccommodation.type }}</span>
+      <span class="text-size-14 text-bold-600">{{ currentAccommodation.description }}</span>
+      <span class="text-size-12 color-gray" *ngFor="let room of currentAccommodation.room">{{room.description}}</span>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon color="accent" class="reserve-icon">grade</mat-icon>
+        <span class="text-size-12 text-bold-600">{{ currentAccommodation.grade }}</span>
+        <span class="text-size-12 color-gray">({{ currentAccommodation.votesCount }})</span>
+        <div *ngIf="currentAccommodation.grade > 4.8">
+          <mat-icon color="accent" class="reserve-icon">whatshot</mat-icon>
+          <span class="text-size-12 color-gray">Superhost</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-1" *ngIf="currentAccommodation.grade > 4.8">
+    <span class="text-size-12" fxFlex="80">
+      <span class="text-bold-600">Ovo je jedinstvena prilika</span>
+      Smještaji koji nudi {{currentAccommodation.ownerInfo.name}} najčešće je popunjen.
+    </span>
+    <div class="diamond-icon"></div>
+  </div>
+</div>
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+<div class="reservation-container">
+  <div fxLayout="row">
+    <span class="text-size-16 text-bold-600">Vaše putovanje</span>
+  </div>
+  <button mat-button>
+    <div fxLayout="row" fxLayoutAlign="space-between" class="mt-1">
+      <div fxLayout="column">
+        <span class="text-size-14 text-bold-600">Datumi</span>
+        <span class="text-size-14 color-gray">{{fetchDateRange()}}</span>
+      </div>
+      <span class="text-size-14 text-bold-600 text-underline">Uredite</span>
+    </div>
+  </button>
+  <button mat-button>
+    <div fxLayout="row"  class="mt-1" fxLayoutAlign="space-between">
+      <div fxLayout="column">
+        <span class="text-size-14 text-bold-600">Gosti</span>
+        <span class="text-size-14 color-gray">{{personNumber}} {{personNumber > 1 ? 'gosta' : 'gost'}}</span>
+      </div>
+      <span class="text-size-14 text-bold-600 text-underline">Uredite</span>
+    </div>
+  </button>
+  <div class="margin-top-bottom-1">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <span class="text-size-14 text-bold-600">Radi li se o poslovnom putovanju?</span>
+    <mat-slide-toggle></mat-slide-toggle>
+  </div>
+</div>
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+<div class="price-container">
+  <div fxLayout="row">
+    <span class="text-size-16 text-bold-600">Detaljni prikaz cijene</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between" class="mt-1">
+    <span class="text-size-14 color-gray">{{currentAccommodation.newPrice}} kn x {{numberOfDays}} {{numberOfDays>1 ? 'noćenja': 'noćenje'}}</span>
+    <span class="text-size-14 color-gray">{{ fetchTotalPrice() }} kn</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between"  class="mt-1">
+    <span class="text-size-14 color-gray">Naknada za usluge</span>
+    <span class="text-size-14 color-green text-bold-600">{{otherFees}} kn</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between"  class="mt-1">
+    <span class="text-size-14 text-bold-600">Ukupno (<span class="text-underline">HRK</span>)</span>
+    <span class="text-size-14 text-bold-600">{{fetchTotalPrice()}} kn</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end"  class="mt-1">
+    <button mat-button>
+      <span class="text-size-14 text-bold-600 text-underline">Više informacija</span>
+    </button>
+  </div>
+</div>
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+<div class="payment-container">
+  <div fxLayout="row">
+    <span class="text-size-16 text-bold-600">Način plaćanja:</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-1">
+    <span class="text-size-14">Način plaćanja</span>
+    <button mat-stroked-button class="add-button">Dodajte</button>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center" class="mt-1">
+      <div class="payment-icon visa mr-1"></div>
+      <div class="payment-icon master-card mr-1"></div>
+      <div class="payment-icon google-pay"></div>
+      <span class="text-size-12">Pay</span>
+  </div>
+  <div class="margin-top-bottom-1">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start"  class="mt-1">
+    <button mat-button>
+      <span class="text-size-14 text-bold-600 text-underline">Unesite kupon</span>
+    </button>
+  </div>
+</div>
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+<div class="owner-message-container">
+  <div fxLayout="row">
+    <span class="text-size-16 text-bold-600">Pošaljite poruku domaćinu</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start" class="mt-1">
+    <span class="text-size-14 color-gray">Napišite domaćinu svrhu putovanja i vrijeme dolaska.</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center" class="mt-1">
+      <div class="user-image"
+      [ngStyle]="{'background-image': 'url(' + currentAccommodation.ownerInfo.imagePath + ')'}"></div>
+      <div fxLayout="column" fxFlexOffset="5">
+        <span class="text-size-14 text-bold-600">{{currentAccommodation.ownerInfo.name}}</span>
+      </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start"  class="mt-1">
+    <input class="message-container" [placeholder]="'Pozdrav, '+currentAccommodation.ownerInfo.name+'! Dolazim...'"/>
+  </div>
+</div>
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+<div class="cancel-container">
+  <div fxLayout="row">
+    <span class="text-size-16 text-bold-600">Uvjeti otkazivanja</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start" class="mt-1">
+    <span class="text-size-12 color-gray">
+      {{fetchCancelInfo()}}
+      <span class="color-black text-underline text-bold-600">Saznajte više.</span>
+    </span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start" class="mt-1">
+    <span class="text-size-12 color-gray">
+      <span class="color-black text-bold-600">
+        Provjerite odgovaraju li vam uvjeti otkazivanja koje je odredio ovaj domaćin.
+      </span>
+      Za rezervacije ugovorene nakon 14.ožujka koronavirus se neće uzimat u obzir kao izvandredna okolnost.a
+      <span class="color-black text-underline text-bold-600">Saznajte više.</span>
+    </span>
+  </div>
+</div>
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+<div class="accommodation-container">
+  <div fxLayout="row">
+    <div fxLayout="row" fxFlex="35" class="accommodation-image"
+      [ngStyle]="{'background-image': 'url(' + currentAccommodation.images[0] + ')'}"></div>
+    <div fxLayout="column" fxFlex="65" class="accommodation-info">
+      <span class="text-size-12 color-gray">{{ currentAccommodation.type }}</span>
+      <span class="text-size-14 text-bold-600">{{ currentAccommodation.description }}</span>
+      <span class="text-size-12 color-gray" *ngFor="let room of currentAccommodation.room">{{room.description}}</span>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon color="accent" class="reserve-icon">grade</mat-icon>
+        <span class="text-size-12 text-bold-600">{{ currentAccommodation.grade }}</span>
+        <span class="text-size-12 color-gray">({{ currentAccommodation.votesCount }})</span>
+        <mat-icon color="accent" class="reserve-icon" *ngIf="currentAccommodation.grade > 4.8">whatshot</mat-icon>
+        <span class="text-size-12 color-gray" *ngIf="currentAccommodation.grade > 4.8">Superhost</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+<div class="confirm-container">
+  <div fxLayout="row" fxLayoutAlign="start" class="margin-top-bottom-1">
+    <span class="text-size-12 color-gray">
+     Odabirom gumba u nastavku prihvaćam sljedeće uvjete:
+    <span class="text-underline color-blue">Kućni red</span>,
+    <span class="text-underline color-blue">Informacije o sigurnosti</span>,
+    <span class="text-underline color-blue">Uvjeti otkazivanja</span>,
+    <span class="text-underline color-blue">Airbnbove smjernice za održavanje fizičkog razmaka i druge smjernice koje se odnose na COVID-19</span> i
+    <span class="text-underline color-blue">Uvjeti povrata novca gostima.</span>
+    Također pristajem platiti ukupan prikazani iznos u koji su uključene naknade za usluge. Uvjeti plaćanja između vas i tvrtke Airbnb Payments Luxembourg S.A.
+    </span>
+  </div>
+  <div fxLayout="row" class="margin-top-bottom-1">
+    <button mat-flat-button color="accent" class="confirm-and-pay-button">
+      <mat-icon>lock</mat-icon>
+      Potvrdite i platite
+    </button>
+  </div>
+</div>

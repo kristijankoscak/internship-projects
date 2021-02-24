@@ -1,0 +1,37 @@
+<div class="background">
+<div fxLayout="row" class="header">
+  <mat-icon class="person-icon icon-bg">person</mat-icon>
+  <div fxLayout="column" class="ml-2">
+    <span class="text-size-24 text-bold">{{loggedUser.userName}}</span>
+    <span class="text-size-14 color-green">Pogledajte profil</span>
+  </div>
+</div>
+<div fxLayout="row">
+  <button mat-button class="header shaddow-bottom">
+    <div fxLayout="row">
+      <mat-icon class="person-icon">attach_money</mat-icon>
+      <div fxLayout="column" fxLayoutAlign="start start">
+        <span class="text-size-14">Zaradite iznajmljujući slobodan prostor.</span>
+        <span class="text-size-14 color-green">Saznajte više.</span>
+      </div>
+    </div>
+  </button>
+</div>
+<div class="padding-left-right-2">
+  <div fxLayout="row" class="text-size-14 margin-top-bottom-1">POSTAVKE KORISNIČKOG RAČUNA</div>
+  <app-option-item *ngFor="let option of accountOptions" [item]="option"></app-option-item>
+  <div fxLayout="row" class="text-size-14 margin-top-bottom-1">UGOŠĆIVANJE</div>
+  <app-option-item *ngFor="let option of hostingOptions" [item]="option"></app-option-item>
+  <div fxLayout="row" class="text-size-14 margin-top-bottom-1">POZIVANJE NOVIH KORISNIKA I POPUSTI</div>
+  <app-option-item *ngFor="let option of inviteOptions" [item]="option"></app-option-item>
+  <div fxLayout="row" class="text-size-14 margin-top-bottom-1">PODRŠKA</div>
+  <app-option-item *ngFor="let option of supportOptions" [item]="option"></app-option-item>
+  <div fxLayout="row" class="text-size-14 margin-top-bottom-1">PRAVNE INFORMACIJE</div>
+  <app-option-item *ngFor="let option of legalOptions" [item]="option"></app-option-item>
+</div>
+<div class="padding-left-right-2 margin-top-bottom-2">
+  <div fxLayout="row" fxLayoutAlign="center">
+    <span class="text-size-14">VERZIJA 20.47.1 (24000622)</span>
+  </div>
+</div>
+</div>

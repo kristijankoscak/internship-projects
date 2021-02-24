@@ -1,0 +1,21 @@
+.shaddow-bottom{
+  box-shadow: 0 2rem 0.1rem -2rem rgb(0, 0, 0,0.88);
+}
+.mat-button{
+  width:100%;
+  border-radius: unset !important;
+  line-height: normal;
+  padding:1rem 2rem;
+  text-align: start;
+  white-space: normal;
+}
+@media screen and (min-width: 350px) {
+  .text-size-16 {
+    font-size: 1.8rem;
+  }
+  mat-icon{
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+  }
+}

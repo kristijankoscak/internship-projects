@@ -1,0 +1,48 @@
+.accommodation-button{
+  margin-right: unset;
+  width:100%;
+  height:100%;
+  padding:1rem 0rem;
+  line-height: normal;
+  font-weight: normal;
+  margin-right: 1rem;
+}
+.accommodation-button > ::ng-deep .mat-button-wrapper{
+  display: unset;
+}
+.accommodation-image-container {
+  width:70vw;
+  height:20vh;
+  display: inline-block;
+}
+.accommodation-image{
+  width:100%;
+  height:100%;
+  display: inline-block;
+  background-size: cover;
+  place-content: center;
+  border-radius: 1rem;
+}
+.star-icon{
+  font-size:1.6rem;
+  height:1.6rem;
+  width:1.6rem;
+}
+.small-info > span{
+  font-size: 1.2rem;
+}
+.big-info > span{
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width:350px){
+  .small-info > span{
+    font-size: 1.4rem;
+  }
+  .big-info > span{
+    font-size: 1.6rem;
+  }
+  .accommodation-image-container{
+    width: 40vw;
+  }
+}

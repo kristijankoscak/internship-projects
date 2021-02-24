@@ -1,0 +1,37 @@
+.image{
+  margin-left:2rem;
+  display: inline-block;
+  background-size: cover;
+  height:6rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+}
+.mat-button{
+  width:100%;
+  min-width: unset;
+  line-height: normal;
+  padding:1rem;
+  white-space: unset;
+  text-align: start;
+  margin-bottom: 1rem;
+}
+.button-borders{
+  border: 0.1rem solid rgba(128, 128, 128, 0.4);
+    border-radius: 1.5rem;
+    box-shadow: 0rem 0.3rem 0.5rem 0rem rgba(128, 128, 128, 0.4);
+}
+.button-borders > div > div > span {
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 350px) {
+  .button-borders > div > div > span {
+    font-size: 2rem;
+  }
+  .text-lighter{
+    font-size:1.8rem;
+  }
+  .mat-button{
+    padding:2rem 1rem;
+  }
+}

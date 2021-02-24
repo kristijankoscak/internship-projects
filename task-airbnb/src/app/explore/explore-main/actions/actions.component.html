@@ -1,0 +1,17 @@
+<div fxLayout="column" class="background">
+  <div
+  fxLayout="column"
+  class="margin-top-bottom-2">
+  <span class="text-title">Pridružite se milijunima domaćina na Airbnbu</span>
+</div>
+<div
+  fxLayout="row"
+  class="scrollable">
+  <app-item-action
+    *ngFor="let action of actions"
+    [action]="action"
+    ></app-item-action>
+</div>
+
+</div>
+

@@ -1,0 +1,44 @@
+<div fxLayout="row" class="background" fxLayoutAlign="space-evenly center">
+    <button
+      mat-button
+      routerLink="/explore">
+      <mat-icon class="icon" routerLinkActive="active">search</mat-icon>
+      <span class="icon-text" routerLinkActive="active">Istražite</span>
+    </button>
+    <button
+      mat-button
+      routerLink="/saved">
+      <mat-icon class="icon" routerLinkActive="active">favorite_border</mat-icon>
+      <span class="icon-text" routerLinkActive="active">Spremljeno</span>
+    </button>
+    <button
+      mat-button
+      routerLink="/trips">
+      <span class="icon airbnb-icon" routerLinkActive="active"></span>
+      <span class="icon-text" routerLinkActive="active">Putovanja</span>
+    </button>
+    <button
+      mat-button
+      routerLink="/messages"
+      >
+      <mat-icon class="icon" routerLinkActive="active">messenger_outline</mat-icon>
+      <span class="icon-text" routerLinkActive="active">Dolazne poruke</span>
+    </button>
+    <button
+      mat-button
+      routerLink="/login"
+      *ngIf="!userIsLogged"
+      >
+      <mat-icon class="icon" routerLinkActive="active">person_outline</mat-icon>
+      <span class="icon-text" routerLinkActive="active">Prijava</span>
+    </button>
+    <button
+      mat-button
+      routerLink="/user"
+      *ngIf="userIsLogged"
+      >
+      <mat-icon class="icon" routerLinkActive="active"> person_pin</mat-icon>
+      <span class="icon-text" routerLinkActive="active">Profil</span>
+    </button>
+
+</div>

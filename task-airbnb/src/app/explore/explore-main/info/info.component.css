@@ -1,0 +1,30 @@
+.background {
+  background-color: rgba(247, 247, 247);
+  width:100vw;
+  padding: 2rem 0rem;
+  box-shadow: 0rem 0 0.1rem rgba(0, 0, 0, 0.4);
+}
+
+.scrollable{
+  overflow-x: scroll;
+  display: grid !important;
+  grid-template-columns: auto auto auto auto;
+  padding:0rem 1rem;
+}
+
+.mat-list{
+  margin-right:1rem;
+}
+
+@media screen and (min-width: 350px) {
+  .background{
+    padding-left: 8rem;
+    padding-bottom:10rem;
+  }
+  .background > div > .text-title{
+    font-size: 2.5rem;
+  }
+  .scrollable > mat-list > .text-size-16{
+    font-size:2rem;
+  }
+}

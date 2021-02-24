@@ -1,0 +1,21 @@
+.info-item{
+  padding:1rem 0rem;
+}
+
+.accommodation-info-icon{
+  display: inline;
+  height: 3rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+  margin-right: 1rem;
+}
+
+@media screen and (min-width:350px){
+  .text-size-14{
+    font-size:1.6rem;
+  }
+  .accommodation-info-icon{
+    height:4rem;
+  }
+}

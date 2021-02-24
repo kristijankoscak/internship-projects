@@ -1,0 +1,12 @@
+
+<button
+  mat-button
+  (click)="navigateToExploreCity()">
+  <div fxLayout="row">
+    <img class="image" [src] ="city.image" [ngClass]="{'gray-background': !city.distance}"/>
+    <div fxLayout="column" fxLayoutAlign="center start" >
+      <span class="text-lighter">{{city.name}}</span>
+      <span class="text-lighter text-size-12">{{city.distance}}</span>
+    </div>
+  </div>
+</button>

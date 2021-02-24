@@ -1,0 +1,294 @@
+.accommodation-container{
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 30vh;
+}
+.images-container{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.slide-container{
+  position: relative;
+  width:100%;
+  height:100%;
+  display:flex;
+  overflow-x: scroll;
+}
+
+.images-button{
+  border-radius: unset;
+  min-width: unset;
+  padding:unset;
+  width:100%;
+  height:100%;
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bedroom-ideas-rds-work-queens-road-08-1593114639.jpg');
+  display: inline-block;
+  background-size: cover;
+}
+.images-button > ::ng-deep .mat-button-wrapper{
+  width:100vw;
+  height:100%;
+  padding:0;
+  margin:0;
+  display:block;
+  box-sizing: unset;
+}
+.actions-container{
+  position: absolute;
+  top:0;
+  display: block;
+  width:100%;
+  height: 20%;
+  padding:0.5rem 2rem;
+}
+
+.actions-container >  .mat-flat-button{
+  width:3rem;
+  height:3rem;
+  min-width: unset;
+  line-height: normal;
+  padding: unset;
+  border-radius: 50%;
+}
+.icon{
+  position: relative;
+  display:inline-block;
+}
+.back{
+  float: left;
+}
+.share{
+  float:right;
+  transform: rotate(-90deg);
+  margin-right: 1rem;
+}
+.save{
+  float:right;
+}
+
+.counter-container{
+  position: absolute;
+  display: block;
+  bottom: 0;
+  height: auto;
+  width: 15%;
+  background-color: rgba(0, 0, 0, 0.5);
+  right: 0;
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 500;
+  padding: 0.1rem 1rem;
+  border-radius: 0.2rem;
+  display: flex;
+  place-content: space-around;
+  margin: 0.5rem;
+}
+
+.accommodation-info-container{
+  position: relative;
+  width:100%;
+  height:30%;
+  padding: 2rem;
+}
+.star-icon{
+  height:1.4rem;
+  width:1.4rem;
+  font-size: 1.4rem;
+}
+.divider{
+  padding:1rem 0rem;
+  width:100%;
+}
+.diamond-icon{
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  background-size: cover;
+  background-image: url(../../../assets/diamond.svg);
+}
+.bed-icon{
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  background-size: cover;
+  background-image: url(../../../assets/bed.svg);
+}
+
+
+.user-image{
+  position: relative;
+  height: 5rem;
+  width: 5rem;
+  display: inline-block;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.translate-button{
+  border-color: rgba(0, 0, 0);
+  width: 100%;
+}
+.translate-button > ::ng-deep .mat-button-wrapper{
+  width:100%;
+  display:contents;
+}
+.room-container{
+  border: 0.1rem solid rgba(0,0,0,0.2);
+  border-radius: 1rem;
+  width: fit-content;
+  padding: 1rem;
+}
+.all-content-button{
+  border-color: rgba(0, 0, 0);
+  width: 100%;
+}
+.map-block{
+  width: 100%;
+  height: 30%;
+}
+.review-user-image{
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  display: inline-block;
+  background-size: cover;
+  border-radius: 50%;
+}
+.button-option{
+  width:100%;
+  line-height: normal;
+  white-space: unset;
+  font-weight: unset;
+  text-align: center;
+}
+.button-option > ::ng-deep .mat-button-wrapper{
+  width:100%;
+  display:contents;
+}
+.text-align-start{
+  text-align: start;
+}
+.more-accommodations-container{
+  display:block;
+  width:100vw;
+  height:auto;
+  padding:0rem 2rem;
+  margin-bottom: 9rem;
+}
+.more-accommodations-container > .slide-container{
+  height:80%;
+}
+.bigger-divider{
+  padding:1rem 0rem;
+}
+
+.bigger-divider > ::ng-deep mat-divider{
+  border-top-width: 0.3rem;
+}
+.reserve-container{
+  position: fixed;
+  width:100%;
+  height:8rem;
+  padding:1rem 2rem;
+  bottom:0;
+  background-color: white;
+  z-index:50;
+}
+.reserve-info{
+  width:40%;
+}
+.reserve-container > ::ng-deep .mat-flat-button{
+    min-width: unset;
+    line-height: normal;
+    padding: 1rem 2rem;
+}
+
+@media screen and (min-width: 350px) {
+  .accommodation-container{
+    height:45vh;
+  }
+  .actions-container{
+    height:15%;
+    padding:1rem 2rem;
+  }
+  .icon{
+    width:4rem !important;
+    height:4rem !important;
+  }
+  ::ng-deep .mat-button-wrapper > .mat-icon{
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+  }
+  .counter-container{
+    width: 10%;
+    font-size: 1.6rem;
+    margin-right: 2rem;
+  }
+  .accommodation-info-container{
+    padding: 2rem 8rem;
+  }
+  .text-size-24 {
+    font-size:3rem;
+  }
+  .text-size-14{
+    font-size:1.6rem;
+  }
+  .star-icon{
+    height: 1.6rem;
+    width: 1.6rem;
+    font-size: 1.6rem;
+  }
+  .text-size-16{
+    font-size:1.8rem;
+  }
+  .diamond-icon{
+    height: 6rem;
+  }
+  .text-size-20{
+    font-size:2.4rem;
+  }
+  .bed-icon{
+    height: 4rem;
+    width: 4rem;
+  }
+  .mat-stroked-button{
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  .text-size-12{
+    font-size: 1.4rem;
+  }
+  .accommodation-location-container{
+    height: 50rem;
+    overflow: hidden;
+  }
+  .map-block{
+    margin-top: -20%;
+    height: 145%;
+  }
+  .button-option{
+    padding:1rem 0rem;
+    line-height: 2;
+  }
+  .more-accommodations-container{
+    padding:0rem
+  }
+  .more-accommodations-container > div > .text-size-20{
+    padding: 0rem 8rem;
+  }
+  .more-accommodations-container > .slide-container{
+    padding: 1rem 8rem;
+  }
+  .reserve-container{
+    padding: 1rem 8rem;
+  }
+  .reserve-container > .mat-flat-button{
+    font-size: 1.8rem;
+  }
+}
